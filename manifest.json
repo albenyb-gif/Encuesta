@@ -1,0 +1,21 @@
+{
+  "name": "Encuesta Senior Pro 2.0",
+  "short_name": "Encuesta 2.0",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "description": "Sistema de gestión de relevamientos en campo.",
+  "icons": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Black_check.svg/1024px-Black_check.svg.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Black_check.svg/1024px-Black_check.svg.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
