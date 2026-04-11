@@ -5,21 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Encuesta 2.0 - Sistema Senior Pro</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#0f172a">
-    <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Black_check.svg/1024px-Black_check.svg.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Encuesta 2.0">
+    <link rel="apple-touch-icon" href="/icon-512.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
+        // Service Worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js').then(reg => console.log('SW Registered', reg)).catch(err => console.log('SW Failed', err));
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('SW Registered', reg.scope))
+                    .catch(err => console.log('SW Failed', err));
+            });
+        }
+
+        // PWA Install Prompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            const banner = document.getElementById('pwa-install-banner');
+            if (banner) banner.style.display = 'flex';
+        });
+
+        window.addEventListener('appinstalled', () => {
+            const banner = document.getElementById('pwa-install-banner');
+            if (banner) banner.style.display = 'none';
+            deferredPrompt = null;
+        });
+
+        function installPWA() {
+            if (!deferredPrompt) return;
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then(choice => {
+                if (choice.outcome === 'accepted') console.log('PWA instalada');
+                deferredPrompt = null;
+                document.getElementById('pwa-install-banner').style.display = 'none';
             });
         }
     </script>
 </head>
 <body>
+    <!-- BANNER DE INSTALACIÓN PWA -->
+    <div id="pwa-install-banner" style="display: none; position: fixed; bottom: 90px; left: 16px; right: 16px; z-index: 9999; background: linear-gradient(135deg, #0f172a, #1e293b); color: white; border-radius: 20px; padding: 16px 20px; align-items: center; gap: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); border: 1px solid rgba(59,130,246,0.3);">
+        <div style="width: 48px; height: 48px; background: #3b82f6; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">📋</div>
+        <div style="flex: 1;">
+            <div style="font-weight: 800; font-size: 14px;">Instalar Encuesta 2.0</div>
+            <div style="font-size: 11px; color: #94a3b8; margin-top: 2px;">Acceso rápido desde tu pantalla de inicio</div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+            <button onclick="document.getElementById('pwa-install-banner').style.display='none'" style="background: rgba(255,255,255,0.1); color: white; border: none; padding: 8px 12px; border-radius: 10px; cursor: pointer; font-size: 12px;">✕</button>
+            <button onclick="installPWA()" style="background: #3b82f6; color: white; border: none; padding: 8px 16px; border-radius: 10px; cursor: pointer; font-size: 13px; font-weight: 700;">Instalar</button>
+        </div>
+    </div>
+
+
     <!-- SIDEBAR OVERLAY (Mobile) -->
     <div id="sidebar-overlay" class="overlay"></div>
     
