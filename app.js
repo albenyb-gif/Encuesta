@@ -104,9 +104,10 @@ function checkSession() {
         updateProfileUI();
         const sidebar = document.getElementById('sidebar');
         if (sidebar) sidebar.style.display = 'flex';
-        // Mostrar/ocultar link de Admin según rol
         const adminLink = document.getElementById('nav-admin');
         if (adminLink) adminLink.style.display = isAdmin() ? 'flex' : 'none';
+        connectSSE();         // Conectar canal de tiempo real
+        loadSchemaFromServer(); // Cargar esquema compartido
         navigateTo('view-dashboard');
     } else {
         mainContent.style.display = 'flex';
@@ -114,6 +115,54 @@ function checkSession() {
         document.getElementById('sidebar').style.display = 'none';
         document.querySelectorAll('.bottom-nav').forEach(n => n.style.display = 'none');
         navigateTo('view-login');
+    }
+}
+
+// === SSE: Tiempo Real ===
+let sseConnection = null;
+function connectSSE() {
+    if (sseConnection) sseConnection.close();
+    // SSE no soporta headers personalizados natively; usamos token en query param
+    const token = getToken();
+    sseConnection = new EventSource(`/api/events?token=${token}`);
+    sseConnection.onmessage = (e) => {
+        const data = JSON.parse(e.data);
+        if (data.type === 'schema-updated') {
+            currentSchema = data.schema;
+            localStorage.setItem('survey_schema', JSON.stringify(data.schema));
+            showSchemaUpdateNotification();
+        }
+    };
+    sseConnection.onerror = () => {
+        // Reconexión automática manejada por el navegador
+    };
+}
+
+function showSchemaUpdateNotification() {
+    let notif = document.getElementById('schema-update-notif');
+    if (!notif) {
+        notif = document.createElement('div');
+        notif.id = 'schema-update-notif';
+        notif.style.cssText = `position:fixed;top:70px;left:50%;transform:translateX(-50%);z-index:9999;
+            background:linear-gradient(135deg,#10b981,#059669);color:white;padding:12px 24px;
+            border-radius:50px;font-size:13px;font-weight:700;box-shadow:0 8px 24px rgba(16,185,129,0.4);
+            display:flex;align-items:center;gap:10px;animation:slideDown 0.4s ease;white-space:nowrap;`;
+        notif.innerHTML = '<i class="fa-solid fa-rotate"></i> ¡Preguntas actualizadas por el administrador!';
+        document.body.appendChild(notif);
+    }
+    notif.style.display = 'flex';
+    setTimeout(() => { if (notif) notif.style.display = 'none'; }, 4000);
+}
+
+async function loadSchemaFromServer() {
+    try {
+        const data = await apiRequest('GET', '/api/schema');
+        if (data.schema && Array.isArray(data.schema)) {
+            currentSchema = data.schema;
+            localStorage.setItem('survey_schema', JSON.stringify(data.schema));
+        }
+    } catch (e) {
+        // Si falla, usar el schema local (ya está en currentSchema)
     }
 }
 
@@ -1022,6 +1071,7 @@ function saveNewQuestion() {
     else currentSchema.push(newQ);
 
     localStorage.setItem('survey_schema', JSON.stringify(currentSchema));
+    pushSchemaToServer();
     closeModal();
     renderSettingsList();
 }
@@ -1030,8 +1080,31 @@ function removeQuestion(idx) {
     if (confirm('¿Eliminar esta pregunta?')) {
         currentSchema.splice(idx, 1);
         localStorage.setItem('survey_schema', JSON.stringify(currentSchema));
+        pushSchemaToServer();
         renderSettingsList();
     }
+}
+
+// === SCHEMA SYNC CON SERVIDOR ===
+async function pushSchemaToServer() {
+    try {
+        await apiRequest('PUT', '/api/schema', { schema: currentSchema });
+        showToast('Preguntas actualizadas en todos los dispositivos', 'success');
+    } catch (e) {
+        console.error('Error al sincronizar esquema:', e);
+    }
+}
+
+function showToast(msg, type = 'success') {
+    const colors = { success: '#10b981', error: '#ef4444', info: '#3b82f6' };
+    const toast = document.createElement('div');
+    toast.style.cssText = `position:fixed;bottom:100px;left:50%;transform:translateX(-50%);z-index:9999;
+        background:${colors[type]};color:white;padding:10px 22px;border-radius:50px;
+        font-size:13px;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,0.2);
+        display:flex;align-items:center;gap:8px;white-space:nowrap;`;
+    toast.innerHTML = `<i class="fa-solid fa-${type === 'success' ? 'check' : 'triangle-exclamation'}"></i> ${msg}`;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3500);
 }
 
 // Modals Candidates

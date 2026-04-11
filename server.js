@@ -13,6 +13,21 @@ const JWT_SECRET = process.env.JWT_SECRET || 'encuesta_senior_pro_secret_2024';
 app.use(express.json());
 app.use(express.static(__dirname));
 
+// ─── SSE: Clientes conectados ─────────────────────────────────────────────────
+const sseClients = new Map(); // Map<userId, res>
+
+function broadcastSchemaUpdate(schema) {
+    const payload = JSON.stringify({ type: 'schema-updated', schema });
+    sseClients.forEach((res, userId) => {
+        try {
+            res.write(`data: ${payload}\n\n`);
+        } catch (e) {
+            sseClients.delete(userId);
+        }
+    });
+    console.log(`[SSE] Schema broadcast a ${sseClients.size} clientes conectados.`);
+}
+
 // ─── Middleware de Autenticación ─────────────────────────────────────────────
 function authMiddleware(req, res, next) {
     const token = req.headers['authorization']?.split(' ')[1];
@@ -43,6 +58,55 @@ app.post('/api/login', (req, res) => {
         { expiresIn: '12h' }
     );
     res.json({ token, nombre: usuario.nombre, rol: usuario.rol });
+});
+
+// ─── API Schema (Compartido en servidor) ─────────────────────────────────────
+// GET: Cualquier usuario autenticado puede obtener el esquema actual
+app.get('/api/schema', authMiddleware, (req, res) => {
+    const schema = db.getSchema();
+    res.json({ schema }); // null si no hay schema guardado en servidor
+});
+
+// PUT: Solo admin puede actualizar el esquema → broadcast en tiempo real
+app.put('/api/schema', authMiddleware, adminOnly, (req, res) => {
+    const { schema } = req.body;
+    if (!schema || !Array.isArray(schema)) return res.status(400).json({ error: 'Schema inválido' });
+    db.saveSchema(schema);
+    broadcastSchemaUpdate(schema);
+    res.json({ mensaje: 'Schema actualizado y enviado a todos los encuestadores' });
+});
+
+// ─── SSE: Canal de eventos en tiempo real ─────────────────────────────────────
+// EventSource no permite headers → token va en query string
+app.get('/api/events', (req, res) => {
+    const token = req.query.token || req.headers['authorization']?.split(' ')[1];
+    if (!token) return res.status(401).end();
+    let user;
+    try {
+        user = jwt.verify(token, JWT_SECRET);
+    } catch {
+        return res.status(401).end();
+    }
+
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    res.setHeader('X-Accel-Buffering', 'no');
+    res.flushHeaders();
+
+    const userId = `${user.id}_${Date.now()}`;
+    sseClients.set(userId, res);
+    console.log(`[SSE] Conectado: ${user.nombre} (total: ${sseClients.size})`);
+
+    const heartbeat = setInterval(() => {
+        try { res.write(': ping\n\n'); } catch { clearInterval(heartbeat); }
+    }, 25000);
+
+    req.on('close', () => {
+        clearInterval(heartbeat);
+        sseClients.delete(userId);
+        console.log(`[SSE] Desconectado: ${user.nombre} (total: ${sseClients.size})`);
+    });
 });
 
 // ─── API Encuestas ────────────────────────────────────────────────────────────

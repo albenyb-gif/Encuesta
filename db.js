@@ -5,10 +5,21 @@ const bcrypt = require('bcryptjs');
 const DATA_DIR = path.join(__dirname, 'data');
 const USERS_FILE = path.join(DATA_DIR, 'users.json');
 const ENCUESTAS_FILE = path.join(DATA_DIR, 'encuestas.json');
+const SCHEMA_FILE = path.join(DATA_DIR, 'schema.json');
 
 // Crear carpeta de datos si no existe
 if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+
+// ─── SCHEMA ───────────────────────────────────────────────────────────────────
+function loadSchema() {
+    if (!fs.existsSync(SCHEMA_FILE)) return null; // null = usar el default del cliente
+    return JSON.parse(fs.readFileSync(SCHEMA_FILE, 'utf8'));
+}
+
+function saveSchema(schema) {
+    fs.writeFileSync(SCHEMA_FILE, JSON.stringify(schema, null, 2));
 }
 
 // ─── USERS ────────────────────────────────────────────────────────────────────
@@ -103,6 +114,10 @@ module.exports = {
         saveEncuestas(encuestas.filter(e => e.id !== Number(id)));
         return enc;
     },
+
+    // Schema
+    getSchema: () => loadSchema(),
+    saveSchema: (schema) => saveSchema(schema),
 
     init
 };
