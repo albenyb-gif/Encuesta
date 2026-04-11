@@ -1289,7 +1289,65 @@ async function importSurveyData() {
     reader.readAsText(file);
 }
 
-// === INITIALIZATION ===
+// === RECUPERACIÓN PROFUNDA (PARA ENCUESTADORES) ===
+async function deepRecoveryScan() {
+    if (!confirm("Este proceso buscará encuestas perdidas en la memoria interna de este navegador. ¿Deseas comenzar?")) return;
+    
+    showToast("Buscando datos huérfanos...", "info");
+    let found = [];
+    
+    try {
+        // 1. Buscar en todas las llaves posibles de LocalStorage
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            // Si la llave contiene 'survey', 'results', 'data', o es un array de objetos
+            if (key.toLowerCase().includes('survey') || key.toLowerCase().includes('result') || key.toLowerCase().includes('encuesta')) {
+                try {
+                    const data = JSON.parse(localStorage.getItem(key));
+                    if (Array.isArray(data)) {
+                        // Validar si parece una encuesta (tiene timestamp o q1)
+                        const looksLikeSurvey = data.filter(item => item && (item.timestamp || (item.datos && item.datos.q1)));
+                        if (looksLikeSurvey.length > 0) {
+                            found = [...found, ...looksLikeSurvey];
+                        }
+                    } else if (typeof data === 'object' && data !== null) {
+                        if (data.timestamp || (data.datos && data.datos.q1)) {
+                            found.push(data);
+                        }
+                    }
+                } catch(e) {}
+            }
+        }
+
+        if (found.length === 0) {
+            alert("No se encontraron datos antiguos para recuperar en este celular.");
+            return;
+        }
+
+        if (confirm(`¡Se han localizado ${found.length} posibles registros perdidos! ¿Deseas intentar enviarlos al servidor ahora?`)) {
+            showToast("Sincronizando rescate...", "info");
+            
+            // Limpiar los datos para el formato nuevo si es necesario
+            const sanitized = found.map(f => {
+                if (f.datos) return f;
+                // Si es formato viejo (plano), envolverlo
+                const { timestamp, usuario_id, usuario_nombre, ...datos } = f;
+                return {
+                    timestamp: timestamp || new Date().toISOString(),
+                    usuario_id: usuario_id || getCurrentUserInfo()?.id,
+                    usuario_nombre: usuario_nombre || getCurrentUserInfo()?.nombre,
+                    datos: datos
+                };
+            });
+
+            const result = await apiRequest('POST', '/api/admin/import-data', { encuestas: sanitized });
+            alert(`¡Éxito! El servidor procesó el rescate: ${result.mensaje}`);
+            renderDashboardStats();
+        }
+    } catch (err) {
+        alert("Error durante el escaneo: " + err.message);
+    }
+}
 document.addEventListener('DOMContentLoaded', () => {
     checkSession();
     

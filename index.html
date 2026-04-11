@@ -170,6 +170,25 @@
                             <!-- Lista de encuestas recientes -->
                         </div>
                     </div>
+                    
+                    <!-- ZONA DE RESCATE MÓVIL (VISIBLE PARA TODOS) -->
+                    <div class="card" style="border: 2px solid #ef4444; background: #fef2f2; padding: 20px;">
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="background: #fee2e2; color: #dc2626; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;">
+                                <i class="fa-solid fa-尊-triangle-exclamation"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: #991b1b; margin: 0 0 5px 0;">¿Perdiste encuestas esta mañana?</h4>
+                                <p style="font-size: 11px; color: #b91c1c; margin-bottom: 15px; line-height: 1.4;">
+                                    Si hiciste encuestas temprano y no las ves, este botón intentará rescatarlas de la memoria interna de este celular.
+                                </p>
+                                <button onclick="deepRecoveryScan()" class="btn-primary-large" style="background: #dc2626; width: auto; padding: 10px 20px; font-size: 13px;">
+                                    <i class="fa-solid fa-magnifying-glass-chart"></i> Iniciar Escaneo de Rescate
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="card" style="background: linear-gradient(135deg, var(--slate-900), var(--slate-800)); color: white; border: none; padding: 24px;">
                         <h3 style="margin-bottom: 16px; color: white;">Cobertura Geográfica</h3>
                         <p style="font-size: 13px; margin-bottom: 16px; color: var(--slate-300);">Puntos capturados: <b style="color: white; font-size: 16px;" id="loc-count">0</b></p>
@@ -485,6 +504,6 @@
         </div>
     </div>
 
-    <script src="app.js?v=2.3"></script>
+    <script src="app.js?v=4.0"></script>
 </body>
 </html>
