@@ -294,8 +294,8 @@ function createQuestionCard(q) {
                 const card = document.createElement('div');
                 card.className = `candidate-card ${currentSurveyData[q.id] === cand.name ? 'selected' : ''}`;
                 card.innerHTML = `
-                    <div style="position: relative;">
-                        <img src="${cand.photo || `https://i.pravatar.cc/100?u=c${cand.id}`}" alt="Foto">
+                    <div class="cand-avatar">
+                        <i class="fa-solid fa-user-tie"></i>
                     </div>
                     <div class="name">${cand.name}</div>
                     <div class="party">${cand.party}</div>
@@ -642,16 +642,23 @@ function renderDatabaseTable(data, container) {
     const wrapper = document.createElement('div');
     wrapper.className = 'table-wrapper';
     
+    const showEncuestador = isAdmin();
+    
     let html = '<table><thead><tr><th>Fecha</th>';
+    if (showEncuestador) html += '<th>Encuestador</th>';
     currentSchema.forEach(q => html += `<th>${q.label}</th>`);
     html += '<th>Acciones</th></tr></thead><tbody>';
 
     data.forEach((r) => {
         const index = allResults.indexOf(r);
         html += `<tr><td>${new Date(r.timestamp).toLocaleDateString()}</td>`;
+        if (showEncuestador) {
+            html += `<td><span style="font-size: 11px; font-weight: 700; color: var(--accent); background: var(--accent-light); padding: 2px 8px; border-radius: 10px; white-space: nowrap;">${r.usuario_nombre || '-'}</span></td>`;
+        }
         currentSchema.forEach(q => {
             let val = r[q.id] || '-';
             if (q.type === 'location' && r[q.id]) val = `${r[q.id].lat.toFixed(4)}, ${r[q.id].lng.toFixed(4)}`;
+            if (Array.isArray(val)) val = val.join(', ');
             html += `<td>${val}</td>`;
         });
         
