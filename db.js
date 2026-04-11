@@ -99,10 +99,16 @@ module.exports = {
     // Encuestas
     getAllEncuestas: () => loadEncuestas(),
     getEncuestasByUser: (usuario_id) => loadEncuestas().filter(e => e.usuario_id === Number(usuario_id)),
-    createEncuesta: (usuario_id, usuario_nombre, datos) => {
+    createEncuesta: (usuario_id, usuario_nombre, datos, timestamp = null) => {
         const encuestas = loadEncuestas();
         const newId = encuestas.length ? Math.max(...encuestas.map(e => e.id)) + 1 : 1;
-        const newEnc = { id: newId, usuario_id, usuario_nombre, timestamp: new Date().toISOString(), datos };
+        const newEnc = { 
+            id: newId, 
+            usuario_id, 
+            usuario_nombre, 
+            timestamp: timestamp || new Date().toISOString(), 
+            datos 
+        };
         encuestas.push(newEnc);
         saveEncuestas(encuestas);
         return newEnc;

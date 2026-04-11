@@ -111,9 +111,9 @@ app.get('/api/events', (req, res) => {
 
 // ─── API Encuestas ────────────────────────────────────────────────────────────
 app.post('/api/encuestas', authMiddleware, (req, res) => {
-    const { datos } = req.body;
+    const { datos, timestamp } = req.body;
     if (!datos) return res.status(400).json({ error: 'Datos requeridos' });
-    const enc = db.createEncuesta(req.user.id, req.user.nombre, datos);
+    const enc = db.createEncuesta(req.user.id, req.user.nombre, datos, timestamp);
     res.json({ id: enc.id, mensaje: 'Encuesta guardada correctamente' });
 });
 

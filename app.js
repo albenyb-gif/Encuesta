@@ -108,6 +108,7 @@ function checkSession() {
         if (adminLink) adminLink.style.display = isAdmin() ? 'flex' : 'none';
         connectSSE();         // Conectar canal de tiempo real
         loadSchemaFromServer(); // Cargar esquema compartido
+        checkAndSyncLegacyData(); // RESCATE DE DATOS: Sincronizar encuestas locales viejas
         navigateTo('view-dashboard');
     } else {
         mainContent.style.display = 'flex';
@@ -163,6 +164,53 @@ async function loadSchemaFromServer() {
         }
     } catch (e) {
         // Si falla, usar el schema local (ya está en currentSchema)
+    }
+}
+
+// === MIGRACIÓN DE DATOS HEREDADOS (RESCATE) ===
+async function checkAndSyncLegacyData() {
+    const legacyKey = 'survey_results';
+    const rawData = localStorage.getItem(legacyKey);
+    if (!rawData) return;
+
+    try {
+        const legacySurveys = JSON.parse(rawData);
+        if (!Array.isArray(legacySurveys) || legacySurveys.length === 0) return;
+
+        // Mostrar aviso al usuario
+        const confirmSync = confirm(`¡Atención! Se han detectado ${legacySurveys.length} encuestas guardadas localmente en este dispositivo de la versión anterior.\n\n¿Deseas subirlas ahora al servidor centralizado para que no se pierdan?`);
+        
+        if (!confirmSync) return;
+
+        showToast(`Sincronizando ${legacySurveys.length} encuestas...`, 'info');
+        
+        let successCount = 0;
+        for (const survey of legacySurveys) {
+            try {
+                // Adaptar formato si es necesario y enviar
+                // En la versión vieja, los datos estaban en la raíz del objeto
+                // En la nueva, enviamos { datos: ... }
+                const { timestamp, id, ...datos } = survey; 
+                await apiRequest('POST', '/api/encuestas', { datos, timestamp });
+                successCount++;
+            } catch (err) {
+                console.error("Error al sincronizar una encuesta legacy:", err);
+            }
+        }
+
+        if (successCount > 0) {
+            showToast(`¡Éxito! ${successCount} encuestas recuperadas.`, 'success');
+            // Renombrar la clave antigua para evitar re-sincronización pero no borrar por seguridad absoluta aún
+            localStorage.setItem('survey_results_migrated_' + Date.now(), rawData);
+            localStorage.removeItem(legacyKey);
+            
+            // Actualizar dashboard para mostrar los nuevos datos
+            if (document.getElementById('view-dashboard').style.display !== 'none') {
+                renderDashboardStats();
+            }
+        }
+    } catch (e) {
+        console.error("Error en el migrador de datos:", e);
     }
 }
 
