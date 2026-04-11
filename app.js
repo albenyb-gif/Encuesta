@@ -1232,25 +1232,57 @@ function exportToExcel() {
 // === IMPORTACIÓN DE DATOS (RESCATE) ===
 async function importSurveyData() {
     const fileInput = document.getElementById('import-json-file');
-    if (!fileInput.files.length) return alert('Seleccione un archivo JSON primero');
+    if (!fileInput.files.length) return alert('Seleccione un archivo (.json o .csv) primero');
 
     const file = fileInput.files[0];
+    const isCsv = file.name.toLowerCase().endsWith('.csv');
     const reader = new FileReader();
 
     reader.onload = async (e) => {
         try {
-            const json = JSON.parse(e.target.result);
-            if (!Array.isArray(json)) throw new Error('El archivo no contiene un array de encuestas');
+            let dataToImport = [];
+            const content = e.target.result;
 
-            showToast(`Procesando e importando ${json.length} registros...`, 'info');
+            if (isCsv) {
+                // Procesar CSV (Semicolon separated)
+                const lines = content.split('\n').filter(line => line.trim());
+                if (lines.length < 2) throw new Error('El CSV está vacío');
+
+                // Quitar BOM si existe y limpiar headers
+                const headers = lines[0].replace(/^\ufeff/, '').split(';').map(h => h.trim());
+                
+                for (let i = 1; i < lines.length; i++) {
+                    const row = lines[i].split(';');
+                    const survey = { timestamp: row[0], datos: {} };
+                    
+                    // Mapear columnas a IDs de preguntas basado en labels
+                    headers.forEach((header, idx) => {
+                        if (idx === 0) return; // Saltar timestamp
+                        const question = currentSchema.find(q => q.label === header);
+                        if (question) {
+                            survey.datos[question.id] = row[idx] ? row[idx].trim() : '';
+                        }
+                    });
+                    dataToImport.push(survey);
+                }
+            } else {
+                // Procesar JSON
+                dataToImport = JSON.parse(content);
+                if (!Array.isArray(dataToImport)) throw new Error('El JSON no contiene un array de encuestas');
+            }
+
+            if (dataToImport.length === 0) return alert('No se encontraron encuestas para importar');
+
+            showToast(`Procesando ${dataToImport.length} registros...`, 'info');
             
-            const result = await apiRequest('POST', '/api/admin/import-data', { encuestas: json });
+            const result = await apiRequest('POST', '/api/admin/import-data', { encuestas: dataToImport });
             
-            alert(`¡Proceso completado!\n${result.mensaje}`);
+            alert(`¡Éxito!\n${result.mensaje}`);
             renderDashboardStats();
             renderAdminPanel();
-            fileInput.value = ''; // Limpiar input
+            fileInput.value = '';
         } catch (err) {
+            console.error(err);
             alert('Error al importar: ' + err.message);
         }
     };
