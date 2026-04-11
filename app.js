@@ -24,37 +24,70 @@ const SCHEMA_VERSION = 'v2.1';
 let currentSchema = JSON.parse(localStorage.getItem('survey_schema')) || DEFAULT_SCHEMA;
 let savedVersion = localStorage.getItem('schema_version');
 
-// === PERFIL USUARIO ===
-let currentUser = JSON.parse(localStorage.getItem('survey_user')) || {
-    name: "Investigador",
-    photo: "https://i.pravatar.cc/100?u=researcher"
-};
-
-// Sincronización automática de esquema en desarrollo (Forzada por versión)
 if (savedVersion !== SCHEMA_VERSION || currentSchema.length !== DEFAULT_SCHEMA.length) {
     currentSchema = DEFAULT_SCHEMA;
     localStorage.setItem('survey_schema', JSON.stringify(DEFAULT_SCHEMA));
     localStorage.setItem('schema_version', SCHEMA_VERSION);
 }
-let allResults = JSON.parse(localStorage.getItem('survey_results')) || [];
+
+// allResults now loaded from API, kept for backwards compat in chart/map rendering
+let allResults = [];
 let currentSurveyData = {};
 let currentStep = 0;
 let focusedSurveyIndex = null;
 let editingSurveyIndex = null;
 const QUESTIONS_PER_STEP = 4;
 
+// === SESSION (API-BASED) ===
+function getToken() { return sessionStorage.getItem('auth_token'); }
+function getCurrentUserInfo() { return JSON.parse(sessionStorage.getItem('user_info') || 'null'); }
+function isAdmin() { const u = getCurrentUserInfo(); return u && u.rol === 'admin'; }
+
+async function apiRequest(method, endpoint, body = null) {
+    const opts = {
+        method,
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` }
+    };
+    if (body) opts.body = JSON.stringify(body);
+    const res = await fetch(endpoint, opts);
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Error en el servidor');
+    return data;
+}
+
 // === LOGIN & SESSION ===
-function handleLogin() {
-    const user = document.getElementById('login-user').value;
-    const pass = document.getElementById('login-pass').value;
-    if (user === 'admin' && pass === '1234') {
-        sessionStorage.setItem('isLoggedIn', 'true');
-        location.reload(); // Refresh to set UI properly
-    } else { alert('Credenciales incorrectas'); }
+async function handleLogin() {
+    const nombre = document.getElementById('login-user').value.trim();
+    const password = document.getElementById('login-pass').value.trim();
+    const btn = document.querySelector('#view-login .btn-primary-large');
+    
+    if (!nombre || !password) return alert('Complete usuario y contraseña');
+    
+    btn.textContent = 'Ingresando...';
+    btn.disabled = true;
+
+    try {
+        const data = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nombre, password })
+        });
+        const json = await data.json();
+        if (!data.ok) throw new Error(json.error);
+        
+        sessionStorage.setItem('auth_token', json.token);
+        sessionStorage.setItem('user_info', JSON.stringify({ nombre: json.nombre, rol: json.rol }));
+        checkSession();
+    } catch (e) {
+        alert(e.message || 'Error de conexión');
+        btn.textContent = 'Entrar al Sistema →';
+        btn.disabled = false;
+    }
 }
 
 function handleLogout() {
-    sessionStorage.removeItem('isLoggedIn');
+    sessionStorage.removeItem('auth_token');
+    sessionStorage.removeItem('user_info');
     location.reload();
 }
 
@@ -62,20 +95,18 @@ function checkSession() {
     const mainContent = document.getElementById('main-content');
     const loginView = document.getElementById('view-login');
     const appContainer = document.querySelector('.app-container');
-    const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+    const token = getToken();
 
-    if (isLoggedIn) {
+    if (token) {
         if (loginView) loginView.style.display = 'none';
         mainContent.style.display = 'flex';
         appContainer.classList.remove('login-mode');
-        
-        // Cargar Datos del Perfil en UI
         updateProfileUI();
-        
-        // Ensure sidebar/nav elements are visible
         const sidebar = document.getElementById('sidebar');
         if (sidebar) sidebar.style.display = 'flex';
-        
+        // Mostrar/ocultar link de Admin según rol
+        const adminLink = document.getElementById('nav-admin');
+        if (adminLink) adminLink.style.display = isAdmin() ? 'flex' : 'none';
         navigateTo('view-dashboard');
     } else {
         mainContent.style.display = 'flex';
@@ -85,6 +116,12 @@ function checkSession() {
         navigateTo('view-login');
     }
 }
+
+// Perfil UI se basa en session
+let currentUser = {
+    name: getCurrentUserInfo()?.nombre || 'Investigador',
+    photo: localStorage.getItem('user_photo') || 'https://i.pravatar.cc/100?u=researcher'
+};
 
 // === NAVIGATION ===
 function navigateTo(viewId) {
@@ -111,6 +148,7 @@ function navigateTo(viewId) {
     if (viewId === 'view-dashboard') renderDashboardStats();
     if (viewId === 'view-results') refreshAnalysis();
     if (viewId === 'view-settings') renderSettingsList();
+    if (viewId === 'view-admin') renderAdminPanel();
 
     // Auto-cerrar sidebar en móvil
     closeSidebar();
@@ -329,19 +367,29 @@ function prevStep() {
     }
 }
 
-function finishSurvey() {
-    allResults.push(currentSurveyData);
-    localStorage.setItem('survey_results', JSON.stringify(allResults));
-    alert('Encuesta guardada con éxito.');
-    navigateTo('view-dashboard');
+async function finishSurvey() {
+    const btn = document.getElementById('btn-next');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Guardando...';
+    
+    try {
+        await apiRequest('POST', '/api/encuestas', { datos: currentSurveyData });
+        alert('¡Encuesta guardada con éxito en el servidor!');
+        navigateTo('view-dashboard');
+    } catch (e) {
+        alert('Error al guardar: ' + e.message);
+        btn.disabled = false;
+        btn.innerHTML = 'Finalizar Relevamiento <i class="fa-solid fa-check-double"></i>';
+    }
 }
 
 // === PERFIL Y MODALS ===
 function updateProfileUI() {
     const headerImg = document.getElementById('header-avatar');
     const welcomeName = document.getElementById('welcome-name');
+    const userInfo = getCurrentUserInfo();
     if (headerImg) headerImg.src = currentUser.photo;
-    if (welcomeName) welcomeName.textContent = currentUser.name;
+    if (welcomeName) welcomeName.textContent = userInfo?.nombre || currentUser.name;
 }
 
 function openProfileModal() {
@@ -611,7 +659,7 @@ function renderDatabaseTable(data, container) {
             <div style="display: flex;">
                 <button class="btn-action btn-action-map" onclick="jumpToMap(${index})" title="Ver en Mapa"><i class="fa-solid fa-map-location-dot"></i></button>
                 <button class="btn-action btn-action-edit" onclick="openEditSurveyModal(${index})" title="Editar"><i class="fa-solid fa-pen"></i></button>
-                <button class="btn-action btn-action-delete" onclick="deleteSurvey(${index})" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                <button class="btn-action btn-action-delete" onclick="deleteSurveyFromApi(${r.id || index})" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
             </div>
         </td></tr>`;
     });
@@ -630,12 +678,9 @@ function jumpToMap(idx) {
 }
 
 function deleteSurvey(idx) {
-    if (confirm('¿Está seguro de eliminar esta encuesta permanentemente?')) {
-        allResults.splice(idx, 1);
-        localStorage.setItem('survey_results', JSON.stringify(allResults));
-        refreshAnalysis();
-        renderDashboardStats();
-    }
+    // Redirect to API based deletion
+    const record = allResults[idx];
+    if (record && record.id) deleteSurveyFromApi(record.id);
 }
 
 function openEditSurveyModal(idx) {
@@ -703,7 +748,16 @@ function saveSurveyEdit() {
 // === DASHBOARD STATS ===
 let dashboardMapInstance = null;
 
-function renderDashboardStats() {
+async function renderDashboardStats() {
+    try {
+        // Load from API - each user only sees their own, admin sees all
+        const encuestas = await apiRequest('GET', '/api/encuestas');
+        allResults = encuestas.map(e => ({ ...e.datos, id: e.id, timestamp: e.timestamp, usuario_nombre: e.usuario_nombre }));
+    } catch (e) {
+        console.error('Error cargando encuestas:', e);
+        allResults = [];
+    }
+
     const quickStats = document.getElementById('quick-stats');
     const locCount = allResults.filter(r => r.q2 && r.q2.lat).length;
     
@@ -711,7 +765,7 @@ function renderDashboardStats() {
         <div class="card" style="border-left: 4px solid var(--accent); display: flex; align-items: center; justify-content: space-between;">
             <div>
                 <div style="font-size: 11px; color: var(--slate-400); font-weight: 800; text-transform: uppercase;">Total Encuestas</div>
-                <div style="font-size: 36px; font-weight: 800; color: var(--slate-900); display: flex; align-items: center; gap: 8px;">${allResults.length}</div>
+                <div style="font-size: 36px; font-weight: 800; color: var(--slate-900);">${allResults.length}</div>
             </div>
             <i class="fa-solid fa-users" style="font-size: 32px; color: rgba(59, 130, 246, 0.2);"></i>
         </div>
@@ -733,11 +787,15 @@ function renderDashboardStats() {
         activityList.innerHTML = '<div style="color: var(--slate-400); font-size: 13px; text-align: center; padding: 20px;">No hay actividad aún</div>';
     } else {
         recent.forEach(r => {
+            const encuestadorBadge = isAdmin() && r.usuario_nombre
+                ? `<div style="font-size:10px; color: var(--accent); font-weight:700;">${r.usuario_nombre}</div>`
+                : '';
             activityList.innerHTML += `
                 <div style="display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--slate-50);">
                     <div style="display: flex; gap: 12px; align-items: center;">
                         <div style="width: 32px; height: 32px; background: var(--accent-light); color: var(--accent); border-radius: 50%; display: flex; justify-content: center; align-items: center;"><i class="fa-solid fa-file-signature"></i></div>
                         <div>
+                            ${encuestadorBadge}
                             <div style="font-weight: 700; font-size: 14px;">${r.q3 || 'Sin barrio registrado'}</div>
                             <div style="font-size: 12px; color: var(--slate-400);">${new Date(r.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
                         </div>
@@ -761,7 +819,7 @@ function renderDashboardStats() {
         }
 
         if (resultsWithLoc.length > 0) {
-            dbMap.innerHTML = ''; // Clear icon
+            dbMap.innerHTML = '';
             dashboardMapInstance = L.map('dashboard-map', { zoomControl: false }).setView([resultsWithLoc[0].q2.lat, resultsWithLoc[0].q2.lng], 13);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(dashboardMapInstance);
             
@@ -775,6 +833,106 @@ function renderDashboardStats() {
             }
         }
     }, 300);
+}
+
+// === ADMIN PANEL ===
+async function renderAdminPanel() {
+    if (!isAdmin()) return;
+    
+    try {
+        const usuarios = await apiRequest('GET', '/api/usuarios');
+        const list = document.getElementById('admin-users-list');
+        if (!list) return;
+        
+        list.innerHTML = '';
+        usuarios.forEach(u => {
+            list.innerHTML += `
+                <div class="card" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 20px;">
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background: ${u.rol === 'admin' ? 'var(--accent)' : 'var(--slate-200)'}; display: flex; align-items:center; justify-content:center; color: ${u.rol === 'admin' ? 'white' : 'var(--slate-600)'}; font-weight:800; font-size: 14px;">
+                            ${u.nombre.charAt(0).toUpperCase()}
+                        </div>
+                        <div>
+                            <div style="font-weight: 700;">${u.nombre}</div>
+                            <div style="font-size: 11px; color: var(--slate-400); text-transform: uppercase;">${u.rol}</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <button onclick="openEditUserModal(${u.id}, '${u.nombre}', '${u.rol}')" style="color: var(--accent); background: none; font-size: 16px;"><i class="fa-solid fa-pen"></i></button>
+                        ${u.rol !== 'admin' ? `<button onclick="deleteUser(${u.id}, '${u.nombre}')" style="color: var(--danger); background: none; font-size: 16px;"><i class="fa-solid fa-trash-can"></i></button>` : ''}
+                    </div>
+                </div>
+            `;
+        });
+    } catch (e) {
+        console.error('Error cargando usuarios:', e);
+    }
+}
+
+function openNewUserModal() {
+    document.getElementById('edit-user-id').value = '';
+    document.getElementById('edit-user-nombre').value = '';
+    document.getElementById('edit-user-password').value = '';
+    document.getElementById('edit-user-rol').value = 'encuestador';
+    document.getElementById('modal-user-title').textContent = 'Nuevo Usuario';
+    document.getElementById('modal-user-container').style.display = 'flex';
+}
+
+function openEditUserModal(id, nombre, rol) {
+    document.getElementById('edit-user-id').value = id;
+    document.getElementById('edit-user-nombre').value = nombre;
+    document.getElementById('edit-user-password').value = '';
+    document.getElementById('edit-user-rol').value = rol;
+    document.getElementById('modal-user-title').textContent = 'Editar Usuario';
+    document.getElementById('modal-user-container').style.display = 'flex';
+}
+
+function closeUserModal() {
+    document.getElementById('modal-user-container').style.display = 'none';
+}
+
+async function saveUser() {
+    const id = document.getElementById('edit-user-id').value;
+    const nombre = document.getElementById('edit-user-nombre').value;
+    const password = document.getElementById('edit-user-password').value;
+    const rol = document.getElementById('edit-user-rol').value;
+    
+    if (!nombre) return alert('Nombre requerido');
+    if (!id && !password) return alert('La contraseña es requerida para nuevos usuarios');
+    
+    try {
+        if (id) {
+            await apiRequest('PUT', `/api/usuarios/${id}`, { nombre, password: password || undefined, rol });
+        } else {
+            await apiRequest('POST', '/api/usuarios', { nombre, password, rol });
+        }
+        closeUserModal();
+        renderAdminPanel();
+        alert('Usuario guardado correctamente');
+    } catch (e) {
+        alert('Error: ' + e.message);
+    }
+}
+
+async function deleteUser(id, nombre) {
+    if (!confirm(`¿Eliminar al usuario "${nombre}"? Sus encuestas se conservarán.`)) return;
+    try {
+        await apiRequest('DELETE', `/api/usuarios/${id}`);
+        renderAdminPanel();
+    } catch (e) {
+        alert('Error: ' + e.message);
+    }
+}
+
+async function deleteSurveyFromApi(id) {
+    if (!confirm('¿Eliminar esta encuesta permanentemente?')) return;
+    try {
+        await apiRequest('DELETE', `/api/encuestas/${id}`);
+        refreshAnalysis();
+        renderDashboardStats();
+    } catch (e) {
+        alert('Error: ' + e.message);
+    }
 }
 
 // === SETTINGS & EXPORT ===

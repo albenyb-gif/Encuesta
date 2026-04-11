@@ -43,6 +43,9 @@
                 <a href="#" class="sidebar-item" data-view="view-settings">
                     <i class="fa-solid fa-sliders"></i> Estructura y Config.
                 </a>
+                <a href="#" id="nav-admin" class="sidebar-item" data-view="view-admin" style="display: none;">
+                    <i class="fa-solid fa-shield-halved"></i> Panel Admin
+                </a>
             </div>
             <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
                 <a href="#" class="sidebar-item" onclick="handleLogout()">
@@ -224,6 +227,24 @@
                 </div>
             </section>
 
+            <!-- ADMIN VIEW -->
+            <section id="view-admin" class="view">
+                <div class="welcome-section">
+                    <span style="font-size: 11px; text-transform: uppercase; color: var(--accent); font-weight: 700;"><i class="fa-solid fa-shield-halved"></i> Administración</span>
+                    <h1 class="welcome-title">Panel de Usuarios</h1>
+                    <p class="welcome-subtitle">Gestione los encuestadores y sus accesos.</p>
+                </div>
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                        <h3>Encuestadores Registrados</h3>
+                        <button class="btn-primary-large" onclick="openNewUserModal()" style="width: auto; padding: 10px 20px; font-size: 13px;">
+                            <i class="fa-solid fa-user-plus"></i> Nuevo Usuario
+                        </button>
+                    </div>
+                    <div id="admin-users-list" style="display: flex; flex-direction: column; gap: 12px;"></div>
+                </div>
+            </section>
+
         </main>
 
         <!-- Floating Nav (Mobile Only) -->
@@ -245,6 +266,38 @@
                 <span>Config</span>
             </a>
         </nav>
+    </div>
+
+    <!-- MODAL PARA USUARIOS (Admin) -->
+    <div id="modal-user-container" class="overlay" style="z-index: 2300;">
+        <div class="card" style="width: 100%; max-width: 450px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <h2 id="modal-user-title" style="margin: 0;">Nuevo Usuario</h2>
+                <button onclick="closeUserModal()" style="background: none; border: none; font-size: 20px; color: var(--slate-400); cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <input type="hidden" id="edit-user-id" value="">
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <div>
+                    <label style="font-size: 12px; font-weight: 600; display: block; margin-bottom: 8px;">Nombre de Usuario</label>
+                    <input type="text" id="edit-user-nombre" placeholder="Ej: Miguel" style="width: 100%; padding: 12px; border: 1px solid var(--slate-200); border-radius: 12px;">
+                </div>
+                <div>
+                    <label style="font-size: 12px; font-weight: 600; display: block; margin-bottom: 8px;">Contraseña (dejar en blanco para no cambiar)</label>
+                    <input type="password" id="edit-user-password" placeholder="Nueva contraseña..." style="width: 100%; padding: 12px; border: 1px solid var(--slate-200); border-radius: 12px;">
+                </div>
+                <div>
+                    <label style="font-size: 12px; font-weight: 600; display: block; margin-bottom: 8px;">Rol</label>
+                    <select id="edit-user-rol" style="width: 100%; padding: 12px; border: 1px solid var(--slate-200); border-radius: 12px;">
+                        <option value="encuestador">Encuestador</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 12px; margin-top: 10px;">
+                    <button class="btn-secondary" onclick="closeUserModal()" style="flex: 1;">Cancelar</button>
+                    <button class="btn-primary-large" onclick="saveUser()" style="flex: 2;">Guardar Usuario</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- MODAL PARA PREGUNTAS -->
