@@ -4,6 +4,9 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const db = require('./db');
 
+// Inicializar base de datos
+db.init();
+
 const app = express();
 const JWT_SECRET = process.env.JWT_SECRET || 'encuesta_senior_pro_secret_2024';
 
@@ -27,10 +30,10 @@ function adminOnly(req, res, next) {
     next();
 }
 
-// ─── API de Autenticación ────────────────────────────────────────────────────
+// ─── API Login ────────────────────────────────────────────────────────────────
 app.post('/api/login', (req, res) => {
     const { nombre, password } = req.body;
-    const usuario = db.prepare('SELECT * FROM usuarios WHERE nombre = ?').get(nombre);
+    const usuario = db.findUserByName(nombre);
     if (!usuario || !bcrypt.compareSync(password, usuario.password_hash)) {
         return res.status(401).json({ error: 'Usuario o contraseña incorrectos' });
     }
@@ -42,83 +45,64 @@ app.post('/api/login', (req, res) => {
     res.json({ token, nombre: usuario.nombre, rol: usuario.rol });
 });
 
-// ─── API de Encuestas ────────────────────────────────────────────────────────
-// Guardar nueva encuesta
+// ─── API Encuestas ────────────────────────────────────────────────────────────
 app.post('/api/encuestas', authMiddleware, (req, res) => {
     const { datos } = req.body;
-    if (!datos) return res.status(400).json({ error: 'Datos de encuesta requeridos' });
-    const stmt = db.prepare('INSERT INTO encuestas (usuario_id, usuario_nombre, timestamp, datos) VALUES (?, ?, ?, ?)');
-    const result = stmt.run(req.user.id, req.user.nombre, new Date().toISOString(), JSON.stringify(datos));
-    res.json({ id: result.lastInsertRowid, mensaje: 'Encuesta guardada correctamente' });
+    if (!datos) return res.status(400).json({ error: 'Datos requeridos' });
+    const enc = db.createEncuesta(req.user.id, req.user.nombre, datos);
+    res.json({ id: enc.id, mensaje: 'Encuesta guardada correctamente' });
 });
 
-// Obtener encuestas (admin ve todas, encuestador solo las suyas)
 app.get('/api/encuestas', authMiddleware, (req, res) => {
-    let encuestas;
-    if (req.user.rol === 'admin') {
-        encuestas = db.prepare('SELECT * FROM encuestas ORDER BY timestamp DESC').all();
-    } else {
-        encuestas = db.prepare('SELECT * FROM encuestas WHERE usuario_id = ? ORDER BY timestamp DESC').all(req.user.id);
-    }
-    // Parsear datos JSON
-    encuestas = encuestas.map(e => ({ ...e, datos: JSON.parse(e.datos) }));
+    const encuestas = req.user.rol === 'admin'
+        ? db.getAllEncuestas()
+        : db.getEncuestasByUser(req.user.id);
     res.json(encuestas);
 });
 
-// Eliminar encuesta (admin siempre, encuestador solo la suya)
 app.delete('/api/encuestas/:id', authMiddleware, (req, res) => {
-    const encuesta = db.prepare('SELECT * FROM encuestas WHERE id = ?').get(req.params.id);
-    if (!encuesta) return res.status(404).json({ error: 'Encuesta no encontrada' });
-    if (req.user.rol !== 'admin' && encuesta.usuario_id !== req.user.id) {
-        return res.status(403).json({ error: 'No tienes permiso para eliminar esta encuesta' });
+    const enc = db.deleteEncuesta(req.params.id);
+    if (!enc) return res.status(404).json({ error: 'No encontrada' });
+    if (req.user.rol !== 'admin' && enc.usuario_id !== req.user.id) {
+        return res.status(403).json({ error: 'Sin permiso' });
     }
-    db.prepare('DELETE FROM encuestas WHERE id = ?').run(req.params.id);
-    res.json({ mensaje: 'Encuesta eliminada' });
+    res.json({ mensaje: 'Eliminada' });
 });
 
-// ─── API de Usuarios (Solo Admin) ────────────────────────────────────────────
-// Obtener todos los usuarios
+// ─── API Usuarios (Admin) ─────────────────────────────────────────────────────
 app.get('/api/usuarios', authMiddleware, adminOnly, (req, res) => {
-    const usuarios = db.prepare('SELECT id, nombre, rol FROM usuarios ORDER BY nombre').all();
-    res.json(usuarios);
+    res.json(db.getAllUsers());
 });
 
-// Crear nuevo usuario
 app.post('/api/usuarios', authMiddleware, adminOnly, (req, res) => {
     const { nombre, password, rol } = req.body;
     if (!nombre || !password) return res.status(400).json({ error: 'Nombre y contraseña requeridos' });
     try {
-        db.prepare('INSERT INTO usuarios (nombre, password_hash, rol) VALUES (?, ?, ?)').run(nombre, bcrypt.hashSync(password, 10), rol || 'encuestador');
-        res.json({ mensaje: `Usuario ${nombre} creado correctamente` });
-    } catch {
-        res.status(409).json({ error: 'Ese nombre de usuario ya existe' });
+        db.createUser(nombre, password, rol || 'encuestador');
+        res.json({ mensaje: `Usuario ${nombre} creado` });
+    } catch (e) {
+        res.status(409).json({ error: e.message });
     }
 });
 
-// Editar usuario (nombre, contraseña, rol)
 app.put('/api/usuarios/:id', authMiddleware, adminOnly, (req, res) => {
-    const { nombre, password, rol } = req.body;
-    const usuario = db.prepare('SELECT * FROM usuarios WHERE id = ?').get(req.params.id);
-    if (!usuario) return res.status(404).json({ error: 'Usuario no encontrado' });
-    
-    const nuevoNombre = nombre || usuario.nombre;
-    const nuevoRol = rol || usuario.rol;
-    const nuevoHash = password ? bcrypt.hashSync(password, 10) : usuario.password_hash;
-    
-    db.prepare('UPDATE usuarios SET nombre = ?, password_hash = ?, rol = ? WHERE id = ?').run(nuevoNombre, nuevoHash, nuevoRol, req.params.id);
-    res.json({ mensaje: 'Usuario actualizado correctamente' });
+    try {
+        db.updateUser(req.params.id, req.body);
+        res.json({ mensaje: 'Usuario actualizado' });
+    } catch (e) {
+        res.status(404).json({ error: e.message });
+    }
 });
 
-// Eliminar usuario
 app.delete('/api/usuarios/:id', authMiddleware, adminOnly, (req, res) => {
-    const usuario = db.prepare('SELECT * FROM usuarios WHERE id = ?').get(req.params.id);
-    if (!usuario) return res.status(404).json({ error: 'Usuario no encontrado' });
-    if (usuario.rol === 'admin') return res.status(403).json({ error: 'No se puede eliminar al administrador' });
-    db.prepare('DELETE FROM usuarios WHERE id = ?').run(req.params.id);
+    const usuario = db.findUserById(req.params.id);
+    if (!usuario) return res.status(404).json({ error: 'No encontrado' });
+    if (usuario.rol === 'admin') return res.status(403).json({ error: 'No se puede eliminar al admin' });
+    db.deleteUser(req.params.id);
     res.json({ mensaje: 'Usuario eliminado' });
 });
 
-// ─── Fallback SPA ────────────────────────────────────────────────────────────
+// ─── Fallback SPA ─────────────────────────────────────────────────────────────
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
