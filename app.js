@@ -39,8 +39,8 @@ let editingSurveyIndex = null;
 const QUESTIONS_PER_STEP = 4;
 
 // === SESSION (API-BASED) ===
-function getToken() { return sessionStorage.getItem('auth_token'); }
-function getCurrentUserInfo() { return JSON.parse(sessionStorage.getItem('user_info') || 'null'); }
+function getToken() { return localStorage.getItem('auth_token'); }
+function getCurrentUserInfo() { return JSON.parse(localStorage.getItem('user_info') || 'null'); }
 function isAdmin() { const u = getCurrentUserInfo(); return u && u.rol === 'admin'; }
 
 async function apiRequest(method, endpoint, body = null) {
@@ -75,8 +75,8 @@ async function handleLogin() {
         const json = await data.json();
         if (!data.ok) throw new Error(json.error);
         
-        sessionStorage.setItem('auth_token', json.token);
-        sessionStorage.setItem('user_info', JSON.stringify({ nombre: json.nombre, rol: json.rol }));
+        localStorage.setItem('auth_token', json.token);
+        localStorage.setItem('user_info', JSON.stringify({ nombre: json.nombre, rol: json.rol }));
         checkSession();
     } catch (e) {
         alert(e.message || 'Error de conexión');
@@ -86,8 +86,8 @@ async function handleLogin() {
 }
 
 function handleLogout() {
-    sessionStorage.removeItem('auth_token');
-    sessionStorage.removeItem('user_info');
+    localStorage.removeItem('auth_token');
+    localStorage.removeItem('user_info');
     location.reload();
 }
 

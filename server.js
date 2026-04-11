@@ -55,7 +55,7 @@ app.post('/api/login', (req, res) => {
     const token = jwt.sign(
         { id: usuario.id, nombre: usuario.nombre, rol: usuario.rol },
         JWT_SECRET,
-        { expiresIn: '12h' }
+        { expiresIn: '7d' }
     );
     res.json({ token, nombre: usuario.nombre, rol: usuario.rol });
 });
