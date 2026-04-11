@@ -166,6 +166,35 @@ app.delete('/api/usuarios/:id', authMiddleware, adminOnly, (req, res) => {
     res.json({ mensaje: 'Usuario eliminado' });
 });
 
+// ─── IMPORTACIÓN DE EMERGENCIA ────────────────────────────────────────────────
+app.post('/api/admin/import-data', authMiddleware, adminOnly, (req, res) => {
+    const { encuestas } = req.body;
+    if (!Array.isArray(encuestas)) return res.status(400).json({ error: 'Se requiere un array de encuestas' });
+    
+    const current = db.getAllEncuestas();
+    let imported = 0;
+    
+    encuestas.forEach(newEnc => {
+        // Evitar duplicados basados en timestamp y usuario
+        const exists = current.some(e => 
+            e.timestamp === newEnc.timestamp && 
+            e.usuario_id === newEnc.usuario_id
+        );
+        
+        if (!exists) {
+            db.createEncuesta(
+                newEnc.usuario_id || 0, 
+                newEnc.usuario_nombre || 'Importado', 
+                newEnc.datos || newEnc, 
+                newEnc.timestamp
+            );
+            imported++;
+        }
+    });
+    
+    res.json({ mensaje: `Importación completada. Se añadieron ${imported} registros nuevos.` });
+});
+
 // ─── Fallback SPA ─────────────────────────────────────────────────────────────
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));

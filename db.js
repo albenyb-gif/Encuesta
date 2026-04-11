@@ -2,13 +2,16 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
-const DATA_DIR = path.join(__dirname, 'data');
+// PERSISTENCIA BLINDADA: Guardamos los datos FUERA de la carpeta del proyecto
+// para que Hostinger no los borre al actualizar el código vía GitHub.
+const DATA_DIR = process.env.DATA_PATH || path.join(__dirname, '..', 'encuesta_central_data');
 const USERS_FILE = path.join(DATA_DIR, 'users.json');
 const ENCUESTAS_FILE = path.join(DATA_DIR, 'encuestas.json');
 const SCHEMA_FILE = path.join(DATA_DIR, 'schema.json');
 
 // Crear carpeta de datos si no existe
 if (!fs.existsSync(DATA_DIR)) {
+    console.log(`[DB] Creando carpeta de datos persistente en: ${DATA_DIR}`);
     fs.mkdirSync(DATA_DIR, { recursive: true });
 }
 

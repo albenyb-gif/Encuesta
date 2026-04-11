@@ -1229,6 +1229,34 @@ function exportToExcel() {
     link.click();
 }
 
+// === IMPORTACIÓN DE DATOS (RESCATE) ===
+async function importSurveyData() {
+    const fileInput = document.getElementById('import-json-file');
+    if (!fileInput.files.length) return alert('Seleccione un archivo JSON primero');
+
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+
+    reader.onload = async (e) => {
+        try {
+            const json = JSON.parse(e.target.result);
+            if (!Array.isArray(json)) throw new Error('El archivo no contiene un array de encuestas');
+
+            showToast(`Procesando e importando ${json.length} registros...`, 'info');
+            
+            const result = await apiRequest('POST', '/api/admin/import-data', { encuestas: json });
+            
+            alert(`¡Proceso completado!\n${result.mensaje}`);
+            renderDashboardStats();
+            renderAdminPanel();
+            fileInput.value = ''; // Limpiar input
+        } catch (err) {
+            alert('Error al importar: ' + err.message);
+        }
+    };
+    reader.readAsText(file);
+}
+
 // === INITIALIZATION ===
 document.addEventListener('DOMContentLoaded', () => {
     checkSession();
