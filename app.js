@@ -1219,8 +1219,16 @@ function exportToExcel() {
     const headers = ["Timestamp", ...currentSchema.map(q => q.label)];
     let csv = "\ufeff" + headers.join(";") + "\n";
     allResults.forEach(r => {
-        const row = [r.timestamp, ...currentSchema.map(q => r[q.id] || '')];
-        csv += row.join(";") + "\n";
+        const rowData = [r.timestamp || new Date().toISOString()];
+        currentSchema.forEach(q => {
+            const val = r[q.id] || '';
+            if (q.type === 'location' && typeof val === 'object' && val !== null) {
+                rowData.push(`${val.lat},${val.lng}`);
+            } else {
+                rowData.push(val);
+            }
+        });
+        csv += rowData.join(";") + "\n";
     });
     const blob = new Blob([csv], { type: 'text/csv' });
     const link = document.createElement("a");
@@ -1260,7 +1268,20 @@ async function importSurveyData() {
                         if (idx === 0) return; // Saltar timestamp
                         const question = currentSchema.find(q => q.label === header);
                         if (question) {
-                            survey.datos[question.id] = row[idx] ? row[idx].trim() : '';
+                            let val = row[idx] ? row[idx].trim() : '';
+                            // Si es ubicación y viene en formato "lat,lng" o similar
+                            if (question.type === 'location' && val.includes(',')) {
+                                const parts = val.split(',');
+                                if (parts.length >= 2) {
+                                    const lat = parseFloat(parts[0]);
+                                    const lng = parseFloat(parts[1]);
+                                    if (!isNaN(lat) && !isNaN(lng)) {
+                                        survey.datos[question.id] = { lat, lng };
+                                        return;
+                                    }
+                                }
+                            }
+                            survey.datos[question.id] = val;
                         }
                     });
                     dataToImport.push(survey);
