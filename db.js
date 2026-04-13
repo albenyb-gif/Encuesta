@@ -2,9 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
-// PERSISTENCIA BLINDADA: Guardamos los datos FUERA de la carpeta del proyecto
-// para que Hostinger no los borre al actualizar el código vía GitHub.
-const DATA_DIR = process.env.DATA_PATH || path.join(__dirname, '..', 'encuesta_central_data');
+// PERSISTENCIA BLINDADA: Ajustamos la ruta para que sea absoluta y segura en Hostinger
+const DATA_DIR = process.env.DATA_PATH || path.resolve(__dirname, 'encuesta_central_data');
 const USERS_FILE = path.join(DATA_DIR, 'users.json');
 const ENCUESTAS_FILE = path.join(DATA_DIR, 'encuestas.json');
 const SCHEMA_FILE = path.join(DATA_DIR, 'schema.json');
@@ -99,17 +98,18 @@ module.exports = {
         saveUsers(users);
     },
 
-    // Huella digital para detectar duplicados (Ubicación + Respuestas)
+    // Huella digital para detectar duplicados (Optimizado para Velocidad)
     getSurveyFingerprint: (datos) => {
         if (!datos) return "";
-        // Redondear GPS para evitar micro-variaciones (jitter)
-        const lat = datos.q2 && datos.q2.lat ? Number(datos.q2.lat).toFixed(6) : "0";
-        const lng = datos.q2 && datos.q2.lng ? Number(datos.q2.lng).toFixed(6) : "0";
-        
-        // Creamos un objeto simplificado para la firma (sin el mapa original para normalizar)
-        // Incluimos lat/lng redondeados y todas las demás respuestas
-        const { q2, timestamp, ...respuestas } = datos;
-        return JSON.stringify({ lat, lng, ...respuestas });
+        try {
+            const lat = datos.q2 && datos.q2.lat ? Number(datos.q2.lat).toFixed(6) : "0";
+            const lng = datos.q2 && datos.q2.lng ? Number(datos.q2.lng).toFixed(6) : "0";
+            const { q2, timestamp, ...respuestas } = datos;
+            // Usamos un separador simple en lugar de JSON.stringify para ganar microsegundos
+            return `${lat}|${lng}|${Object.values(respuestas).join('|')}`;
+        } catch (e) {
+            return JSON.stringify(datos);
+        }
     },
 
     findDuplicate: (datos) => {

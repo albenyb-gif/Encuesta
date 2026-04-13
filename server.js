@@ -203,35 +203,37 @@ app.post('/api/admin/import-data', authMiddleware, adminOnly, (req, res) => {
     res.json({ mensaje: `Importación completada. Se añadieron ${imported} registros nuevos.` });
 });
 
-// ─── Fallback SPA ─────────────────────────────────────────────────────────────
-// Endpoint para limpiar duplicados (mantenimiento agresivo por GPS + Respuestas)
-app.post('/api/admin/clean-duplicates', adminOnly, (req, res) => {
+// Endpoint para limpiar duplicados (MANTENIMIENTO ULTRA-RÁPIDO)
+app.post('/api/admin/clean-duplicates', authMiddleware, adminOnly, (req, res) => {
     try {
+        console.log("[LIMPIEZA] Iniciando proceso de saneamiento...");
         const current = db.getAllEncuestas();
         const seen = new Set();
         const unique = [];
 
-        current.forEach(e => {
+        // Procesamiento en memoria pura (O(n))
+        for (const e of current) {
             const fingerprint = db.getSurveyFingerprint(e.datos);
             if (!seen.has(fingerprint)) {
                 seen.add(fingerprint);
                 unique.push(e);
             }
-        });
+        }
 
         const removedCount = current.length - unique.length;
         
-        // Actualizamos físicamente el archivo
-        const fs = require('fs');
-        const DATA_DIR = process.env.DATA_PATH || path.join(__dirname, '..', 'encuesta_central_data');
-        const ENCUESTAS_FILE = path.join(DATA_DIR, 'encuestas.json');
-        fs.writeFileSync(ENCUESTAS_FILE, JSON.stringify(unique, null, 2));
+        // Escritura única al final
+        db.saveEncuestas(unique);
 
-        res.json({ 
-            mensaje: `Limpieza profunda por GPS completada.`, 
+        console.log(`[LIMPIEZA] Finalizada. Eliminados: ${removedCount}, Quedaron: ${unique.length}`);
+        
+        // Devolvemos JSON puro siempre
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).send(JSON.stringify({ 
+            mensaje: `Limpieza profunda completada.`, 
             quedaron: unique.length,
             eliminados: removedCount 
-        });
+        }));
     } catch (e) {
         console.error("Error en limpieza:", e);
         res.status(500).json({ error: e.message });
