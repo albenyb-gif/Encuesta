@@ -106,10 +106,15 @@ function checkSession() {
         if (sidebar) sidebar.style.display = 'flex';
         const adminLink = document.getElementById('nav-admin');
         if (adminLink) adminLink.style.display = isAdmin() ? 'flex' : 'none';
+        
         connectSSE();         // Conectar canal de tiempo real
         loadSchemaFromServer(); // Cargar esquema compartido
-        checkAndSyncLegacyData(); // RESCATE DE DATOS: Sincronizar encuestas locales viejas
-        navigateTo('view-dashboard');
+        checkAndSyncLegacyData(); 
+
+        // RECUPERAR ÚLTIMA VISTA: En lugar de ir siempre al dashboard, 
+        // recordamos dónde estaba el usuario antes del refresco.
+        const lastView = localStorage.getItem('last_view') || 'view-dashboard';
+        navigateTo(lastView);
     } else {
         mainContent.style.display = 'flex';
         appContainer.classList.add('login-mode');
@@ -222,6 +227,11 @@ let currentUser = {
 
 // === NAVIGATION ===
 function navigateTo(viewId) {
+    // PERSISTENCIA DE VISTA: Recordamos dónde está para refrescos
+    if (viewId !== 'view-login') {
+        localStorage.setItem('last_view', viewId);
+    }
+
     // Esconder todas las vistas
     document.querySelectorAll('.view').forEach(v => v.style.display = 'none');
     
