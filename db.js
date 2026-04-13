@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
-// PERSISTENCIA BLINDADA: Ajustamos la ruta para que sea absoluta y segura en Hostinger
-const DATA_DIR = process.env.DATA_PATH || path.resolve(__dirname, 'encuesta_central_data');
+// PERSISTENCIA BLINDADA: Volvemos a la ruta relativa probada en Hostinger
+const DATA_DIR = process.env.DATA_PATH || path.join(__dirname, '..', 'encuesta_central_data');
 const USERS_FILE = path.join(DATA_DIR, 'users.json');
 const ENCUESTAS_FILE = path.join(DATA_DIR, 'encuestas.json');
 const SCHEMA_FILE = path.join(DATA_DIR, 'schema.json');
@@ -124,6 +124,7 @@ module.exports = {
 
     // Encuestas
     getAllEncuestas: () => loadEncuestas(),
+    saveEncuestas: (encuestas) => saveEncuestas(encuestas),
     getEncuestasByUser: (usuario_id) => loadEncuestas().filter(e => e.usuario_id === Number(usuario_id)),
     createEncuesta: (usuario_id, usuario_nombre, datos, timestamp = null) => {
         const encuestas = loadEncuestas();
