@@ -596,27 +596,40 @@ function renderMapAnalysis(data, container) {
         const locQ = currentSchema.find(q => q.type === 'location');
         if (!locQ) return;
 
+        const usedCoordsAnalysis = new Set();
         resultsWithLoc.forEach(r => {
             const index = allResults.indexOf(r);
-            const loc = r[locQ.id];
-            const marker = L.marker([loc.lat, loc.lng]).addTo(mapInstance);
+            let loc = { ...r[locQ.id] };
+
+            const locKey = `${loc.lat.toFixed(6)},${loc.lng.toFixed(6)}`;
+            if (usedCoordsAnalysis.has(locKey)) {
+                loc.lat += (Math.random() - 0.5) * 0.00015;
+                loc.lng += (Math.random() - 0.5) * 0.00015;
+            }
+            usedCoordsAnalysis.add(locKey);
+
+            const marker = L.circleMarker([loc.lat, loc.lng], { 
+                radius: 7, 
+                color: 'white', 
+                fillColor: '#3b82f6', 
+                fillOpacity: 1, 
+                weight: 2 
+            }).addTo(mapInstance);
             
-            // Construir resumen para el popup
-            let summary = `<div style="font-family: Inter, sans-serif;">
-                <b style="color:var(--accent)">Encuesta #${index + 1}</b><br>
-                <small>${new Date(r.timestamp).toLocaleString()}</small><hr style="margin:8px 0; border:0; border-top:1px solid #eee">`;
-            
-            // Mostrar un par de respuestas clave
-            currentSchema.slice(0, 4).forEach(q => {
-                if (q.type !== 'location') {
-                    summary += `<div style="font-size:11px"><b>${q.label}:</b> ${r[q.id] || '-'}</div>`;
-                }
-            });
-            summary += `</div>`;
+            const summary = `
+                <div style="min-width: 180px; font-family: 'Inter', sans-serif;">
+                    <div style="font-size: 10px; color: var(--accent); font-weight: 800; text-transform: uppercase;">Encuesta #${r.id || index + 1}</div>
+                    <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">${r.q3 || 'Sin Barrio'}</div>
+                    <div style="font-size: 11px; color: var(--slate-600); margin-bottom: 8px;">
+                        <b>Encuestador:</b> ${r.usuario_nombre || 'N/A'}<br>
+                        <b>Partido:</b> ${r.q1 || 'NS/NR'}<br>
+                        <b>Fecha:</b> ${new Date(r.timestamp).toLocaleDateString()}
+                    </div>
+                </div>
+            `;
             
             marker.bindPopup(summary);
 
-            // Si es el foco, abrir popup
             if (focusedSurveyIndex === index) {
                 marker.openPopup();
                 mapInstance.setView([loc.lat, loc.lng], 16);
@@ -624,7 +637,7 @@ function renderMapAnalysis(data, container) {
         });
 
         if (resultsWithLoc.length > 1 && focusedSurveyIndex === null) {
-            const group = new L.featureGroup(resultsWithLoc.map(r => L.marker([r[locQ.id].lat, r[locQ.id].lng])));
+            const group = new L.featureGroup(resultsWithLoc.map(r => L.circleMarker([r[locQ.id].lat, r[locQ.id].lng])));
             mapInstance.fitBounds(group.getBounds().pad(0.1));
         }
 
@@ -927,7 +940,18 @@ async function renderDashboardStats() {
             dashboardMapInstance = L.map('dashboard-map', { zoomControl: false }).setView([resultsWithLoc[0].q2.lat, resultsWithLoc[0].q2.lng], 13);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(dashboardMapInstance);
             
+            const usedCoordsRoot = new Set();
             resultsWithLoc.forEach(r => {
+                let loc = { ...r.q2 };
+                
+                // Efecto Jitter
+                const coordKey = `${loc.lat.toFixed(6)},${loc.lng.toFixed(6)}`;
+                if (usedCoordsRoot.has(coordKey)) {
+                    loc.lat += (Math.random() - 0.5) * 0.00015;
+                    loc.lng += (Math.random() - 0.5) * 0.00015;
+                }
+                usedCoordsRoot.add(coordKey);
+
                 const popupContent = `
                     <div style="min-width: 180px; font-family: 'Inter', sans-serif;">
                         <div style="font-size: 10px; color: var(--accent); font-weight: 800; text-transform: uppercase;">Encuesta #${r.id}</div>
@@ -935,14 +959,14 @@ async function renderDashboardStats() {
                         <div style="font-size: 11px; color: var(--slate-600); margin-bottom: 12px;">
                             <b>Encuestador:</b> ${r.usuario_nombre || 'N/A'}<br>
                             <b>Partido:</b> ${r.q1 || 'NS/NR'}<br>
-                            <b>Ciudadano:</b> ${r.q_demo ? r.q_demo.join(', ') : 'N/A'}
+                            <b>Fecha:</b> ${new Date(r.timestamp).toLocaleDateString()}
                         </div>
                         <button onclick="jumpToSurvey(${r.id})" style="background: var(--accent); color: white; border: none; padding: 6px 10px; border-radius: 6px; font-size: 11px; width: 100%; cursor: pointer;">
                             <i class="fa-solid fa-table-list"></i> Ver en Base de Datos
                         </button>
                     </div>
                 `;
-                L.circleMarker([r.q2.lat, r.q2.lng], { 
+                L.circleMarker([loc.lat, loc.lng], { 
                     radius: 7, 
                     color: 'white', 
                     fillColor: '#3b82f6', 
