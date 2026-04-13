@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "admin",
+    "password_hash": "$2a$10$ACQoyQoACZhA0ZyMy9zM5eXGXeMuqhBUQhQxl7C7nvHKIN2CkT82W",
+    "rol": "admin"
+  },
+  {
+    "id": 2,
+    "nombre": "Miguel",
+    "password_hash": "$2a$10$rti1xfEBEjHDvzTgRVzaH.V3C9CxFhchH6xb2n.QkD8NbJOIln3A2",
+    "rol": "encuestador"
+  },
+  {
+    "id": 3,
+    "nombre": "Santiago",
+    "password_hash": "$2a$10$eWA77MEAMA7gORmyrPiPuOdjZ.4yCg.Pz30DBU8w.z6lhOL4U1YB6",
+    "rol": "encuestador"
+  },
+  {
+    "id": 6,
+    "nombre": "Mabel",
+    "password_hash": "$2a$10$cNRMraHqdLoIXhVbJMyTvudocmzHjyyEkRl36jxCTtrcfEBlpNV8m",
+    "rol": "encuestador"
+  }
+]

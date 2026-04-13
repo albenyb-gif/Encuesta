@@ -940,6 +940,19 @@ async function renderDashboardStats() {
 }
 
 // === ADMIN PANEL ===
+async function cleanDuplicates() {
+    if (!confirm("Esto eliminará las encuestas que tengan la misma fecha y datos exactos. ¿Continuar?")) return;
+    
+    try {
+        showToast("Limpiando duplicados...", "info");
+        const res = await apiRequest('POST', '/api/admin/clean-duplicates');
+        alert(res.mensaje);
+        renderDashboardStats();
+    } catch (e) {
+        alert("Error al limpiar: " + e.message);
+    }
+}
+
 async function renderAdminPanel() {
     if (!isAdmin()) return;
     
@@ -1216,10 +1229,16 @@ function resetToDefault() {
 
 function exportToExcel() {
     if (allResults.length === 0) return alert("Sin datos");
-    const headers = ["Timestamp", ...currentSchema.map(q => q.label)];
+    const headers = ["ID", "Timestamp", "Encuestador", ...currentSchema.map(q => q.label)];
     let csv = "\ufeff" + headers.join(";") + "\n";
+    
     allResults.forEach(r => {
-        const rowData = [r.timestamp || new Date().toISOString()];
+        const rowData = [
+            r.id || '',
+            r.timestamp || '',
+            r.usuario_nombre || 'Desconocido'
+        ];
+        
         currentSchema.forEach(q => {
             const val = r[q.id] || '';
             if (q.type === 'location' && typeof val === 'object' && val !== null) {
@@ -1230,6 +1249,7 @@ function exportToExcel() {
         });
         csv += rowData.join(";") + "\n";
     });
+    
     const blob = new Blob([csv], { type: 'text/csv' });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);

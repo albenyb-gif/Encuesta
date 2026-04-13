@@ -196,6 +196,25 @@ app.post('/api/admin/import-data', authMiddleware, adminOnly, (req, res) => {
 });
 
 // ─── Fallback SPA ─────────────────────────────────────────────────────────────
+// Endpoint para limpiar duplicados (mantenimiento)
+app.post('/api/admin/clean-duplicates', adminOnly, (req, res) => {
+    try {
+        const current = db.read('encuestas') || [];
+        const seen = new Set();
+        const unique = current.filter(e => {
+            const key = `${e.timestamp}_${JSON.stringify(e.datos)}`;
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+
+        db.write('encuestas', unique);
+        res.json({ mensaje: `Limpieza completada. Quedaron ${unique.length} registros únicos.`, eliminados: current.length - unique.length });
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
