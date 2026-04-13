@@ -99,6 +99,29 @@ module.exports = {
         saveUsers(users);
     },
 
+    // Huella digital para detectar duplicados (Ubicación + Respuestas)
+    getSurveyFingerprint: (datos) => {
+        if (!datos) return "";
+        // Redondear GPS para evitar micro-variaciones (jitter)
+        const lat = datos.q2 && datos.q2.lat ? Number(datos.q2.lat).toFixed(6) : "0";
+        const lng = datos.q2 && datos.q2.lng ? Number(datos.q2.lng).toFixed(6) : "0";
+        
+        // Creamos un objeto simplificado para la firma (sin el mapa original para normalizar)
+        // Incluimos lat/lng redondeados y todas las demás respuestas
+        const { q2, timestamp, ...respuestas } = datos;
+        return JSON.stringify({ lat, lng, ...respuestas });
+    },
+
+    findDuplicate: (datos) => {
+        const encuestas = loadEncuestas();
+        const newFingerprint = module.exports.getSurveyFingerprint(datos);
+        
+        return encuestas.find(e => {
+            const existingFingerprint = module.exports.getSurveyFingerprint(e.datos);
+            return existingFingerprint === newFingerprint;
+        });
+    },
+
     // Encuestas
     getAllEncuestas: () => loadEncuestas(),
     getEncuestasByUser: (usuario_id) => loadEncuestas().filter(e => e.usuario_id === Number(usuario_id)),

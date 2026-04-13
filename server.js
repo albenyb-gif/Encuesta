@@ -113,6 +113,14 @@ app.get('/api/events', (req, res) => {
 app.post('/api/encuestas', authMiddleware, (req, res) => {
     const { datos, timestamp } = req.body;
     if (!datos) return res.status(400).json({ error: 'Datos requeridos' });
+
+    // ESCUDO ANTI-DUPLICADOS: Si ya existe una igual, no guardamos otra
+    const duplicate = db.findDuplicate(datos);
+    if (duplicate) {
+        console.log(`[DUPLICADO] Intento de duplicar encuesta ignorado (${req.user.nombre})`);
+        return res.json({ id: duplicate.id, mensaje: 'Encuesta ya registrada previamente', duplicada: true });
+    }
+
     const enc = db.createEncuesta(req.user.id, req.user.nombre, datos, timestamp);
     res.json({ id: enc.id, mensaje: 'Encuesta guardada correctamente' });
 });
@@ -196,21 +204,36 @@ app.post('/api/admin/import-data', authMiddleware, adminOnly, (req, res) => {
 });
 
 // ─── Fallback SPA ─────────────────────────────────────────────────────────────
-// Endpoint para limpiar duplicados (mantenimiento)
+// Endpoint para limpiar duplicados (mantenimiento agresivo por GPS + Respuestas)
 app.post('/api/admin/clean-duplicates', adminOnly, (req, res) => {
     try {
-        const current = db.read('encuestas') || [];
+        const current = db.getAllEncuestas();
         const seen = new Set();
-        const unique = current.filter(e => {
-            const key = `${e.timestamp}_${JSON.stringify(e.datos)}`;
-            if (seen.has(key)) return false;
-            seen.add(key);
-            return true;
+        const unique = [];
+
+        current.forEach(e => {
+            const fingerprint = db.getSurveyFingerprint(e.datos);
+            if (!seen.has(fingerprint)) {
+                seen.add(fingerprint);
+                unique.push(e);
+            }
         });
 
-        db.write('encuestas', unique);
-        res.json({ mensaje: `Limpieza completada. Quedaron ${unique.length} registros únicos.`, eliminados: current.length - unique.length });
+        const removedCount = current.length - unique.length;
+        
+        // Actualizamos físicamente el archivo
+        const fs = require('fs');
+        const DATA_DIR = process.env.DATA_PATH || path.join(__dirname, '..', 'encuesta_central_data');
+        const ENCUESTAS_FILE = path.join(DATA_DIR, 'encuestas.json');
+        fs.writeFileSync(ENCUESTAS_FILE, JSON.stringify(unique, null, 2));
+
+        res.json({ 
+            mensaje: `Limpieza profunda por GPS completada.`, 
+            quedaron: unique.length,
+            eliminados: removedCount 
+        });
     } catch (e) {
+        console.error("Error en limpieza:", e);
         res.status(500).json({ error: e.message });
     }
 });
