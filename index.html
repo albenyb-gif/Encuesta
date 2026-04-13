@@ -303,6 +303,17 @@
                             </button>
                         </div>
                     </div>
+
+                    <!-- BOTÓN DE LIMPIEZA ATÓMICA -->
+                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #fef3c7;">
+                        <p style="font-size: 13px; color: #b45309; margin-bottom: 12px;">
+                            <i class="fa-solid fa-circle-info"></i> <b>Limpieza Forense:</b> Elimina registros triplicados comparando GPS y Respuestas.
+                        </p>
+                        <button class="btn-primary-large" onclick="cleanDuplicates()" style="width: 100%; background: #1e293b; color: white;">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Limpiar Base de Datos (Misma Puerta + Misma Pregunta)
+                        </button>
+                    </div>
+                </div>
                 </div>
 
                 <div class="card">
@@ -486,6 +497,6 @@
         </div>
     </div>
 
-    <script src="app.js?v=8.0"></script>
+    <script src="app.js?v=8.1"></script>
 </body>
 </html>

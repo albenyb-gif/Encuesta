@@ -1487,3 +1487,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupProfilePreview();
 });
+
+// === MANTENIMIENTO DE DATOS ===
+async function cleanDuplicates() {
+    if (!confirm("¿Deseas ejecutar la limpieza profunda? Se eliminarán encuestas que tengan la misma ubicación y las mismas respuestas (triplicados de sincronización).")) return;
+    
+    const btn = document.querySelector('button[onclick="cleanDuplicates()"]');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Limpiando...';
+    btn.disabled = true;
+
+    try {
+        const result = await apiRequest('POST', '/api/admin/clean-duplicates');
+        alert(`¡Limpieza completada!\n\n- Se eliminaron: ${result.eliminados} triplicados.\n- Quedaron: ${result.quedaron} encuestas únicas.`);
+        renderDashboardStats(); // Refrescar números
+    } catch (err) {
+        alert("Error al limpiar: " + err.message);
+    } finally {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    }
+}
