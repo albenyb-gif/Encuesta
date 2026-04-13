@@ -626,15 +626,37 @@ function renderMapAnalysis(data, container) {
                 weight: 2 
             }).addTo(mapInstance);
             
+            // Construir detalles completos dinámicamente
+            let detailsHtml = '';
+            currentSchema.forEach(q => {
+                if (q.type !== 'location' && r[q.id]) {
+                    const value = Array.isArray(r[q.id]) ? r[q.id].join(', ') : r[q.id];
+                    detailsHtml += `<div style="margin-bottom: 4px;"><b>${q.label}:</b> <span style="color: var(--slate-700);">${value}</span></div>`;
+                }
+            });
+
             const summary = `
-                <div style="min-width: 180px; font-family: 'Inter', sans-serif;">
-                    <div style="font-size: 10px; color: var(--accent); font-weight: 800; text-transform: uppercase;">Encuesta #${r.id || index + 1}</div>
-                    <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">${r.q3 || 'Sin Barrio'}</div>
-                    <div style="font-size: 11px; color: var(--slate-600); margin-bottom: 8px;">
-                        <b>Encuestador:</b> ${r.usuario_nombre || 'N/A'}<br>
-                        <b>Partido:</b> ${r.q1 || 'NS/NR'}<br>
-                        <b>Fecha:</b> ${new Date(r.timestamp).toLocaleDateString()}
+                <div style="min-width: 220px; max-width: 280px; font-family: 'Inter', sans-serif;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; border-bottom: 1px solid var(--slate-100); padding-bottom: 8px;">
+                        <div>
+                            <div style="font-size: 10px; color: var(--accent); font-weight: 800; text-transform: uppercase;">Encuesta #${r.id || index + 1}</div>
+                            <div style="font-weight: 700; font-size: 15px; color: var(--slate-900);">${r.q3 || 'Sin Barrio'}</div>
+                        </div>
+                        <div style="font-size: 10px; color: var(--slate-400); text-align: right;">
+                            ${new Date(r.timestamp).toLocaleDateString()}<br>${new Date(r.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                        </div>
                     </div>
+                    
+                    <div style="font-size: 12px; line-height: 1.4; color: var(--slate-600); max-height: 200px; overflow-y: auto; padding-right: 5px; margin-bottom: 15px;">
+                        <div style="margin-bottom: 8px; padding: 6px; background: var(--slate-50); border-radius: 6px; font-size: 11px;">
+                            <b>Encuestador:</b> ${r.usuario_nombre || 'N/A'}
+                        </div>
+                        ${detailsHtml}
+                    </div>
+
+                    <button onclick="jumpToSurvey('${r.id || index + 1}')" style="width: 100%; background: var(--slate-900); color: white; border: none; padding: 10px; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s;">
+                        <i class="fa-solid fa-database"></i> Ver en Base de Datos
+                    </button>
                 </div>
             `;
             
@@ -962,17 +984,24 @@ async function renderDashboardStats() {
                 }
                 usedCoordsRoot.add(coordKey);
 
+                // Construir detalles dinámicos para el Dashboard también
+                let detailsHtml = '';
+                currentSchema.forEach(q => {
+                    if (q.type !== 'location' && r[q.id]) {
+                        const value = Array.isArray(r[q.id]) ? r[q.id].join(', ') : r[q.id];
+                        detailsHtml += `<div style="margin-bottom: 2px;"><b>${q.label}:</b> ${value}</div>`;
+                    }
+                });
+
                 const popupContent = `
-                    <div style="min-width: 180px; font-family: 'Inter', sans-serif;">
+                    <div style="min-width: 200px; font-family: 'Inter', sans-serif;">
                         <div style="font-size: 10px; color: var(--accent); font-weight: 800; text-transform: uppercase;">Encuesta #${r.id}</div>
-                        <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">${r.q3 || 'Sin Barrio'}</div>
-                        <div style="font-size: 11px; color: var(--slate-600); margin-bottom: 12px;">
-                            <b>Encuestador:</b> ${r.usuario_nombre || 'N/A'}<br>
-                            <b>Partido:</b> ${r.q1 || 'NS/NR'}<br>
-                            <b>Fecha:</b> ${new Date(r.timestamp).toLocaleDateString()}
+                        <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px; border-bottom: 1px solid var(--slate-100); padding-bottom: 4px;">${r.q3 || 'Sin Barrio'}</div>
+                        <div style="font-size: 11px; color: var(--slate-600); margin-bottom: 12px; max-height: 100px; overflow-y: auto;">
+                            ${detailsHtml}
                         </div>
-                        <button onclick="jumpToSurvey(${r.id})" style="background: var(--accent); color: white; border: none; padding: 6px 10px; border-radius: 6px; font-size: 11px; width: 100%; cursor: pointer;">
-                            <i class="fa-solid fa-table-list"></i> Ver en Base de Datos
+                        <button onclick="jumpToSurvey('${r.id}')" style="width: 100%; background: var(--slate-900); color: white; border: none; padding: 8px; border-radius: 6px; font-size: 11px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px;">
+                            <i class="fa-solid fa-database"></i> Ver en Base de Datos
                         </button>
                     </div>
                 `;
