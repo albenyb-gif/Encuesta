@@ -1,4 +1,4 @@
-const CACHE_NAME = 'encuesta-v6.1';
+const CACHE_NAME = 'encuesta-v7.0';
 const urlsToCache = [
     '/',
     '/index.html',

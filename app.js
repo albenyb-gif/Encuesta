@@ -928,7 +928,27 @@ async function renderDashboardStats() {
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(dashboardMapInstance);
             
             resultsWithLoc.forEach(r => {
-                L.circleMarker([r.q2.lat, r.q2.lng], { radius: 6, color: '#3b82f6', fillColor: '#60a5fa', fillOpacity: 0.9, weight: 2 }).addTo(dashboardMapInstance);
+                const popupContent = `
+                    <div style="min-width: 180px; font-family: 'Inter', sans-serif;">
+                        <div style="font-size: 10px; color: var(--accent); font-weight: 800; text-transform: uppercase;">Encuesta #${r.id}</div>
+                        <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">${r.q3 || 'Sin Barrio'}</div>
+                        <div style="font-size: 11px; color: var(--slate-600); margin-bottom: 12px;">
+                            <b>Encuestador:</b> ${r.usuario_nombre || 'N/A'}<br>
+                            <b>Partido:</b> ${r.q1 || 'NS/NR'}<br>
+                            <b>Ciudadano:</b> ${r.q_demo ? r.q_demo.join(', ') : 'N/A'}
+                        </div>
+                        <button onclick="jumpToSurvey(${r.id})" style="background: var(--accent); color: white; border: none; padding: 6px 10px; border-radius: 6px; font-size: 11px; width: 100%; cursor: pointer;">
+                            <i class="fa-solid fa-table-list"></i> Ver en Base de Datos
+                        </button>
+                    </div>
+                `;
+                L.circleMarker([r.q2.lat, r.q2.lng], { 
+                    radius: 7, 
+                    color: 'white', 
+                    fillColor: '#3b82f6', 
+                    fillOpacity: 1, 
+                    weight: 2 
+                }).addTo(dashboardMapInstance).bindPopup(popupContent);
             });
             
             if (resultsWithLoc.length > 1) {
@@ -940,6 +960,29 @@ async function renderDashboardStats() {
 }
 
 // === ADMIN PANEL ===
+async function jumpToSurvey(surveyId) {
+    // 1. Cambiar a la vista de resultados
+    navigateTo('view-results');
+    
+    // 2. Cambiar tipo de informe a 'Base de Datos (Tabla)'
+    const reportSelect = document.getElementById('report-type');
+    if (reportSelect) {
+        reportSelect.value = 'raw';
+        await refreshAnalysis(); // Forzar render de la tabla
+    }
+
+    // 3. Pequeño delay para que la tabla se cree y podamos buscar la fila
+    setTimeout(() => {
+        const rows = document.querySelectorAll('table tr');
+        rows.forEach(row => {
+            if (row.textContent.includes(`ID: ${surveyId}`)) {
+                row.style.background = '#fef3c7'; // Resaltar fila
+                row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    }, 500);
+}
+
 async function cleanDuplicates() {
     if (!confirm("Esto eliminará las encuestas que tengan la misma fecha y datos exactos. ¿Continuar?")) return;
     
