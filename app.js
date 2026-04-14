@@ -37,6 +37,40 @@ let currentStep = 0;
 let focusedSurveyIndex = null;
 let editingSurveyIndex = null;
 const QUESTIONS_PER_STEP = 4;
+let syncInProgress = false;
+
+// === OFFLINE STORAGE & SYNC ===
+function getOfflineQueue() { return JSON.parse(localStorage.getItem('offline_surveys') || '[]'); }
+function saveToOfflineQueue(surveyData) {
+    const queue = getOfflineQueue();
+    queue.push(surveyData);
+    localStorage.setItem('offline_surveys', JSON.stringify(queue));
+    updateOfflineUI();
+}
+
+function updateOfflineUI(isSyncing = false) {
+    const bar = document.getElementById('offline-status-bar');
+    const count = document.getElementById('sync-count');
+    const text = document.getElementById('sync-text');
+    const icon = document.getElementById('sync-icon');
+    
+    const queueCount = getOfflineQueue().length;
+    
+    if (queueCount > 0 || isSyncing) {
+        bar.style.display = 'flex';
+        count.textContent = queueCount;
+        
+        if (isSyncing) {
+            text.textContent = 'Sincronizando encuestas...';
+            icon.className = 'fa-solid fa-sync fa-spin';
+        } else {
+            text.textContent = `Pendientes de envío (${queueCount})`;
+            icon.className = 'fa-solid fa-cloud-arrow-up';
+        }
+    } else {
+        bar.style.display = 'none';
+    }
+}
 
 // === SESSION (API-BASED) ===
 function getToken() { return localStorage.getItem('auth_token'); }
@@ -49,11 +83,54 @@ async function apiRequest(method, endpoint, body = null) {
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` }
     };
     if (body) opts.body = JSON.stringify(body);
-    const res = await fetch(endpoint, opts);
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Error en el servidor');
-    return data;
+    
+    try {
+        const res = await fetch(endpoint, opts);
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Error en el servidor');
+        return data;
+    } catch (e) {
+        if (e.name === 'TypeError') {
+            // Error de conexión (offline)
+            throw new Error('NETWORK_ERROR');
+        }
+        throw e;
+    }
 }
+
+async function syncOfflineQueue() {
+    if (!navigator.onLine || syncInProgress) return;
+    const queue = getOfflineQueue();
+    if (queue.length === 0) return;
+
+    syncInProgress = true;
+    updateOfflineUI(true);
+    console.log(`Intentando sincronizar ${queue.length} encuestas...`);
+
+    const successfullySynced = [];
+    for (const survey of queue) {
+        try {
+            await apiRequest('POST', '/api/encuestas', { datos: survey });
+            successfullySynced.push(survey);
+        } catch (e) {
+            if (e.message.includes('NETWORK_ERROR')) {
+                break; // Seguimos sin red, parar sync
+            }
+            // Si el error es un duplicado o error de datos, lo marcamos como procesado para no trabar la cola
+            successfullySynced.push(survey);
+        }
+    }
+
+    // Limpiar de la cola lo que se subió (o falló definitivamente)
+    const newQueue = getOfflineQueue().filter(s => !successfullySynced.includes(s));
+    localStorage.setItem('offline_surveys', JSON.stringify(newQueue));
+    
+    syncInProgress = false;
+    updateOfflineUI();
+}
+
+window.addEventListener('online', syncOfflineQueue);
+setInterval(syncOfflineQueue, 60000); // Intento cada minuto por si acaso
 
 // === LOGIN & SESSION ===
 async function handleLogin() {
@@ -102,6 +179,9 @@ function checkSession() {
         mainContent.style.display = 'flex';
         appContainer.classList.remove('login-mode');
         updateProfileUI();
+        updateOfflineUI();    // Ver si hay pendientes al entrar
+        syncOfflineQueue();   // Intentar subir si hay red hoy mismo
+        
         const sidebar = document.getElementById('sidebar');
         if (sidebar) sidebar.style.display = 'flex';
         const adminLink = document.getElementById('nav-admin');
@@ -482,12 +562,22 @@ async function finishSurvey() {
     try {
         await apiRequest('POST', '/api/encuestas', { datos: currentSurveyData });
         alert('¡Encuesta guardada con éxito en el servidor!');
-        navigateTo('view-dashboard');
     } catch (e) {
-        alert('Error al guardar: ' + e.message);
-        btn.disabled = false;
-        btn.innerHTML = 'Finalizar Relevamiento <i class="fa-solid fa-check-double"></i>';
+        if (e.message === 'NETWORK_ERROR') {
+            saveToOfflineQueue({...currentSurveyData});
+            alert('📱 Sin conexión: Encuesta guardada LOCALMENTE en su celular. Se sincronizará sola al recuperar internet.');
+        } else {
+            alert('Error al guardar: ' + e.message);
+            btn.disabled = false;
+            btn.innerHTML = 'Finalizar Relevamiento <i class="fa-solid fa-check-double"></i>';
+            return;
+        }
     }
+    
+    // Resetear cuestionario
+    currentSurveyData = {};
+    currentStep = 0;
+    navigateTo('view-dashboard');
 }
 
 // === PERFIL Y MODALS ===
