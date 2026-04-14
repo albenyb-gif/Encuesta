@@ -1335,7 +1335,18 @@ function resetToDefault() {
 
 function exportToExcel() {
     if (allResults.length === 0) return alert("Sin datos");
-    const headers = ["ID", "Timestamp", "Encuestador", ...currentSchema.map(q => q.label)];
+    
+    // Generar encabezados inteligentes: Si hay location, poner Latitud y Longitud
+    let headers = ["ID", "Timestamp", "Encuestador"];
+    currentSchema.forEach(q => {
+        if (q.type === 'location') {
+            headers.push(`${q.label} (Lat)`);
+            headers.push(`${q.label} (Lng)`);
+        } else {
+            headers.push(q.label);
+        }
+    });
+
     let csv = "\ufeff" + headers.join(";") + "\n";
     
     allResults.forEach(r => {
@@ -1348,7 +1359,11 @@ function exportToExcel() {
         currentSchema.forEach(q => {
             const val = r[q.id] || '';
             if (q.type === 'location' && typeof val === 'object' && val !== null) {
-                rowData.push(`${val.lat},${val.lng}`);
+                rowData.push(val.lat || '0');
+                rowData.push(val.lng || '0');
+            } else if (q.type === 'location') {
+                rowData.push('0');
+                rowData.push('0');
             } else {
                 rowData.push(val);
             }
