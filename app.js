@@ -44,6 +44,8 @@ let selectedSurveys = new Set(); // Para gestión masiva
 function getOfflineQueue() { return JSON.parse(localStorage.getItem('offline_surveys') || '[]'); }
 function saveToOfflineQueue(surveyData) {
     const queue = getOfflineQueue();
+    // Asegurar que cada encuesta tenga un timestamp único para evitar duplicados en la cola
+    if (!surveyData.timestamp) surveyData.timestamp = new Date().toISOString();
     queue.push(surveyData);
     localStorage.setItem('offline_surveys', JSON.stringify(queue));
     updateOfflineUI();
@@ -123,7 +125,10 @@ async function syncOfflineQueue() {
     }
 
     // Limpiar de la cola lo que se subió (o falló definitivamente)
-    const newQueue = getOfflineQueue().filter(s => !successfullySynced.includes(s));
+    // Usamos el timestamp como ID único para el filtrado, ya que las referencias de objeto
+    // se pierden al serializar/deserializar en LocalStorage.
+    const syncedTimestamps = successfullySynced.map(s => s.timestamp);
+    const newQueue = getOfflineQueue().filter(s => !syncedTimestamps.includes(s.timestamp));
     localStorage.setItem('offline_surveys', JSON.stringify(newQueue));
     
     syncInProgress = false;

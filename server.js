@@ -192,18 +192,19 @@ app.post('/api/admin/import-data', authMiddleware, adminOnly, (req, res) => {
     let imported = 0;
     
     encuestas.forEach(newEnc => {
-        // Evitar duplicados basados en timestamp y usuario
-        const exists = current.some(e => 
-            e.timestamp === newEnc.timestamp && 
-            e.usuario_id === newEnc.usuario_id
-        );
-        
-        if (!exists) {
+        const datos = newEnc.datos || newEnc;
+        // Si no tiene timestamp, usar el de la importación
+        const surveyToValidate = { 
+            timestamp: newEnc.timestamp || new Date().toISOString(), 
+            datos: datos 
+        };
+
+        if (!db.findDuplicate(surveyToValidate.datos)) {
             db.createEncuesta(
                 newEnc.usuario_id || 0, 
                 newEnc.usuario_nombre || 'Importado', 
-                newEnc.datos || newEnc, 
-                newEnc.timestamp
+                datos, 
+                surveyToValidate.timestamp
             );
             imported++;
         }
@@ -220,13 +221,23 @@ app.post('/api/admin/clean-duplicates', authMiddleware, adminOnly, (req, res) =>
         const seen = new Set();
         const unique = [];
 
-        // Procesamiento en memoria pura (O(n))
+        // Procesamiento en memoria pura con doble escudo (Coordenadas y Huella)
         for (const e of current) {
+            const lat = (e.datos.q2 && e.datos.q2.lat) ? Number(e.datos.q2.lat).toFixed(6) : null;
+            const lng = (e.datos.q2 && e.datos.q2.lng) ? Number(e.datos.q2.lng).toFixed(6) : null;
+            
+            // Llave de coordenadas: si coinciden lat, lng y timestamp al mismo tiempo, es 100% duplicado
+            const coordKey = (lat && lng) ? `${lat}|${lng}|${e.timestamp}` : null;
             const fingerprint = db.getSurveyFingerprint(e.datos);
-            if (!seen.has(fingerprint)) {
-                seen.add(fingerprint);
-                unique.push(e);
+            
+            if ((coordKey && seen.has(coordKey)) || seen.has(fingerprint)) {
+                // Es duplicado
+                continue;
             }
+
+            if (coordKey) seen.add(coordKey);
+            seen.add(fingerprint);
+            unique.push(e);
         }
 
         const removedCount = current.length - unique.length;

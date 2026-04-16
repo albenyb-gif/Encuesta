@@ -127,10 +127,28 @@ module.exports = {
 
     findDuplicate: (datos) => {
         const encuestas = loadEncuestas();
-        const newFingerprint = module.exports.getSurveyFingerprint(datos);
         
+        // Normalizar coordenadas y timestamp para la comparación
+        const lat = (datos.q2 && datos.q2.lat) ? Number(datos.q2.lat).toFixed(6) : null;
+        const lng = (datos.q2 && datos.q2.lng) ? Number(datos.q2.lng).toFixed(6) : null;
+        const timestamp = datos.timestamp;
+
         return encuestas.find(e => {
+            const eLat = (e.datos.q2 && e.datos.q2.lat) ? Number(e.datos.q2.lat).toFixed(6) : null;
+            const eLng = (e.datos.q2 && e.datos.q2.lng) ? Number(e.datos.q2.lng).toFixed(6) : null;
+            
+            // ESCUDO NIVEL 1: Coordenadas + Timestamp (Detecta re-envíos exactos del mismo celular)
+            if (lat && lng && eLat && eLng && lat === eLat && lng === eLng) {
+                if (timestamp && e.timestamp === timestamp) return true;
+                
+                // ESCUDO NIVEL 2: Mismas coordenadas + Mismo Barrio (q3) o Demográficos (q_demo)
+                // Esto protege si el timestamp cambió levemente pero son los mismos datos en el mismo punto
+                if (datos.q3 === e.datos.q3 && datos.q_demo === e.datos.q_demo) return true;
+            }
+            
+            // ESCUDO NIVEL 3: Huella digital completa (fallback heredado)
             const existingFingerprint = module.exports.getSurveyFingerprint(e.datos);
+            const newFingerprint = module.exports.getSurveyFingerprint(datos);
             return existingFingerprint === newFingerprint;
         });
     },
