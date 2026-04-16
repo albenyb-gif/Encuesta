@@ -14,6 +14,13 @@ if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
 }
 
+// ESCRITURA ATÓMICA: Evita corrupción si el proceso se corta a mitad de escritura
+function safeWriteJson(filePath, data) {
+    const tempPath = `${filePath}.tmp`;
+    fs.writeFileSync(tempPath, JSON.stringify(data, null, 2));
+    fs.renameSync(tempPath, filePath);
+}
+
 // ─── SCHEMA ───────────────────────────────────────────────────────────────────
 function loadSchema() {
     if (!fs.existsSync(SCHEMA_FILE)) return null; // null = usar el default del cliente
@@ -21,7 +28,7 @@ function loadSchema() {
 }
 
 function saveSchema(schema) {
-    fs.writeFileSync(SCHEMA_FILE, JSON.stringify(schema, null, 2));
+    safeWriteJson(SCHEMA_FILE, schema);
 }
 
 // ─── USERS ────────────────────────────────────────────────────────────────────
@@ -31,7 +38,7 @@ function loadUsers() {
 }
 
 function saveUsers(users) {
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
+    safeWriteJson(USERS_FILE, users);
 }
 
 // ─── ENCUESTAS ────────────────────────────────────────────────────────────────
@@ -41,7 +48,7 @@ function loadEncuestas() {
 }
 
 function saveEncuestas(encuestas) {
-    fs.writeFileSync(ENCUESTAS_FILE, JSON.stringify(encuestas, null, 2));
+    safeWriteJson(ENCUESTAS_FILE, encuestas);
 }
 
 // ─── INIT: Crear usuarios por defecto ─────────────────────────────────────────
@@ -102,11 +109,17 @@ module.exports = {
     getSurveyFingerprint: (datos) => {
         if (!datos) return "";
         try {
-            const lat = datos.q2 && datos.q2.lat ? Number(datos.q2.lat).toFixed(6) : "0";
-            const lng = datos.q2 && datos.q2.lng ? Number(datos.q2.lng).toFixed(6) : "0";
+            // Normalizar coordenadas a 6 decimales para la huella
+            const lat = (datos.q2 && datos.q2.lat) ? Number(datos.q2.lat).toFixed(6) : "0";
+            const lng = (datos.q2 && datos.q2.lng) ? Number(datos.q2.lng).toFixed(6) : "0";
+            
+            // Extraer solo las respuestas relevantes para la huella (evitar timestamp si viene en datos)
             const { q2, timestamp, ...respuestas } = datos;
-            // Usamos un separador simple en lugar de JSON.stringify para ganar microsegundos
-            return `${lat}|${lng}|${Object.values(respuestas).join('|')}`;
+            
+            // Ordenar llaves para consistencia en el fingerprint
+            const sortedValues = Object.keys(respuestas).sort().map(key => respuestas[key]);
+            
+            return `${lat}|${lng}|${sortedValues.join('|')}`;
         } catch (e) {
             return JSON.stringify(datos);
         }
@@ -146,6 +159,16 @@ module.exports = {
         if (!enc) return null;
         saveEncuestas(encuestas.filter(e => e.id !== Number(id)));
         return enc;
+    },
+
+    deleteEncuestasBulk: (ids) => {
+        if (!Array.isArray(ids)) return 0;
+        const numericIds = ids.map(id => Number(id));
+        const encuestas = loadEncuestas();
+        const initialCount = encuestas.length;
+        const filtered = encuestas.filter(e => !numericIds.includes(e.id));
+        saveEncuestas(filtered);
+        return initialCount - filtered.length;
     },
 
     // Schema

@@ -38,6 +38,7 @@ let focusedSurveyIndex = null;
 let editingSurveyIndex = null;
 const QUESTIONS_PER_STEP = 4;
 let syncInProgress = false;
+let selectedSurveys = new Set(); // Para gestión masiva
 
 // === OFFLINE STORAGE & SYNC ===
 function getOfflineQueue() { return JSON.parse(localStorage.getItem('offline_surveys') || '[]'); }
@@ -422,7 +423,8 @@ function createQuestionCard(q) {
                 item.innerHTML = `<div class="radio-circle"></div> <b style="font-size: 14px;">${opt}</b>`;
                 item.onclick = () => {
                     currentSurveyData[q.id] = opt;
-                    renderCurrentStep();
+                    group.querySelectorAll('.selection-card').forEach(el => el.classList.remove('selected'));
+                    item.classList.add('selected');
                 };
                 group.appendChild(item);
             });
@@ -433,7 +435,6 @@ function createQuestionCard(q) {
             const multiGroup = document.createElement('div');
             multiGroup.className = 'option-group';
             
-            // Initialize array if undefined
             if (!Array.isArray(currentSurveyData[q.id])) {
                 currentSurveyData[q.id] = [];
             }
@@ -446,11 +447,12 @@ function createQuestionCard(q) {
                 chip.onclick = () => {
                     const idx = currentSurveyData[q.id].indexOf(opt);
                     if (idx === -1) {
-                        currentSurveyData[q.id].push(opt); // Agregar
+                        currentSurveyData[q.id].push(opt);
+                        chip.classList.add('selected');
                     } else {
-                        currentSurveyData[q.id].splice(idx, 1); // Quitar
+                        currentSurveyData[q.id].splice(idx, 1);
+                        chip.classList.remove('selected');
                     }
-                    renderCurrentStep();
                 };
                 multiGroup.appendChild(chip);
             });
@@ -467,7 +469,8 @@ function createQuestionCard(q) {
                 chip.textContent = s;
                 chip.onclick = () => {
                     currentSurveyData[q.id] = s;
-                    renderCurrentStep();
+                    scaleGroup.querySelectorAll('.chip').forEach(el => el.classList.remove('selected'));
+                    chip.classList.add('selected');
                 };
                 scaleGroup.appendChild(chip);
             });
@@ -489,7 +492,8 @@ function createQuestionCard(q) {
                 `;
                 card.onclick = () => {
                     currentSurveyData[q.id] = cand.name;
-                    renderCurrentStep();
+                    candGrid.querySelectorAll('.candidate-card').forEach(el => el.classList.remove('selected'));
+                    card.classList.add('selected');
                 };
                 candGrid.appendChild(card);
             });
@@ -874,16 +878,24 @@ function renderDatabaseTable(data, container) {
     const wrapper = document.createElement('div');
     wrapper.className = 'table-wrapper';
     
+    selectedSurveys.clear();
+    updateBulkDeleteUI();
+    
     const showEncuestador = isAdmin();
     
-    let html = '<table><thead><tr><th>Fecha</th>';
+    let html = '<table><thead><tr>';
+    if (isAdmin()) html += '<th><input type="checkbox" id="select-all-surveys" onclick="toggleSelectAll()"></th>';
+    html += '<th>Fecha</th>';
     if (showEncuestador) html += '<th>Encuestador</th>';
     currentSchema.forEach(q => html += `<th>${q.label}</th>`);
     html += '<th>Acciones</th></tr></thead><tbody>';
 
     data.forEach((r) => {
         const index = allResults.indexOf(r);
-        html += `<tr><td>${new Date(r.timestamp).toLocaleDateString()}</td>`;
+        const recordId = r.id || index;
+        html += `<tr>`;
+        if (isAdmin()) html += `<td><input type="checkbox" class="survey-checkbox" data-id="${recordId}" onclick="toggleSurveySelection('${recordId}')"></td>`;
+        html += `<td>${new Date(r.timestamp).toLocaleDateString()}</td>`;
         if (showEncuestador) {
             html += `<td><span style="font-size: 11px; font-weight: 700; color: var(--accent); background: var(--accent-light); padding: 2px 8px; border-radius: 10px; white-space: nowrap;">${r.usuario_nombre || '-'}</span></td>`;
         }
@@ -898,7 +910,7 @@ function renderDatabaseTable(data, container) {
             <div style="display: flex;">
                 <button class="btn-action btn-action-map" onclick="jumpToMap(${index})" title="Ver en Mapa"><i class="fa-solid fa-map-location-dot"></i></button>
                 <button class="btn-action btn-action-edit" onclick="openEditSurveyModal(${index})" title="Editar"><i class="fa-solid fa-pen"></i></button>
-                <button class="btn-action btn-action-delete" onclick="deleteSurveyFromApi(${r.id || index})" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                <button class="btn-action btn-action-delete" onclick="deleteSurveyFromApi(${recordId})" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
             </div>
         </td></tr>`;
     });
@@ -906,6 +918,62 @@ function renderDatabaseTable(data, container) {
     html += '</tbody></table>';
     wrapper.innerHTML = html;
     container.appendChild(wrapper);
+}
+
+// === GESTIÓN MASIVA ===
+function toggleSelectAll() {
+    const mainCb = document.getElementById('select-all-surveys');
+    const cbs = document.querySelectorAll('.survey-checkbox');
+    
+    selectedSurveys.clear();
+    cbs.forEach(cb => {
+        cb.checked = mainCb.checked;
+        if (cb.checked) selectedSurveys.add(cb.getAttribute('data-id'));
+    });
+    updateBulkDeleteUI();
+}
+
+function toggleSurveySelection(id) {
+    if (selectedSurveys.has(id)) selectedSurveys.delete(id);
+    else selectedSurveys.add(id);
+    
+    const mainCb = document.getElementById('select-all-surveys');
+    const cbs = document.querySelectorAll('.survey-checkbox');
+    mainCb.checked = (selectedSurveys.size === cbs.length && cbs.length > 0);
+    
+    updateBulkDeleteUI();
+}
+
+function updateBulkDeleteUI() {
+    const btn = document.getElementById('btn-bulk-delete');
+    const countSpan = document.getElementById('selected-count');
+    if (!btn) return;
+    
+    if (selectedSurveys.size > 0) {
+        btn.style.display = 'flex';
+        countSpan.textContent = selectedSurveys.size;
+    } else {
+        btn.style.display = 'none';
+    }
+}
+
+async function deleteSelectedSurveys() {
+    const count = selectedSurveys.size;
+    if (!confirm(`¿Eliminar las ${count} encuestas seleccionadas permanentemente?`)) return;
+    
+    try {
+        showToast(`Eliminando ${count} encuestas...`, 'info');
+        const ids = Array.from(selectedSurveys);
+        
+        const res = await apiRequest('DELETE', '/api/admin/encuestas/bulk', { ids });
+        
+        alert(res.mensaje);
+        selectedSurveys.clear();
+        refreshAnalysis();
+        renderDashboardStats();
+    } catch (e) {
+        alert("Error al eliminar: " + e.message);
+    }
 }
 
 // === DATABASE ACTIONS INTERACTION ===

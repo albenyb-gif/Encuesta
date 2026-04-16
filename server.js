@@ -141,6 +141,15 @@ app.delete('/api/encuestas/:id', authMiddleware, (req, res) => {
     res.json({ mensaje: 'Eliminada' });
 });
 
+// Endpoint para eliminación masiva (solo Admin)
+app.delete('/api/admin/encuestas/bulk', authMiddleware, adminOnly, (req, res) => {
+    const { ids } = req.body;
+    if (!ids || !Array.isArray(ids)) return res.status(400).json({ error: 'Se requiere un array de IDs' });
+    
+    const count = db.deleteEncuestasBulk(ids);
+    res.json({ mensaje: `Se eliminaron ${count} encuestas.`, eliminados: count });
+});
+
 // ─── API Usuarios (Admin) ─────────────────────────────────────────────────────
 app.get('/api/usuarios', authMiddleware, adminOnly, (req, res) => {
     res.json(db.getAllUsers());

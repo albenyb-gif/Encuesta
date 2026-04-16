@@ -215,9 +215,14 @@
                             <span style="font-size: 11px; text-transform: uppercase; color: var(--slate-400); font-weight: 700;">Análisis y Reportes</span>
                             <h1 class="welcome-title">Procesamiento de Datos</h1>
                         </div>
-                        <button onclick="exportToExcel()" class="btn-primary-large" style="width: auto; background: #166534; padding: 12px 24px;">
-                            <i class="fa-solid fa-file-excel"></i> Exportar Completo
-                        </button>
+                        <div style="display: flex; gap: 10px;">
+                            <button id="btn-bulk-delete" onclick="deleteSelectedSurveys()" class="btn-primary-large" style="width: auto; background: var(--danger); padding: 12px 24px; display: none;">
+                                <i class="fa-solid fa-trash-can"></i> Eliminar Selección (<span id="selected-count">0</span>)
+                            </button>
+                            <button onclick="exportToExcel()" class="btn-primary-large" style="width: auto; background: #166534; padding: 12px 24px;">
+                                <i class="fa-solid fa-file-excel"></i> Exportar Completo
+                            </button>
+                        </div>
                     </div>
                 </div>
 
