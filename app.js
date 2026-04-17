@@ -210,13 +210,15 @@ function checkSession() {
                 resultsLink.classList.add('active');
             }
             
-            // Forzar vista a Mapa (GEO)
+            // Forzar vista a Mapa (GEO) con TODOS los datos
             const reportType = document.getElementById('report-type');
             if (reportType) reportType.value = 'geo';
+            const barrioFilter = document.getElementById('filter-barrio');
+            if (barrioFilter) barrioFilter.value = 'all';
             
             // Redirigir si está en una vista prohibida
             const currentV = localStorage.getItem('last_view');
-            if (!currentV || currentV === 'view-dashboard' || currentV === 'view-survey' || currentV === 'view-settings') {
+            if (!currentV || currentV === 'view-dashboard' || currentV === 'view-survey' || currentV === 'view-settings' || currentV === 'view-login') {
                 navigateTo('view-results');
             }
         } else {
