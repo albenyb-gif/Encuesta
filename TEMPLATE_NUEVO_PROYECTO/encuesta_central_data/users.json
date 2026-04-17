@@ -1,0 +1,8 @@
+[
+  {
+    "id": 1,
+    "nombre": "admin",
+    "password_hash": "$2a$10$ol1HrlEPHleyXYXQkV9vbO1ZQY4KxZjKUkyJbZVC9HziDXTX9aHni",
+    "rol": "admin"
+  }
+]
