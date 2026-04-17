@@ -676,7 +676,17 @@ function setupProfilePreview() {
 }
 
 // === ADVANCED PROCESSING & ANALYSIS ===
-function refreshAnalysis() {
+async function refreshAnalysis() {
+    // Si no hay resultados cargados aún, intentar cargar del servidor
+    if (allResults.length === 0) {
+        try {
+            const encuestas = await apiRequest('GET', '/api/encuestas');
+            allResults = encuestas.map(e => ({ ...e.datos, id: e.id, timestamp: e.timestamp, usuario_nombre: e.usuario_nombre }));
+        } catch (e) {
+            console.error('Error cargando datos para análisis:', e);
+        }
+    }
+
     const barrioFilter = document.getElementById('filter-barrio').value;
     const reportType = document.getElementById('report-type').value;
     const container = document.getElementById('analysis-container');
