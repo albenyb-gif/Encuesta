@@ -3,7 +3,10 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 
 // PERSISTENCIA BLINDADA: Volvemos a la ruta relativa probada en Hostinger
-const DATA_DIR = process.env.DATA_PATH || path.join(__dirname, '..', 'encuesta_central_data');
+// Ruta de persistencia: Prioriza carpeta local si existe, sino usa la carpeta blindada (una arriba)
+const localDir = path.join(__dirname, 'encuesta_central_data');
+const globalDir = path.join(__dirname, '..', 'encuesta_central_data');
+const DATA_DIR = fs.existsSync(localDir) ? localDir : globalDir;
 const USERS_FILE = path.join(DATA_DIR, 'users.json');
 const ENCUESTAS_FILE = path.join(DATA_DIR, 'encuestas.json');
 const SCHEMA_FILE = path.join(DATA_DIR, 'schema.json');
