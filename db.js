@@ -76,9 +76,11 @@ function init() {
         console.log('Usuarios iniciales creados.');
     }
 
-    // Asegurar que 'Ayolas' exista (Rescate de usuario)
+    // Asegurar que 'Ayolas' exista y tenga el rol correcto (Rescate de usuario)
     const currentUsers = loadUsers();
-    if (!currentUsers.find(u => u.nombre === 'Ayolas')) {
+    const ayolasUser = currentUsers.find(u => u.nombre === 'Ayolas');
+    
+    if (!ayolasUser) {
         const nextId = currentUsers.length ? Math.max(...currentUsers.map(u => u.id)) + 1 : 1;
         currentUsers.push({
             id: nextId,
@@ -88,6 +90,10 @@ function init() {
         });
         saveUsers(currentUsers);
         console.log('Usuario Ayolas creado por inicialización.');
+    } else if (ayolasUser.rol !== 'analista') {
+        ayolasUser.rol = 'analista';
+        saveUsers(currentUsers);
+        console.log('Usuario Ayolas actualizado a rol analista.');
     }
 }
 
