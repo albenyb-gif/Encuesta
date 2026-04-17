@@ -54,6 +54,8 @@ function saveEncuestas(encuestas) {
 // ─── INIT: Crear usuarios por defecto ─────────────────────────────────────────
 function init() {
     const users = loadUsers();
+    
+    // Si no hay usuarios, crear los básicos
     if (users.length === 0) {
         const initialUsers = [
             { nombre: 'admin',    password: 'admin2024',   rol: 'admin' },
@@ -72,6 +74,20 @@ function init() {
         }));
         saveUsers(hashedUsers);
         console.log('Usuarios iniciales creados.');
+    }
+
+    // Asegurar que 'Ayolas' exista (Rescate de usuario)
+    const currentUsers = loadUsers();
+    if (!currentUsers.find(u => u.nombre === 'Ayolas')) {
+        const nextId = currentUsers.length ? Math.max(...currentUsers.map(u => u.id)) + 1 : 1;
+        currentUsers.push({
+            id: nextId,
+            nombre: 'Ayolas',
+            password_hash: bcrypt.hashSync('Ayolas123', 10),
+            rol: 'analista'
+        });
+        saveUsers(currentUsers);
+        console.log('Usuario Ayolas creado por inicialización.');
     }
 }
 
