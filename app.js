@@ -194,16 +194,38 @@ function checkSession() {
         const adminLink = document.getElementById('nav-admin');
         if (adminLink) adminLink.style.display = isAdmin() ? 'flex' : 'none';
         
-        // RESTRICCIONES ROL ANALISTA
+        // RESTRICCIONES ROL ANALISTA (SOLO MAPA)
         const newSurveyLink = document.getElementById('nav-new-survey');
         const settingsLink = document.getElementById('nav-settings');
+        const homeLink = document.getElementById('nav-home');
+        const resultsLink = document.getElementById('nav-results');
+        const exportBtn = document.getElementById('btn-export-excel');
+        const configPanel = document.getElementById('report-config-panel');
         
         if (isAnalyst()) {
             if (newSurveyLink) newSurveyLink.style.display = 'none';
             if (settingsLink) settingsLink.style.display = 'none';
+            if (homeLink) homeLink.style.display = 'none';
+            if (exportBtn) exportBtn.style.display = 'none';
+            if (configPanel) configPanel.style.display = 'none';
+            
+            if (resultsLink) {
+                resultsLink.innerHTML = '<i class="fa-solid fa-map-location-dot"></i> Mapa de Relevamiento';
+                resultsLink.style.display = 'flex';
+            }
+            
+            // Forzar vista a Mapa
+            document.getElementById('report-type').value = 'geo';
+            navigateTo('view-results');
         } else {
             if (newSurveyLink) newSurveyLink.style.display = 'flex';
             if (settingsLink) settingsLink.style.display = 'flex';
+            if (homeLink) homeLink.style.display = 'flex';
+            if (exportBtn) exportBtn.style.display = 'flex';
+            if (configPanel) configPanel.style.display = 'block';
+            if (resultsLink) {
+                resultsLink.innerHTML = '<i class="fa-solid fa-chart-column"></i> Procesamiento de Datos';
+            }
         }
         
         connectSSE();         // Conectar canal de tiempo real

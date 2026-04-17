@@ -77,7 +77,7 @@
                 <span>Encuesta</span>
             </div>
             <div class="sidebar-nav">
-                <a href="#" class="sidebar-item active" data-view="view-dashboard">
+                <a href="#" id="nav-home" class="sidebar-item active" data-view="view-dashboard">
                     <i class="fa-solid fa-house"></i> Inicio
                 </a>
                 <a href="#" id="nav-new-survey" class="sidebar-item" onclick="startNewSurvey()">
@@ -219,7 +219,7 @@
                             <button id="btn-bulk-delete" onclick="deleteSelectedSurveys()" class="btn-primary-large" style="width: auto; background: var(--danger); padding: 12px 24px; display: none;">
                                 <i class="fa-solid fa-trash-can"></i> Eliminar Selección (<span id="selected-count">0</span>)
                             </button>
-                            <button onclick="exportToExcel()" class="btn-primary-large" style="width: auto; background: #166534; padding: 12px 24px;">
+                            <button id="btn-export-excel" onclick="exportToExcel()" class="btn-primary-large" style="width: auto; background: #166534; padding: 12px 24px;">
                                 <i class="fa-solid fa-file-excel"></i> Exportar Completo
                             </button>
                         </div>
@@ -227,7 +227,7 @@
                 </div>
 
                 <!-- Panel de Procesamiento Avanzado -->
-                <div class="processing-panel">
+                <div id="report-config-panel" class="processing-panel">
                     <h3 style="font-size: 14px; margin-bottom: 20px; color: var(--slate-600);"><i class="fa-solid fa-filter"></i> Configuración de Informe Profesional</h3>
                     <div class="filter-group">
                         <div class="filter-item">
