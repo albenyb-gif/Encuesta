@@ -78,8 +78,8 @@ function updateOfflineUI(isSyncing = false) {
 // === SESSION (API-BASED) ===
 function getToken() { return localStorage.getItem('auth_token'); }
 function getCurrentUserInfo() { return JSON.parse(localStorage.getItem('user_info') || 'null'); }
-function isAdmin() { const u = getCurrentUserInfo(); return u && u.rol === 'admin'; }
-function isAnalyst() { const u = getCurrentUserInfo(); return u && u.rol === 'analista'; }
+function isAdmin() { const u = getCurrentUserInfo(); return u && u.rol && u.rol.toLowerCase() === 'admin'; }
+function isAnalyst() { const u = getCurrentUserInfo(); return u && u.rol && u.rol.toLowerCase() === 'analista'; }
 
 async function apiRequest(method, endpoint, body = null) {
     const opts = {
@@ -195,34 +195,41 @@ function checkSession() {
         if (adminLink) adminLink.style.display = isAdmin() ? 'flex' : 'none';
         
         // RESTRICCIONES ROL ANALISTA (SOLO MAPA)
-        const newSurveyLink = document.getElementById('nav-new-survey');
-        const settingsLink = document.getElementById('nav-settings');
-        const homeLink = document.getElementById('nav-home');
-        const resultsLink = document.getElementById('nav-results');
-        const exportBtn = document.getElementById('btn-export-excel');
-        const configPanel = document.getElementById('report-config-panel');
-        
         if (isAnalyst()) {
-            if (newSurveyLink) newSurveyLink.style.display = 'none';
-            if (settingsLink) settingsLink.style.display = 'none';
-            if (homeLink) homeLink.style.display = 'none';
-            if (exportBtn) exportBtn.style.display = 'none';
-            if (configPanel) configPanel.style.display = 'none';
+            console.log("Modo Analista Activado para:", currentUser.name);
+            const toHide = ['nav-home', 'nav-new-survey', 'nav-settings', 'btn-export-excel', 'report-config-panel', 'nav-admin'];
+            toHide.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = 'none';
+            });
             
+            const resultsLink = document.getElementById('nav-results');
             if (resultsLink) {
                 resultsLink.innerHTML = '<i class="fa-solid fa-map-location-dot"></i> Mapa de Relevamiento';
                 resultsLink.style.display = 'flex';
+                resultsLink.classList.add('active');
             }
             
-            // Forzar vista a Mapa
-            document.getElementById('report-type').value = 'geo';
-            navigateTo('view-results');
+            // Forzar vista a Mapa (GEO)
+            const reportType = document.getElementById('report-type');
+            if (reportType) reportType.value = 'geo';
+            
+            // Redirigir si está en una vista prohibida
+            const currentV = localStorage.getItem('last_view');
+            if (!currentV || currentV === 'view-dashboard' || currentV === 'view-survey' || currentV === 'view-settings') {
+                navigateTo('view-results');
+            }
         } else {
-            if (newSurveyLink) newSurveyLink.style.display = 'flex';
-            if (settingsLink) settingsLink.style.display = 'flex';
-            if (homeLink) homeLink.style.display = 'flex';
-            if (exportBtn) exportBtn.style.display = 'flex';
-            if (configPanel) configPanel.style.display = 'block';
+            // Restaurar para otros roles
+            const toShow = ['nav-home', 'nav-new-survey', 'nav-settings'];
+            toShow.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = 'flex';
+            });
+            const reportConfig = document.getElementById('report-config-panel');
+            if (reportConfig) reportConfig.style.display = 'block';
+            
+            const resultsLink = document.getElementById('nav-results');
             if (resultsLink) {
                 resultsLink.innerHTML = '<i class="fa-solid fa-chart-column"></i> Procesamiento de Datos';
             }
