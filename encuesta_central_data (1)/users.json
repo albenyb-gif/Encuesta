@@ -22,5 +22,11 @@
     "nombre": "Mabel",
     "password_hash": "$2a$10$cNRMraHqdLoIXhVbJMyTvudocmzHjyyEkRl36jxCTtrcfEBlpNV8m",
     "rol": "encuestador"
+  },
+  {
+    "id": 7,
+    "nombre": "Ayolas",
+    "password_hash": "$2a$10$DFS89TVasMbVxNWswWaBy.AdR/ko3zdjsSAu516j5N65faKofsdBG",
+    "rol": "analista"
   }
 ]

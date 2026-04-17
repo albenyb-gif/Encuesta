@@ -79,6 +79,7 @@ function updateOfflineUI(isSyncing = false) {
 function getToken() { return localStorage.getItem('auth_token'); }
 function getCurrentUserInfo() { return JSON.parse(localStorage.getItem('user_info') || 'null'); }
 function isAdmin() { const u = getCurrentUserInfo(); return u && u.rol === 'admin'; }
+function isAnalyst() { const u = getCurrentUserInfo(); return u && u.rol === 'analista'; }
 
 async function apiRequest(method, endpoint, body = null) {
     const opts = {
@@ -192,6 +193,18 @@ function checkSession() {
         if (sidebar) sidebar.style.display = 'flex';
         const adminLink = document.getElementById('nav-admin');
         if (adminLink) adminLink.style.display = isAdmin() ? 'flex' : 'none';
+        
+        // RESTRICCIONES ROL ANALISTA
+        const newSurveyLink = document.getElementById('nav-new-survey');
+        const settingsLink = document.getElementById('nav-settings');
+        
+        if (isAnalyst()) {
+            if (newSurveyLink) newSurveyLink.style.display = 'none';
+            if (settingsLink) settingsLink.style.display = 'none';
+        } else {
+            if (newSurveyLink) newSurveyLink.style.display = 'flex';
+            if (settingsLink) settingsLink.style.display = 'flex';
+        }
         
         connectSSE();         // Conectar canal de tiempo real
         loadSchemaFromServer(); // Cargar esquema compartido

@@ -126,7 +126,7 @@ app.post('/api/encuestas', authMiddleware, (req, res) => {
 });
 
 app.get('/api/encuestas', authMiddleware, (req, res) => {
-    const encuestas = req.user.rol === 'admin'
+    const encuestas = (req.user.rol === 'admin' || req.user.rol === 'analista')
         ? db.getAllEncuestas()
         : db.getEncuestasByUser(req.user.id);
     res.json(encuestas);

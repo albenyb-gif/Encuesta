@@ -1,0 +1,52 @@
+﻿ID;Timestamp;Encuestador;Datos Demográficos (Seleccione múltiples);¿A qué partido pertenece o tiene afinidad?;Ubicación de la Encuesta (Lat);Ubicación de la Encuesta (Lng);Barrio o Compañía;Calificación: Gestión del Intendente Municipal;Calificación: Gestión del Presidente de la República;Pre-candidatos a Intendente Municipal;Pre-candidatos a Concejal Municipal;¿Qué servicio público debe mejorar la municipalidad?
+1;2026-04-16T12:12:02.923Z;Miguel;Joven,Varón;Partido Colorado;-27.3570332;-56.7782279;Las Mercedes;Buena;Mala;;;Ips
+2;2026-04-16T12:15:01.644Z;Miguel;Varón,Adulto Mayor;Partido Colorado;-27.3564651;-56.7790682;Las Mercedes;Buena;Buena;Christian Rolon;Daniel;Todo 
+3;2026-04-16T12:17:02.640Z;Miguel;Varón,Joven;Partido Colorado;-27.3563176;-56.7789179;Las Mercedes;Buena;Buena;;;Trabajo
+4;2026-04-16T12:19:53.623Z;Miguel;Mujer,Mayor;Partido Colorado;-27.3561608;-56.7791469;Las Mercedes;Excelente;Buena;Christian Rolon;Daniel ;
+5;2026-04-16T12:21:50.159Z;Miguel;Mujer,Mayor;Partido Colorado;-27.356116;-56.7790977;Las Mercedes;Buena;Mala;Christian Rolon;Daniel;Agua potable 
+6;2026-04-16T12:25:05.262Z;Miguel;Varón,Mayor;Partido Colorado;-27.3556675;-56.7790265;Las Mercedes;Buena;Mala;Jose Mutti;Daniel ;Iluminación 
+7;2026-04-16T12:29:46.676Z;Miguel;Mujer,Mayor;;-27.3549657;-56.7790413;;Muy Mala;Muy Mala;Jose Mutti;Wlifrido;
+8;2026-04-16T12:33:07.411Z;Miguel;Varón,Mayor;Partido Colorado;-27.3547947;-56.7790203;Las Mercedes;Buena;Mala;Jose Mutti;Daniel ;Ruta
+9;2026-04-16T12:40:26.392Z;Mabel;Varón,Mayor;Partido Colorado;-27.3581475;-56.7807337;;Buena;Buena;Christian Rolon;Profe Luis Vera Cuellar;Cloaca en la enrtada de San Antonio  y  
+10;2026-04-16T12:40:26.824Z;Mabel;Varón,Mayor;Partido Colorado;-27.3582849;-56.780219;Las Mercedes;Excelente;Excelente;Jose Mutti;Ninguno;Agua potable 
+11;2026-04-16T12:40:27.167Z;Mabel;Varón,Mayor;Partido Colorado;-27.3578084;-56.780109;Las Mercedes;Excelente;Excelente;Jose Mutti;Ningúno;Limpieza y mejorar servicio de agua
+12;2026-04-16T12:40:27.912Z;Mabel;Mujer,Mayor;Partido Colorado;-27.3578103;-56.7801193;Las Mercedes;Muy Mala;Excelente;;Ninguno;Agua limpieza
+13;2026-04-16T12:40:28.240Z;Mabel;;;0;0;;Mala;Mala;;William Aquino ;Agua 
+14;2026-04-16T12:41:41.407Z;Miguel;Varón,Joven;Partido Colorado;-27.3548784;-56.7774869;Las Mercedes;Buena;Mala;;;Todo 
+15;2026-04-16T12:44:21.460Z;Miguel;Varón,Joven;Partido Colorado;-27.3552714;-56.7773288;Las Mercedes;Buena;Mala;Jose Mutti;;
+16;2026-04-16T12:49:17.625Z;Mabel;Mujer,Joven;Partido Colorado;-27.3575158;-56.7785708;Las Mercedes;Buena;Buena;Christian Rolon;William Aquino ;Atención a la gente  agua
+17;2026-04-16T12:49:46.290Z;Mabel;Varón,Joven;Partido Colorado;-27.3570544;-56.7780402;Las Mercedes;Buena;Muy Mala;Jose Mutti;William Aquino ;Limpieza camino
+18;2026-04-16T12:59:29.098Z;Miguel;Varón,Mayor;Partido Colorado;-27.3722545;-56.8004876;Las Mercedes;Buena;Buena;Christian Rolon;;Recolección de basura 
+30;2026-04-16T13:05:04.564Z;Mabel;Mujer,Joven;Partido Colorado;-27.3717842;-56.7989477;Maria Graciela;Buena;Buena;Christian Rolon;Dani Maciel;Trabajo
+31;2026-04-16T13:05:04.678Z;Mabel;Varón,Joven;Partido Colorado;-27.3721266;-56.7996422;Maria Graciela;Mala;Buena;Jose Mutti;Ninguno;Agua recolección de basura 
+32;2026-04-16T13:12:07.728Z;Miguel;Varón,Joven;Partido Colorado;-27.37239;-56.8008394;María Graciela;Buena;Mala;Jose Mutti;Carlos ;
+33;2026-04-16T13:15:34.318Z;Miguel;Mujer,Joven;Partido Colorado;-27.3721298;-56.8013671;María Graciela;Muy Mala;Mala;Jose Mutti;Fatima ;Recolección
+34;2026-04-16T13:20:44.905Z;Miguel;Mujer,Joven;Partido Colorado;-27.3729711;-56.8012633;María Graciela;Muy Mala;Buena;Jose Mutti;;Todo
+35;2026-04-16T13:23:05.281Z;Mabel;Joven;Partido Colorado;-27.371777;-56.8004992;Maria Graciela;Buena;Buena;Christian Rolon;Rodrigo Benitez;Empedrado 
+36;2026-04-16T13:23:05.366Z;Mabel;Varón,Joven;Partido Colorado;-27.3718703;-56.8003019;;Mala;Buena;Jose Mutti;Rodrigo Benitez;Limpieza iluminación 
+37;2026-04-16T13:24:26.209Z;Miguel;Mujer,Joven;Partido Colorado;-27.3728172;-56.8020769;María Graciela;Buena;Buena;Christian Rolon;;Todo 
+38;2026-04-16T13:34:06.198Z;Miguel;Varón,Joven;Partido Colorado;-27.3739931;-56.8027678;María Graciela;Mala;Mala;Jose Mutti;;Agua potable 
+39;2026-04-16T13:37:20.423Z;Miguel;Mujer,Joven;Partido Colorado;-27.3739944;-56.8029038;María Graciela;Buena;Mala;Christian Rolon;;Agua potable 
+40;2026-04-16T13:39:55.405Z;Miguel;Mujer,Joven;Partido Colorado;-27.3739985;-56.8029368;María Graciela;Buena;Buena;Christian Rolon;Sofia troche ;Cloacas
+41;2026-04-16T13:50:49.882Z;Miguel;Varón,Mayor;Partido Colorado;-27.3738614;-56.8002906;María Graciela;Muy Mala;Muy Mala;Jose Mutti;Mario cañete ;Todo 
+42;2026-04-16T13:53:32.183Z;Mabel;Mujer,Mayor;Partido Colorado;-27.3724342;-56.8004371;Maria Graciela;;Buena;Jose Mutti;Ningúno;Agua
+43;2026-04-16T13:53:32.284Z;Mabel;Mujer,Mayor;Partido Colorado;-27.3728605;-56.8000844;Maria Graciela;Mala;Buena;Christian Rolon;Ninguna ;Todas
+44;2026-04-16T13:53:32.418Z;Mabel;Mujer,Joven;Partido Colorado;-27.373111;-56.7997014;Maria Graciela;Mala;Mala;Jose Mutti;RAMON PALACIOS ;Escuelas
+45;2026-04-16T13:53:32.516Z;Mabel;Mujer,Joven;Partido Colorado;-27.3738238;-56.7997365;Maria Graciela;Mala;Mala;Jose Mutti;Ninguno;Agua
+46;2026-04-16T13:53:32.826Z;Mabel;;;0;0;;Mala;Buena;Gabriel Alfonso;Dr Caballero;Todo 
+47;2026-04-16T13:53:32.915Z;Mabel;Mujer,Mayor;Partido Colorado;-27.3745211;-56.7996587;Maria Graciela;Buena;Mala;Jose Mutti;Hna de Diop;Limpieza y pago al personal 
+48;2026-04-16T13:53:33.072Z;Mabel;Mujer,Joven;Partido Colorado;-27.3743471;-56.7997909;Maria Graciela;Buena;Buena;;William Aquíno;Todos
+49;2026-04-16T14:09:48.825Z;Miguel;Varón,Joven;Partido Colorado;-27.3825062;-56.8075749;San José Obrero;Mala;Muy Mala;Jose Mutti;Rodrigo ;Agua potable 
+50;2026-04-16T14:11:34.901Z;Miguel;Varón,Adulto Mayor;Partido Colorado;-27.3824767;-56.8076597;San José Obrero;Buena;Mala;Jose Mutti;;Todo
+51;2026-04-16T14:14:08.938Z;Miguel;Mujer,Joven;Partido Colorado;-27.3830161;-56.8081438;San José Obrero;Buena;Buena;Christian Rolon;Rodrigo benitez ;
+52;2026-04-16T14:14:55.161Z;Mabel;Mujer,Mayor;Partido Colorado;-27.3813583;-56.8066274;San José Obrero;;;Jose Mutti;Lilio Alvarenga ;Agua
+53;2026-04-16T14:14:55.536Z;Mabel;;;0;0;;;;;Ningúno;Todo
+54;2026-04-16T14:14:55.800Z;Mabel;Mujer,Mayor;Partido Colorado;-27.3821319;-56.8061193;San José Obrero;Buena;Buena;Jose Mutti;Ninguno;Todo
+55;2026-04-16T14:15:19.629Z;Mabel;Mujer,Joven;;-27.3822145;-56.8059669;San José Obrero;Buena;Buena;Christian Rolon;Ingrid  ostachup;Limpieza espacio público playa parque
+56;2026-04-16T14:17:27.420Z;Miguel;Varón,Mayor;Partido Colorado;-27.3825284;-56.808322;San José Obrero;Buena;Mala;Christian Rolon;Lilio alvarenga ;Asfalto 
+57;2026-04-16T14:19:32.296Z;Miguel;Varón,Adulto Mayor;Partido Colorado;-27.382507;-56.8083243;San José Obrero;Buena;Buena;Jose Mutti;;Limpieza 
+58;2026-04-16T14:21:22.926Z;Miguel;Varón,Mayor;Partido Colorado;-27.3826689;-56.8090133;San José Obrero;Buena;Mala;Jose Mutti;Marciano;Agua potable 
+59;2026-04-16T14:23:04.683Z;Miguel;Mujer,Joven;Partido Colorado;-27.3827034;-56.8093395;San José Obrero;Buena;Buena;Christian Rolon;;Todo
+60;2026-04-16T14:26:41.525Z;Miguel;Mujer,Joven;Partido Colorado;-27.3824255;-56.8098979;San José Obrero;Buena;Buena;Jose Mutti;Diego barreto;Basurero
+61;2026-04-16T14:31:23.730Z;Miguel;Mujer,Adulto Mayor;Partido Colorado;-27.3825013;-56.8101593;San José Obrero;Excelente;Buena;Christian Rolon;Wil ;
+62;2026-04-16T14:38:10.260Z;Miguel;Mujer,Mayor;Partido Colorado;-27.3829805;-56.8118303;San José Obrero;Mala;Mala;;;Recolección de basura 
