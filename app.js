@@ -81,6 +81,14 @@ function getCurrentUserInfo() { return JSON.parse(localStorage.getItem('user_inf
 function isAdmin() { const u = getCurrentUserInfo(); return u && u.rol && u.rol.toLowerCase() === 'admin'; }
 function isAnalyst() { const u = getCurrentUserInfo(); return u && u.rol && u.rol.toLowerCase() === 'analista'; }
 
+function goBackToMap() {
+    const reportType = document.getElementById('report-type');
+    if (reportType) {
+        reportType.value = 'geo';
+        refreshAnalysis();
+    }
+}
+
 async function apiRequest(method, endpoint, body = null) {
     const opts = {
         method,
@@ -401,6 +409,13 @@ function updateNavUI(viewId) {
             item.classList.remove('active');
         }
     });
+
+    // Visibilidad del botón "Volver al Mapa" para analistas
+    const btnBackMap = document.getElementById('btn-back-to-map');
+    if (btnBackMap) {
+        const reportType = document.getElementById('report-type')?.value;
+        btnBackMap.style.display = (isAnalyst() && reportType !== 'geo') ? 'inline-flex' : 'none';
+    }
 }
 
 function toggleSidebar() {
@@ -700,7 +715,8 @@ async function refreshAnalysis() {
     // Poblar dropdown de barrios si está vacío
     populateBarrioFilter();
 
-    container.innerHTML = '';
+    // Actualizar botones de navegación (Volver al Mapa)
+    updateNavUI('view-results');
 
     if (filteredData.length === 0) {
         container.innerHTML = '<div class="card" style="text-align: center;">No hay datos que coincidan con los filtros aplicados.</div>';
