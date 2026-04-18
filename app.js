@@ -414,7 +414,9 @@ function updateNavUI(viewId) {
     const btnBackMap = document.getElementById('btn-back-to-map');
     if (btnBackMap) {
         const reportType = document.getElementById('report-type')?.value;
-        btnBackMap.style.display = (isAnalyst() && reportType !== 'geo') ? 'inline-flex' : 'none';
+        const analyst = isAnalyst();
+        console.log("Check Boton Volver:", { analyst, reportType });
+        btnBackMap.style.display = (analyst && reportType !== 'geo') ? 'inline-flex' : 'none';
     }
 }
 
@@ -766,7 +768,7 @@ function renderMapAnalysis(data, container) {
             }
         }
 
-        mapInstance = L.map('map-container').setView(center, 13);
+        mapInstance = L.map(mapDiv).setView(center, 13);
         
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
