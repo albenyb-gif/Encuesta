@@ -207,54 +207,73 @@
                 </div>
             </section>
 
-            <!-- ADVANCED DATA PROCESSING VIEW -->
+            <!-- DASHBOARD DE PROCESAMIENTO DE DATOS PROFESIONAL -->
             <section id="view-results" class="view">
-                <div class="welcome-section">
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <div class="welcome-section" style="margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end;">
                         <div>
-                            <span style="font-size: 11px; text-transform: uppercase; color: var(--slate-400); font-weight: 700;">Análisis y Reportes</span>
-                            <h1 class="welcome-title">
-                                Procesamiento de Datos
-                                <button id="btn-back-to-map" onclick="goBackToMap()" class="btn-primary-large" style="display: none; width: auto; background: var(--accent); padding: 8px 16px; font-size: 13px; margin-left: 15px;">
-                                    <i class="fa-solid fa-map"></i> Volver al Mapa
-                                </button>
-                            </h1>
+                            <span style="font-size: 11px; text-transform: uppercase; color: var(--accent); font-weight: 800;">Centro de Inteligencia</span>
+                            <h1 class="welcome-title">Análisis de Resultados</h1>
                         </div>
-                        <div style="display: flex; gap: 10px;">
-                            <button id="btn-bulk-delete" onclick="deleteSelectedSurveys()" class="btn-primary-large" style="width: auto; background: var(--danger); padding: 12px 24px; display: none;">
-                                <i class="fa-solid fa-trash-can"></i> Eliminar Selección (<span id="selected-count">0</span>)
-                            </button>
-                            <button id="btn-export-excel" onclick="exportToExcel()" class="btn-primary-large" style="width: auto; background: #166534; padding: 12px 24px;">
-                                <i class="fa-solid fa-file-excel"></i> Exportar Completo
-                            </button>
+                        <button class="btn-primary-large" onclick="exportToExcel()" style="width: auto; background: #166534; padding: 10px 20px; font-size: 13px;">
+                            <i class="fa-solid fa-file-excel"></i> Exportar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Navegación de Pestañas Internas -->
+                <div class="analysis-tabs">
+                    <button class="analysis-tab-btn active" id="btn-tab-map" onclick="switchAnalysisTab('map')">
+                        <i class="fa-solid fa-map-location-dot"></i> Territorio
+                    </button>
+                    <button class="analysis-tab-btn" id="btn-tab-charts" onclick="switchAnalysisTab('charts')">
+                        <i class="fa-solid fa-chart-pie"></i> Estadísticas
+                    </button>
+                    <button class="analysis-tab-btn" id="btn-tab-table" onclick="switchAnalysisTab('table')">
+                        <i class="fa-solid fa-table-list"></i> Base de Datos
+                    </button>
+                </div>
+
+                <!-- Panel de Filtros Unificado -->
+                <div class="card" style="padding: 15px; margin-bottom: 20px; background: #f8fafc;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                        <div class="filter-item">
+                            <label style="font-size: 10px; font-weight: 800; color: var(--slate-500); display: block; margin-bottom: 5px;">BARRIO / SECTOR</label>
+                            <select id="filter-barrio" onchange="refreshAnalysis()" style="width: 100%; border-radius: 8px; padding: 8px; border: 1px solid var(--slate-200);">
+                                <option value="all">Todos los barrios</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label style="font-size: 10px; font-weight: 800; color: var(--slate-500); display: block; margin-bottom: 5px;">ENCUESTADOR</label>
+                            <select id="filter-user" onchange="refreshAnalysis()" style="width: 100%; border-radius: 8px; padding: 8px; border: 1px solid var(--slate-200);">
+                                <option value="all">Todo el equipo</option>
+                            </select>
                         </div>
                     </div>
                 </div>
 
-                <!-- Panel de Procesamiento Avanzado -->
-                <div id="report-config-panel" class="processing-panel">
-                    <h3 style="font-size: 14px; margin-bottom: 20px; color: var(--slate-600);"><i class="fa-solid fa-filter"></i> Configuración de Informe Profesional</h3>
-                    <div class="filter-group">
-                        <div class="filter-item">
-                            <label style="font-size: 10px; font-weight: 700; color: var(--slate-400);">SEGMENTACIÓN BARRIO</label>
-                            <select id="filter-barrio" onchange="refreshAnalysis()">
-                                <option value="all">Todos los Barrios</option>
-                            </select>
-                        </div>
-                        <div class="filter-item">
-                            <label style="font-size: 10px; font-weight: 700; color: var(--slate-400);">TIPO DE INFORME</label>
-                            <select id="report-type" onchange="refreshAnalysis()">
-                                <option value="summary">Resumen de Estadísticas</option>
-                                <option value="raw">Base de Datos (Tabla)</option>
-                                <option value="geo">Mapa de Relevamiento</option>
-                            </select>
-                        </div>
+                <!-- Contenedores de Contenido de Pestañas -->
+                <div id="tab-content-map" class="tab-pane active">
+                    <div class="card" style="padding: 0; overflow: hidden; height: 600px; position: relative;">
+                        <div id="analysis-map" style="height: 100%; width: 100%; z-index: 1;"></div>
                     </div>
                 </div>
 
-                <!-- Contenedor Dinámico de Resultados -->
-                <div id="analysis-container">
-                    <!-- Gráficas o Tabla aparecerán aquí -->
+                <div id="tab-content-charts" class="tab-pane">
+                    <div id="analysis-charts-container" class="charts-grid-pro">
+                        <!-- Gráficos inyectados -->
+                    </div>
+                </div>
+
+                <div id="tab-content-table" class="tab-pane">
+                    <div class="card" style="padding: 0; overflow: hidden;">
+                        <div style="overflow-x: auto;">
+                            <table class="premium-table" id="main-data-table">
+                                <thead id="table-headers"></thead>
+                                <tbody id="table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </section>
 

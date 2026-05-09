@@ -38,7 +38,8 @@ let focusedSurveyIndex = null;
 let editingSurveyIndex = null;
 const QUESTIONS_PER_STEP = 4;
 let syncInProgress = false;
-let selectedSurveys = new Set(); // Para gestión masiva
+let selectedSurveys = new Set(); 
+let currentAnalysisTab = 'map'; // Pestaña activa por defecto
 
 // === OFFLINE STORAGE & SYNC ===
 function getOfflineQueue() { return JSON.parse(localStorage.getItem('offline_surveys') || '[]'); }
@@ -693,160 +694,246 @@ function setupProfilePreview() {
 }
 
 // === ADVANCED PROCESSING & ANALYSIS ===
+// === PROCESAMIENTO DE DATOS (DASHBOARD v3.0) ===
+
+function switchAnalysisTab(tabId) {
+    currentAnalysisTab = tabId;
+    
+    // Actualizar Botones
+    document.querySelectorAll('.analysis-tab-btn').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.getElementById(`btn-tab-${tabId}`);
+    if (activeBtn) activeBtn.classList.add('active');
+
+    // Actualizar Paneles
+    document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+    const activePane = document.getElementById(`tab-content-${tabId}`);
+    if (activePane) activePane.classList.add('active');
+
+    refreshAnalysis();
+}
+
 async function refreshAnalysis() {
-    // Si no hay resultados cargados aún, intentar cargar del servidor
+    // 1. Carga de datos si es necesario
     if (allResults.length === 0) {
         try {
             const encuestas = await apiRequest('GET', '/api/encuestas');
             allResults = encuestas.map(e => ({ ...e.datos, id: e.id, timestamp: e.timestamp, usuario_nombre: e.usuario_nombre }));
         } catch (e) {
-            console.error('Error cargando datos para análisis:', e);
+            console.error('Error cargando datos:', e);
         }
     }
 
-    const barrioFilter = document.getElementById('filter-barrio').value;
-    const reportType = document.getElementById('report-type').value;
-    const container = document.getElementById('analysis-container');
+    // 2. Aplicar Filtros
+    const filterBarrio = document.getElementById('filter-barrio').value;
+    const filterUser = document.getElementById('filter-user').value;
     
-    // Filtrar datos
-    let filteredData = allResults;
-    if (barrioFilter !== 'all') {
-        filteredData = allResults.filter(r => r.q3 === barrioFilter); // Asumiendo q3 es barrio
-    }
+    let filteredData = allResults.filter(r => {
+        const matchBarrio = filterBarrio === 'all' || r.q3 === filterBarrio;
+        const matchUser = filterUser === 'all' || r.usuario_nombre === filterUser;
+        return matchBarrio && matchUser;
+    });
 
-    // Poblar dropdown de barrios si está vacío
-    populateBarrioFilter();
+    // 3. Actualizar selectores de filtros (solo una vez)
+    populateFilters();
 
-    // Actualizar botones de navegación (Volver al Mapa)
-    updateNavUI('view-results');
-
-    if (filteredData.length === 0) {
-        container.innerHTML = '<div class="card" style="text-align: center;">No hay datos que coincidan con los filtros aplicados.</div>';
-        return;
-    }
-
-    if (reportType === 'summary') {
-        renderCharts(filteredData, container);
-    } else if (reportType === 'raw') {
-        renderDatabaseTable(filteredData, container);
-    } else {
-        renderMapAnalysis(filteredData, container);
+    // 4. Renderizar según pestaña activa
+    switch (currentAnalysisTab) {
+        case 'map': renderAnalysisMap(filteredData); break;
+        case 'charts': renderAnalysisCharts(filteredData); break;
+        case 'table': renderAnalysisTable(filteredData); break;
     }
 }
 
-let mapInstance = null;
-function renderMapAnalysis(data, container) {
-    const mapDiv = document.createElement('div');
-    mapDiv.id = 'map-container';
-    container.appendChild(mapDiv);
+function populateFilters() {
+    const barrioSelect = document.getElementById('filter-barrio');
+    const userSelect = document.getElementById('filter-user');
 
-    // Pequeño delay para que el DOM se asiente
-    setTimeout(() => {
-        if (mapInstance) {
-            mapInstance.remove();
-        }
-
-        // Centro por defecto (Paraguay central si no hay datos)
-        let center = [-25.3000, -57.5000];
-        
-        // Si hay datos, centrar en el promedio o el primero
-        const resultsWithLoc = data.filter(r => {
-            const locQ = currentSchema.find(q => q.type === 'location');
-            return locQ && r[locQ.id] && r[locQ.id].lat;
+    // Barrios únicos
+    const barrios = [...new Set(allResults.map(r => r.q3).filter(Boolean))].sort();
+    if (barrioSelect.options.length <= 1) {
+        barrios.forEach(b => {
+            const opt = new Option(b, b);
+            barrioSelect.add(opt);
         });
+    }
 
-        if (resultsWithLoc.length > 0) {
-            const locQ = currentSchema.find(q => q.type === 'location');
-            center = [resultsWithLoc[0][locQ.id].lat, resultsWithLoc[0][locQ.id].lng];
+    // Usuarios únicos
+    const users = [...new Set(allResults.map(r => r.usuario_nombre).filter(Boolean))].sort();
+    if (userSelect.options.length <= 1) {
+        users.forEach(u => {
+            const opt = new Option(u, u);
+            userSelect.add(opt);
+        });
+    }
+}
+
+// ─── RENDER: TERRITORIO (MAPA) ──────────────────────────────────────────────
+let analysisMap = null;
+function renderAnalysisMap(data) {
+    const mapContainer = document.getElementById('analysis-map');
+    if (!mapContainer) return;
+
+    if (analysisMap) analysisMap.remove();
+
+    // Centrar en la primera encuesta con GPS
+    const locQ = currentSchema.find(q => q.type === 'location');
+    const validData = data.filter(r => locQ && r[locQ.id] && r[locQ.id].lat);
+    
+    let center = [-25.3006, -57.6359]; // Asunción por defecto
+    if (validData.length > 0) {
+        center = [validData[0][locQ.id].lat, validData[0][locQ.id].lng];
+    }
+
+    analysisMap = L.map('analysis-map').setView(center, 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(analysisMap);
+
+    validData.forEach(r => {
+        const popupContent = `
+            <div style="font-family: sans-serif; min-width: 150px;">
+                <b style="color:var(--accent)">Encuesta #${r.id}</b><br>
+                <small>${new Date(r.timestamp).toLocaleString()}</small><hr>
+                <b>Barrio:</b> ${r.q3 || 'No especificado'}<br>
+                <b>Encuestador:</b> ${r.usuario_nombre}
+            </div>
+        `;
+        L.circleMarker([r[locQ.id].lat, r[locQ.id].lng], {
+            radius: 8,
+            fillColor: '#3b82f6',
+            color: '#fff',
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.8
+        }).addTo(analysisMap).bindPopup(popupContent);
+    });
+}
+
+// ─── RENDER: ESTADÍSTICAS (GRÁFICOS) ─────────────────────────────────────────
+function renderAnalysisCharts(data) {
+    const container = document.getElementById('analysis-charts-container');
+    container.innerHTML = '';
+
+    // Generar gráficos para cada pregunta de selección o escala
+    currentSchema.forEach(q => {
+        if (['choice', 'multi-choice', 'scale', 'candidates'].includes(q.type)) {
+            const card = document.createElement('div');
+            card.className = 'analysis-card';
+            card.innerHTML = `<h3>${q.label}</h3><div id="chart-${q.id}"></div>`;
+            container.appendChild(card);
             
-            // Si hay un foco específico (viniendo de la tabla)
-            if (focusedSurveyIndex !== null) {
-                const focusedRecord = allResults[focusedSurveyIndex];
-                if (focusedRecord && focusedRecord[locQ.id]) {
-                    center = [focusedRecord[locQ.id].lat, focusedRecord[locQ.id].lng];
-                }
-            }
+            renderIndividualChart(q, data, card.querySelector('div'));
         }
+    });
+}
 
-        mapInstance = L.map(mapDiv).setView(center, 13);
-        
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(mapInstance);
+function renderIndividualChart(question, data, target) {
+    const stats = {};
+    data.forEach(r => {
+        const val = r[question.id];
+        if (Array.isArray(val)) {
+            val.forEach(v => stats[v] = (stats[v] || 0) + 1);
+        } else if (val) {
+            stats[val] = (stats[val] || 0) + 1;
+        }
+    });
 
-        const locQ = currentSchema.find(q => q.type === 'location');
-        if (!locQ) return;
+    const total = Object.values(stats).reduce((a, b) => a + b, 0);
+    const sorted = Object.entries(stats).sort((a, b) => b[1] - a[1]);
 
-        const usedCoordsAnalysis = new Set();
-        resultsWithLoc.forEach(r => {
-            const index = allResults.indexOf(r);
-            let loc = { ...r[locQ.id] };
-
-            const locKey = `${loc.lat.toFixed(6)},${loc.lng.toFixed(6)}`;
-            if (usedCoordsAnalysis.has(locKey)) {
-                loc.lat += (Math.random() - 0.5) * 0.00015;
-                loc.lng += (Math.random() - 0.5) * 0.00015;
-            }
-            usedCoordsAnalysis.add(locKey);
-
-            const marker = L.circleMarker([loc.lat, loc.lng], { 
-                radius: 7, 
-                color: 'white', 
-                fillColor: '#3b82f6', 
-                fillOpacity: 1, 
-                weight: 2 
-            }).addTo(mapInstance);
-            
-            // Construir detalles completos dinámicamente
-            let detailsHtml = '';
-            currentSchema.forEach(q => {
-                if (q.type !== 'location' && r[q.id]) {
-                    const value = Array.isArray(r[q.id]) ? r[q.id].join(', ') : r[q.id];
-                    detailsHtml += `<div style="margin-bottom: 4px;"><b>${q.label}:</b> <span style="color: var(--slate-700);">${value}</span></div>`;
-                }
-            });
-
-            const summary = `
-                <div style="min-width: 220px; max-width: 280px; font-family: 'Inter', sans-serif;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; border-bottom: 1px solid var(--slate-100); padding-bottom: 8px;">
-                        <div>
-                            <div style="font-size: 10px; color: var(--accent); font-weight: 800; text-transform: uppercase;">Encuesta #${r.id || index + 1}</div>
-                            <div style="font-weight: 700; font-size: 15px; color: var(--slate-900);">${r.q3 || 'Sin Barrio'}</div>
-                        </div>
-                        <div style="font-size: 10px; color: var(--slate-400); text-align: right;">
-                            ${new Date(r.timestamp).toLocaleDateString()}<br>${new Date(r.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
-                        </div>
-                    </div>
-                    
-                    <div style="font-size: 12px; line-height: 1.4; color: var(--slate-600); max-height: 200px; overflow-y: auto; padding-right: 5px; margin-bottom: 15px;">
-                        <div style="margin-bottom: 8px; padding: 6px; background: var(--slate-50); border-radius: 6px; font-size: 11px;">
-                            <b>Encuestador:</b> ${r.usuario_nombre || 'N/A'}
-                        </div>
-                        ${detailsHtml}
-                    </div>
-
-                    <button onclick="jumpToSurvey('${r.id || index + 1}')" style="width: 100%; background: var(--slate-900); color: white; border: none; padding: 10px; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s;">
-                        <i class="fa-solid fa-database"></i> Ver en Base de Datos
-                    </button>
+    target.innerHTML = sorted.map(([label, count], idx) => {
+        const pct = ((count / total) * 100).toFixed(1);
+        const color = COLORS[idx % COLORS.length];
+        return `
+            <div class="bar-row">
+                <div class="bar-label">
+                    <span>${label}</span>
+                    <span>${count} (${pct}%)</span>
                 </div>
-            `;
-            
-            marker.bindPopup(summary);
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: ${pct}%; background: ${color}"></div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
 
-            if (focusedSurveyIndex === index) {
-                marker.openPopup();
-                mapInstance.setView([loc.lat, loc.lng], 16);
+// Renderizado de tabla premium con acciones
+function renderAnalysisTable(data) {
+    const headerRow = document.getElementById('table-headers');
+    const body = document.getElementById('table-body');
+    
+    // 1. Cabeceras
+    const columns = [
+        { label: 'ID', id: 'id' },
+        { label: 'Fecha', id: 'timestamp' },
+        { label: 'Encuestador', id: 'usuario_nombre' },
+        ...currentSchema.filter(q => q.type !== 'location').map(q => ({ label: q.label, id: q.id }))
+    ];
+
+    headerRow.innerHTML = columns.map(c => `<th>${c.label}</th>`).join('') + '<th>Acciones</th>';
+
+    // 2. Filas
+    body.innerHTML = data.map(r => {
+        const index = allResults.indexOf(r);
+        return `<tr>
+            ${columns.map(c => {
+                let val = r[c.id] || '-';
+                if (c.id === 'timestamp') val = new Date(val).toLocaleDateString();
+                if (Array.isArray(val)) val = val.join(', ');
+                return `<td>${val}</td>`;
+            }).join('')}
+            <td>
+                <div style="display: flex; gap: 5px;">
+                    <button class="btn-action btn-action-map" onclick="jumpToMap(${index})" title="Ver en Mapa"><i class="fa-solid fa-map-location-dot"></i></button>
+                    <button class="btn-action btn-action-edit" onclick="openEditSurveyModal(${index})" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn-action btn-action-delete" onclick="deleteSurveyFromApi(${r.id})" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </td>
+        </tr>`;
+    }).join('');
+}
+
+// Funciones de salto entre vistas
+function jumpToMap(surveyIdOrIndex) {
+    let survey;
+    if (typeof surveyIdOrIndex === 'number') {
+        survey = allResults[surveyIdOrIndex];
+    } else {
+        survey = allResults.find(r => r.id == surveyIdOrIndex);
+    }
+    
+    if (!survey) return;
+
+    // Cambiar a pestaña Mapa
+    switchAnalysisTab('map');
+
+    // Centrar mapa si existe
+    const locQ = currentSchema.find(q => q.type === 'location');
+    if (analysisMap && locQ && survey[locQ.id]) {
+        analysisMap.setView([survey[locQ.id].lat, survey[locQ.id].lng], 18);
+        // Buscar el marcador (esto es opcional pero elegante)
+        analysisMap.eachLayer(layer => {
+            if (layer instanceof L.CircleMarker) {
+                const latLng = layer.getLatLng();
+                if (latLng.lat === survey[locQ.id].lat && latLng.lng === survey[locQ.id].lng) {
+                    layer.openPopup();
+                }
             }
         });
+    }
+}
 
-        if (resultsWithLoc.length > 1 && focusedSurveyIndex === null) {
-            const group = new L.featureGroup(resultsWithLoc.map(r => L.circleMarker([r[locQ.id].lat, r[locQ.id].lng])));
-            mapInstance.fitBounds(group.getBounds().pad(0.1));
-        }
-
-        // Limpiar foco después de renderizar
-        focusedSurveyIndex = null;
-    }, 100);
+async function jumpToSurvey(surveyId) {
+    switchAnalysisTab('table');
+    
+    setTimeout(() => {
+        const rows = document.querySelectorAll('#main-data-table tbody tr');
+        rows.forEach(row => {
+            if (row.innerHTML.includes(`<td>${surveyId}</td>`)) {
+                row.style.background = '#fef3c7';
+                row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    }, 300);
 }
 
 function populateBarrioFilter() {
@@ -862,139 +949,8 @@ function populateBarrioFilter() {
     });
 }
 
-function renderCharts(data, container) {
-    const grid = document.createElement('div');
-    grid.className = 'stats-grid';
-    
-    currentSchema.forEach(q => {
-        if (['choice', 'scale', 'candidates'].includes(q.type)) {
-            const stats = calculateAggregations(q, data);
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `<h3 style="font-size: 14px; margin-bottom: 24px;">${q.label}</h3>`;
-            
-            if (q.type === 'scale' || q.label.length > 30) {
-                // Grafico de Barras Horizontales para textos largos
-                card.appendChild(createBarChart(stats, q));
-            } else {
-                // Grafico Circular para porcentajes
-                card.appendChild(createPieChart(stats));
-            }
-            grid.appendChild(card);
-        }
-    });
-    container.appendChild(grid);
-}
-
-function calculateAggregations(q, data) {
-    const counts = {};
-    let total = 0;
-    data.forEach(r => {
-        const val = r[q.id];
-        if (val) {
-            counts[val] = (counts[val] || 0) + 1;
-            total++;
-        }
-    });
-    return { counts, total };
-}
-
-function createPieChart(stats) {
-    const wrapper = document.createElement('div');
-    const chart = document.createElement('div');
-    chart.className = 'pie-chart';
-    
-    let currentPct = 0;
-    const gradient = [];
-    const legend = document.createElement('div');
-    legend.style = "display: flex; flex-direction: column; gap: 8px; margin-top: 16px;";
-
-    Object.entries(stats.counts).forEach(([label, count], idx) => {
-        const pct = (count / stats.total) * 100;
-        const color = COLORS[idx % COLORS.length];
-        gradient.push(`${color} ${currentPct}% ${currentPct + pct}%`);
-        currentPct += pct;
-
-        legend.innerHTML += `<div style="display: flex; align-items: center; gap: 8px; font-size: 11px;">
-            <div style="width: 10px; height: 10px; border-radius: 2px; background: ${color}"></div>
-            <span>${label}: <b>${pct.toFixed(0)}%</b> (${count})</span>
-        </div>`;
-    });
-
-    chart.style.background = `conic-gradient(${gradient.join(', ')})`;
-    wrapper.appendChild(chart);
-    wrapper.appendChild(legend);
-    return wrapper;
-}
-
-function createBarChart(stats, q) {
-    const wrapper = document.createElement('div');
-    const labels = q.type === 'scale' ? ["Excelente", "Buena", "Mala", "Muy Mala", "NS/NR"] : Object.keys(stats.counts);
-    
-    labels.forEach((label, idx) => {
-        const count = stats.counts[label] || 0;
-        const pct = stats.total > 0 ? (count / stats.total) * 100 : 0;
-        const color = q.type === 'scale' ? getScaleColor(label) : COLORS[idx % COLORS.length];
-
-        wrapper.innerHTML += `
-            <div class="bar-row">
-                <div class="bar-label"><span>${label}</span><span>${count} (${pct.toFixed(0)}%)</span></div>
-                <div class="bar-bg"><div class="bar-fill" style="width: ${pct}%; background: ${color}"></div></div>
-            </div>
-        `;
-    });
-    return wrapper;
-}
-
-function getScaleColor(label) {
-    const map = { "Excelente": "#10b981", "Buena": "#3b82f6", "Mala": "#f59e0b", "Muy Mala": "#ef4444" };
-    return map[label] || "#94a3b8";
-}
-
-function renderDatabaseTable(data, container) {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'table-wrapper';
-    
-    selectedSurveys.clear();
-    updateBulkDeleteUI();
-    
-    const showEncuestador = isAdmin();
-    
-    let html = '<table><thead><tr>';
-    if (isAdmin()) html += '<th><input type="checkbox" id="select-all-surveys" onclick="toggleSelectAll()"></th>';
-    html += '<th>Fecha</th>';
-    if (showEncuestador) html += '<th>Encuestador</th>';
-    currentSchema.forEach(q => html += `<th>${q.label}</th>`);
-    html += '<th>Acciones</th></tr></thead><tbody>';
-
-    data.forEach((r) => {
-        const index = allResults.indexOf(r);
-        const recordId = r.id || index;
-        html += `<tr>`;
-        if (isAdmin()) html += `<td><input type="checkbox" class="survey-checkbox" data-id="${recordId}" onclick="toggleSurveySelection('${recordId}')"></td>`;
-        html += `<td>${new Date(r.timestamp).toLocaleDateString()}</td>`;
-        if (showEncuestador) {
-            html += `<td><span style="font-size: 11px; font-weight: 700; color: var(--accent); background: var(--accent-light); padding: 2px 8px; border-radius: 10px; white-space: nowrap;">${r.usuario_nombre || '-'}</span></td>`;
-        }
-        currentSchema.forEach(q => {
-            let val = r[q.id] || '-';
-            if (q.type === 'location' && r[q.id]) val = `${r[q.id].lat.toFixed(4)}, ${r[q.id].lng.toFixed(4)}`;
-            if (Array.isArray(val)) val = val.join(', ');
-            html += `<td>${val}</td>`;
-        });
-        
-        html += `<td>
-            <div style="display: flex;">
-                <button class="btn-action btn-action-map" onclick="jumpToMap(${index})" title="Ver en Mapa"><i class="fa-solid fa-map-location-dot"></i></button>
-                <button class="btn-action btn-action-edit" onclick="openEditSurveyModal(${index})" title="Editar"><i class="fa-solid fa-pen"></i></button>
-                <button class="btn-action btn-action-delete" onclick="deleteSurveyFromApi(${recordId})" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-            </div>
-        </td></tr>`;
-    });
-
-    html += '</tbody></table>';
-    wrapper.innerHTML = html;
-    container.appendChild(wrapper);
+function deleteSurvey(id) {
+    deleteSurveyFromApi(id);
 }
 
 // === GESTIÓN MASIVA ===
@@ -1258,28 +1214,7 @@ async function renderDashboardStats() {
 }
 
 // === ADMIN PANEL ===
-async function jumpToSurvey(surveyId) {
-    // 1. Cambiar a la vista de resultados
-    navigateTo('view-results');
-    
-    // 2. Cambiar tipo de informe a 'Base de Datos (Tabla)'
-    const reportSelect = document.getElementById('report-type');
-    if (reportSelect) {
-        reportSelect.value = 'raw';
-        await refreshAnalysis(); // Forzar render de la tabla
-    }
-
-    // 3. Pequeño delay para que la tabla se cree y podamos buscar la fila
-    setTimeout(() => {
-        const rows = document.querySelectorAll('table tr');
-        rows.forEach(row => {
-            if (row.textContent.includes(`ID: ${surveyId}`)) {
-                row.style.background = '#fef3c7'; // Resaltar fila
-                row.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        });
-    }, 500);
-}
+// jumpToSurvey y jumpToMap ya fueron actualizados arriba
 
 async function cleanDuplicates() {
     if (!confirm("Esto eliminará las encuestas que tengan la misma fecha y datos exactos. ¿Continuar?")) return;
