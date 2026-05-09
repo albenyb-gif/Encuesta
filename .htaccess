@@ -1,0 +1,14 @@
+# Configuración para Hostinger Node.js Selector
+# Redirigir tráfico al puerto de la aplicación Node.js si es necesario
+
+RewriteEngine On
+RewriteBase /
+
+# No redirigir si el archivo existe (para la carpeta public)
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Redirigir todo lo demás a la aplicación Node.js
+# Nota: Generalmente el selector de Hostinger maneja esto, 
+# pero tenerlo no hace daño para ciertos proxies inversos.
+RewriteRule ^(.*)$ http://localhost:3000/$1 [P,L]

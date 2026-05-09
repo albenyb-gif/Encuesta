@@ -11,7 +11,7 @@ const app = express();
 const JWT_SECRET = process.env.JWT_SECRET || 'encuesta_senior_pro_secret_2024';
 
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // ─── SSE: Clientes conectados ─────────────────────────────────────────────────
 const sseClients = new Map(); // Map<userId, res>
@@ -262,7 +262,7 @@ app.post('/api/admin/clean-duplicates', authMiddleware, adminOnly, (req, res) =>
 });
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
