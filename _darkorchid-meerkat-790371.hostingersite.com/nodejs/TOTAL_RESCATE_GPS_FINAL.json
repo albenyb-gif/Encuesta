@@ -1,0 +1,6809 @@
+[
+  {
+    "id": 1,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T15:10:33.866Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:06:29.290Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3948948,
+        "lng": -56.8665892
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "William Aquino ",
+      "q8": "Fomentar más turismo "
+    }
+  },
+  {
+    "id": 2,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T15:12:12.132Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:10:37.736Z",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3962912,
+        "lng": -56.8513129
+      },
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q8": "Todo",
+      "q_1775904835742": "Mujer"
+    }
+  },
+  {
+    "id": 3,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T15:14:44.430Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:11:09.424Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3951142,
+        "lng": -56.8664756
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Miguel Marin",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 4,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T15:15:03.638Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:13:50.703Z",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3966274,
+        "lng": -56.8515902
+      },
+      "q4": "Muy Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Sofi",
+      "q8": "Agua potable ",
+      "q_1775904835742": "Mujer"
+    }
+  },
+  {
+    "id": 5,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T15:16:39.950Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:14:19.076Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.396599041019574,
+        "lng": -56.85177830595699
+      },
+      "q3": "San Antonio ",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 6,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T15:19:08.236Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:17:46.113Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3952892,
+        "lng": -56.8660949
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Nadie",
+      "q8": "La iluminación en las calles principales "
+    }
+  },
+  {
+    "id": 7,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T15:19:40.541Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:18:06.976Z",
+      "q1": "Partido Colorado",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Carlos ramires ",
+      "q8": "Recolección de basura ",
+      "q4": "Muy Mala",
+      "q2": {
+        "lat": -27.3975815,
+        "lng": -56.8528334
+      },
+      "q_1775904835742": "Mujer"
+    }
+  },
+  {
+    "id": 8,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T15:19:50.996Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:16:56.423Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39689441339282,
+        "lng": -56.85211753252889
+      },
+      "q3": "San Antonio ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguna ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 9,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T15:22:36.066Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:20:37.873Z",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3977329,
+        "lng": -56.8531208
+      },
+      "q4": "NS/NR",
+      "q5": "Mala",
+      "q3": "San Antonio ",
+      "q_1775904835742": "Mayor"
+    }
+  },
+  {
+    "id": 10,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T15:22:48.340Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:20:37.606Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3959984,
+        "lng": -56.8664409
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q7": "Ninguna ",
+      "q8": "Falta de agua, recolección de basura "
+    }
+  },
+  {
+    "id": 11,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T15:25:54.248Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:23:32.915Z",
+      "q_demo": [
+        "Mujer",
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3962888,
+        "lng": -56.8665684
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "Ninguno",
+      "q8": "Ningúno "
+    }
+  },
+  {
+    "id": 12,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T15:26:14.526Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:24:05.610Z",
+      "q2": {
+        "lat": -27.3978992,
+        "lng": -56.8533795
+      },
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q8": "Colectivos",
+      "q1": "Partido Colorado",
+      "q4": "Muy Mala",
+      "q3": "San Antonio ",
+      "q_1775904835742": "Mayor"
+    }
+  },
+  {
+    "id": 13,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T15:27:51.535Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:24:52.289Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39796854051086,
+        "lng": -56.85377696685532
+      },
+      "q3": "San Antonio ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 14,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T15:29:44.279Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:27:10.173Z",
+      "q2": {
+        "lat": -27.3981559,
+        "lng": -56.8539106
+      },
+      "q5": "Muy Mala",
+      "q1": "Partido Colorado",
+      "q3": "San Antonio ",
+      "q4": "Muy Mala",
+      "q_1775904835742": "Mayor"
+    }
+  },
+  {
+    "id": 15,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T15:36:06.702Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:34:02.351Z",
+      "q_demo": [],
+      "q1": "Partido Colorado",
+      "q3": "Lima",
+      "q2": {
+        "lat": -27.3965354,
+        "lng": -56.8653108
+      },
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Ninguno",
+      "q8": "Control de transporte y concienciacion vial"
+    }
+  },
+  {
+    "id": 16,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T14:18:43.238Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:16:03.036Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.40400621051414,
+        "lng": -56.86183459636993
+      },
+      "q3": "San José mi ",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 17,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T14:19:20.410Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:18:01.760Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3904993,
+        "lng": -56.8423842
+      },
+      "q3": "San antonio",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Diosnel Bogado",
+      "q8": "Recoleccion de Basura"
+    }
+  },
+  {
+    "id": 18,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:20:12.294Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:19:34.035Z",
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q2": {
+        "lat": -27.4041435,
+        "lng": -56.8612866
+      },
+      "q3": "San jose mi",
+      "q7": "Sofi ",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q8": "Agua potable ",
+      "q_1775904835742": "Mujer"
+    }
+  },
+  {
+    "id": 19,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T14:21:45.836Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:19:13.281Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.404113553399807,
+        "lng": -56.86174092751455
+      },
+      "q3": "San José Mi ",
+      "q4": "Mala",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 20,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:22:48.866Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:21:32.833Z",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4047385,
+        "lng": -56.8611391
+      },
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Wilian",
+      "q8": "En todo",
+      "q_1775904835742": "Mujer"
+    }
+  },
+  {
+    "id": 21,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T14:23:07.323Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:15:35.231Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.390747,
+        "lng": -56.8430486
+      },
+      "q3": "San Antonio ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ns nr",
+      "q8": "Todo "
+    }
+  },
+  {
+    "id": 22,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T14:25:04.272Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:22:32.550Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.404217857368813,
+        "lng": -56.86188800173899
+      },
+      "q3": "San José mi ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 24,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T14:27:42.533Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:25:10.590Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.404568047548366,
+        "lng": -56.86197004357829
+      },
+      "q3": "San José mi ",
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 25,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T14:28:14.827Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:24:53.990Z",
+      "q_demo": [
+        "Mujer",
+        "Adulto Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3919498,
+        "lng": -56.8446045
+      },
+      "q3": "San Antonio ",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q7": "Ns nr ",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 26,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T14:29:48.750Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:27:27.500Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4049176232877,
+        "lng": -56.86186357629915
+      },
+      "q3": "San José mi ",
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 27,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T14:32:27.597Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:30:04.648Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.405185654226056,
+        "lng": -56.861894874299615
+      },
+      "q3": "San José Mi ",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Diego Barreto ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 28,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:32:41.979Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:32:05.516Z",
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q2": {
+        "lat": -27.4058291,
+        "lng": -56.8609211
+      },
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q8": "Limpieza publica",
+      "q3": "San jose mi ",
+      "q_1775904835742": "Mayor"
+    }
+  },
+  {
+    "id": 29,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T14:34:12.116Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:32:18.044Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39267,
+        "lng": -56.8458755
+      },
+      "q3": "San Antonio ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Diosnel bogado",
+      "q8": "Documentos públicos "
+    }
+  },
+  {
+    "id": 30,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T14:36:19.021Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:34:42.932Z",
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3916144,
+        "lng": -56.844004
+      },
+      "q3": "San Antonio ",
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Willian Aquino"
+    }
+  },
+  {
+    "id": 31,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:36:43.860Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:34:16.868Z",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4063574,
+        "lng": -56.8620412
+      },
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q8": "Recolección de basura ",
+      "q3": "San jose mi ",
+      "q_1775904835742": "Mujer"
+    }
+  },
+  {
+    "id": 32,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T14:37:18.667Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:33:12.697Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.405782610341642,
+        "lng": -56.86209535778314
+      },
+      "q3": "San José mi ",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 33,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:39:38.883Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:38:02.741Z",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4061627,
+        "lng": -56.8618655
+      },
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Wilfrido",
+      "q8": "Agua potable ",
+      "q3": "San jose mi",
+      "q_1775904835742": "Mayor"
+    }
+  },
+  {
+    "id": 34,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T14:39:56.724Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:36:05.544Z",
+      "q_demo": [],
+      "q2": {
+        "lat": -27.3930998,
+        "lng": -56.8464676
+      },
+      "q4": "Mala",
+      "q5": "Mala",
+      "q8": "Todo ",
+      "q7": "Ns nr"
+    }
+  },
+  {
+    "id": 35,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T14:43:52.396Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:42:14.047Z",
+      "q_demo": [
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3936951,
+        "lng": -56.8676326
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguna ",
+      "q8": "Las vías publicas"
+    }
+  },
+  {
+    "id": 36,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T14:44:00.924Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:39:46.582Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3919687,
+        "lng": -56.8446741
+      },
+      "q3": "San antonio",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Willian Aquino"
+    }
+  },
+  {
+    "id": 37,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:44:22.181Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:42:56.369Z",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4061315,
+        "lng": -56.8624329
+      },
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q8": "Alimentos escolares",
+      "q3": "San jose mi ",
+      "q_1775904835742": "Joven"
+    }
+  },
+  {
+    "id": 38,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:45:34.338Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:44:40.912Z",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4057909,
+        "lng": -56.8634476
+      },
+      "q8": "Rutas",
+      "q_1775904835742": "Mujer"
+    }
+  },
+  {
+    "id": 39,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T14:48:24.392Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:46:22.635Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3933541,
+        "lng": -56.8678831
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "David Vega",
+      "q8": "Hermosear  y trabajo"
+    }
+  },
+  {
+    "id": 40,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:48:29.234Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:46:55.258Z",
+      "q1": "Partido Colorado",
+      "q4": "Mala",
+      "q2": {
+        "lat": -27.4055954,
+        "lng": -56.863396
+      },
+      "q5": "Muy Mala",
+      "q7": "Talavera",
+      "q8": "Todo",
+      "q3": "San jose mi",
+      "q_1775904835742": "Varón"
+    }
+  },
+  {
+    "id": 41,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T14:48:57.658Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:47:51.896Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q2": {
+        "lat": -27.3934285,
+        "lng": -56.8470077
+      },
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Jose Carozo",
+      "q8": "Todo "
+    }
+  },
+  {
+    "id": 42,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T14:51:31.216Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:48:58.758Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3934415,
+        "lng": -56.8675465
+      },
+      "q3": "Lima",
+      "q4": "Excelente",
+      "q5": "Excelente",
+      "q6": "Christian Rolon",
+      "q7": "Dennis cardozo",
+      "q8": "Arreglo de vías públicas y limpieza "
+    }
+  },
+  {
+    "id": 43,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T14:56:35.208Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:54:16.615Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3939475,
+        "lng": -56.8672883
+      },
+      "q3": "Lima",
+      "q4": "NS/NR",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno",
+      "q8": "En todo "
+    }
+  },
+  {
+    "id": 44,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T14:59:30.375Z",
+    "datos": {
+      "timestamp": "2026-04-11T14:58:07.134Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3942637,
+        "lng": -56.8673673
+      },
+      "q3": "Lima",
+      "q5": "Buena",
+      "q4": "Excelente",
+      "q6": "Christian Rolon",
+      "q7": "Ninguno",
+      "q8": "En todo"
+    }
+  },
+  {
+    "id": 45,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T15:03:03.451Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:02:16.884Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3932908,
+        "lng": -56.8469262
+      },
+      "q3": "San antonio",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "Willian Aquino ",
+      "q8": "Basura"
+    }
+  },
+  {
+    "id": 46,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T15:08:32.046Z",
+    "datos": {
+      "timestamp": "2026-04-11T15:07:58.505Z",
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3947566,
+        "lng": -56.8494005
+      },
+      "q3": "San antonio ",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Alvarenga",
+      "q8": "Todo"
+    }
+  },
+  {
+    "id": 91,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T16:54:49.913Z",
+    "datos": {
+      "timestamp": "2026-04-11T16:52:39.236Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3990914,
+        "lng": -56.8595559
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Eladio Martinez ",
+      "q8": "Limpieza recolección "
+    }
+  },
+  {
+    "id": 92,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T16:55:09.728Z",
+    "datos": {
+      "timestamp": "2026-04-11T16:52:32.904Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39858457811447,
+        "lng": -56.85851209924371
+      },
+      "q3": "Lima ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Denis flores ",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 93,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T16:57:37.441Z",
+    "datos": {
+      "timestamp": "2026-04-11T16:56:49.687Z",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3978942,
+        "lng": -56.8600982
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Gricelda ",
+      "q8": "Agua potable ",
+      "q_1775904835742": "Mujer"
+    }
+  },
+  {
+    "id": 94,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T16:58:12.181Z",
+    "datos": {
+      "timestamp": "2026-04-11T16:55:02.482Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39823762862592,
+        "lng": -56.859225926674675
+      },
+      "q3": "Lima ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 95,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T16:59:08.766Z",
+    "datos": {
+      "timestamp": "2026-04-11T16:51:12.154Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3984567,
+        "lng": -56.8614946
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "William Aquino",
+      "q8": "Agua"
+    }
+  },
+  {
+    "id": 96,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T16:59:47.886Z",
+    "datos": {
+      "timestamp": "2026-04-11T16:56:24.058Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Lima",
+      "q2": {
+        "lat": -27.3988456,
+        "lng": -56.8596324
+      },
+      "q4": "NS/NR",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Muchísimas cosas"
+    }
+  },
+  {
+    "id": 97,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:02:57.966Z",
+    "datos": {
+      "timestamp": "2026-04-11T16:59:23.237Z",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3977349,
+        "lng": -56.8606901
+      },
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q8": "Limpieza ",
+      "q3": "Lima",
+      "q_1775904835742": "Mujer"
+    }
+  },
+  {
+    "id": 98,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T17:03:15.839Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:02:17.777Z",
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3982005,
+        "lng": -56.862759
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Arnaldo Cardozo",
+      "q8": "Recoleccion de basura"
+    }
+  },
+  {
+    "id": 99,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:05:08.715Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:03:42.272Z",
+      "q2": {
+        "lat": -27.3976451,
+        "lng": -56.8607866
+      },
+      "q1": "Partido Colorado",
+      "q5": "Buena",
+      "q8": "Mejorar turismo ",
+      "q3": "Lima",
+      "q4": "Mala",
+      "q_1775904835742": "Joven"
+    }
+  },
+  {
+    "id": 100,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T17:06:07.373Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:03:20.522Z",
+      "q_demo": [
+        "Mujer"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3986149,
+        "lng": -56.8607505
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Luis Cuellar ",
+      "q8": "Limpieza basura"
+    }
+  },
+  {
+    "id": 101,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T17:06:26.228Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:03:25.943Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.397887936730477,
+        "lng": -56.86041627181986
+      },
+      "q3": "Lima ",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q7": "Ninguno ",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 102,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:06:33.781Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:03:58.209Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3917553,
+        "lng": -56.8656057
+      },
+      "q4": "Buena",
+      "q5": "Excelente",
+      "q6": "Christian Rolon",
+      "q8": "Trabajos "
+    }
+  },
+  {
+    "id": 103,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T17:06:34.425Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:05:16.646Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.397781,
+        "lng": -56.8634922
+      },
+      "q3": "Lima",
+      "q4": "Muy Mala",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Mario Cañete",
+      "q8": "Trabajo "
+    }
+  },
+  {
+    "id": 104,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:08:49.555Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:07:48.758Z",
+      "q2": {
+        "lat": -27.397419,
+        "lng": -56.8615888
+      },
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ramón palacios ",
+      "q8": "Agua potable ",
+      "q4": "Muy Mala",
+      "q3": "Lima",
+      "q1": "Partido Colorado",
+      "q_1775904835742": "Mayor"
+    }
+  },
+  {
+    "id": 105,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T02:02:42.576Z",
+    "datos": {
+      "q_demo": [
+        "Varón"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -26.886463059397656,
+        "lng": -56.85454230845701
+      },
+      "q3": "PABLO VI",
+      "q6": "Jose Mutti",
+      "q8": "SALUD"
+    }
+  },
+  {
+    "id": 106,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:11:34.860Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:10:19.390Z",
+      "q2": {
+        "lat": -27.3972364,
+        "lng": -56.8620884
+      },
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Carlos ramirez ",
+      "q8": "Agua potable ",
+      "q1": "Partido Colorado",
+      "q3": "Lima",
+      "q_1775904835742": "Mujer"
+    }
+  },
+  {
+    "id": 107,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T17:12:37.063Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:10:22.943Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3977020859371,
+        "lng": -56.86112303570069
+      },
+      "q3": "Lima ",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 108,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T17:12:54.628Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:11:13.591Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Lima",
+      "q2": {
+        "lat": -27.3982534,
+        "lng": -56.8616254
+      },
+      "q4": "Buena",
+      "q5": "Buena",
+      "q7": "Ninguna ",
+      "q8": "Nada"
+    }
+  },
+  {
+    "id": 109,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:14:21.971Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:12:57.883Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3919127,
+        "lng": -56.8628758
+      },
+      "q3": "Virgen del pilar ",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 110,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T17:16:30.676Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:15:57.774Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3975753,
+        "lng": -56.863541
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "Cañete",
+      "q8": "Recoleccion"
+    }
+  },
+  {
+    "id": 111,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:16:46.112Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:15:07.007Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3917757,
+        "lng": -56.8626054
+      },
+      "q3": "Virgen del pilar ",
+      "q4": "NS/NR",
+      "q5": "Buena",
+      "q7": "Ns nr",
+      "q8": "Agua, electricidad "
+    }
+  },
+  {
+    "id": 112,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:19:16.350Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:16:58.309Z",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3965086,
+        "lng": -56.8640884
+      },
+      "q4": "Mala",
+      "q5": "Mala",
+      "q8": "Agua potable ",
+      "q3": "Lima",
+      "q_1775904835742": "Mayor"
+    }
+  },
+  {
+    "id": 113,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T17:19:38.407Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:17:13.144Z",
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.396816630045,
+        "lng": -56.86358913938975
+      },
+      "q3": "Lima ",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q7": "Ninguno ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 114,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T17:22:08.477Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:20:17.992Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3973472,
+        "lng": -56.864286
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "William Aquino",
+      "q8": "Agua"
+    }
+  },
+  {
+    "id": 115,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T17:22:19.484Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:21:09.186Z",
+      "q_demo": [
+        "Joven",
+        "Varón"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Lima ",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Alejandro Sanchez",
+      "q2": {
+        "lat": -27.3983346,
+        "lng": -56.8625306
+      },
+      "q8": "Basura "
+    }
+  },
+  {
+    "id": 116,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T17:22:51.458Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:19:34.212Z",
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.396980137739142,
+        "lng": -56.86368480645706
+      },
+      "q3": "Lima ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 117,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:24:05.911Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:22:41.701Z",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3960229,
+        "lng": -56.8644662
+      },
+      "q6": "Jose Mutti",
+      "q8": "Veredas",
+      "q3": "Lima",
+      "q4": "Buena",
+      "q_1775904835742": "Adulto Mayor"
+    }
+  },
+  {
+    "id": 118,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T17:26:52.571Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:24:00.411Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.396504081419177,
+        "lng": -56.864202084256796
+      },
+      "q3": "Lima ",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 119,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:28:54.615Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:27:56.071Z",
+      "q2": {
+        "lat": -27.3952901,
+        "lng": -56.8650852
+      },
+      "q5": "Buena",
+      "q8": "Agua potable ",
+      "q4": "Muy Mala",
+      "q3": "Lima",
+      "q1": "Partido Colorado"
+    }
+  },
+  {
+    "id": 120,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:30:16.365Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:29:29.105Z",
+      "q2": {
+        "lat": -27.3952445,
+        "lng": -56.8651516
+      },
+      "q8": "Todo",
+      "q5": "NS/NR",
+      "q4": "NS/NR",
+      "q3": "Lima",
+      "q1": "Partido Colorado",
+      "q_1775904835742": "Adulto Mayor"
+    }
+  },
+  {
+    "id": 121,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T17:30:28.254Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:29:48.115Z",
+      "q_demo": [
+        "Mujer"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3977724,
+        "lng": -56.8634593
+      },
+      "q3": "Lima",
+      "q6": "Jose Mutti",
+      "q7": "Benitez"
+    }
+  },
+  {
+    "id": 122,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:34:37.110Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:32:26.989Z",
+      "q2": {
+        "lat": -27.3948673,
+        "lng": -56.8654411
+      },
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q8": "Todo",
+      "q3": "Lima",
+      "q1": "Partido Colorado",
+      "q_1775904835742": "Mayor"
+    }
+  },
+  {
+    "id": 123,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T17:35:55.370Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:32:53.867Z",
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39552055538877,
+        "lng": -56.864922028698984
+      },
+      "q3": "Lima ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Elias leguizamon ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 124,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:36:06.641Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:32:15.548Z",
+      "q_demo": [
+        "Varón",
+        "Adulto Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q8": "Todo",
+      "q2": {
+        "lat": -27.388738,
+        "lng": -56.8659997
+      },
+      "q3": "Virgen del pilar "
+    }
+  },
+  {
+    "id": 125,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T17:37:30.594Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:35:10.090Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.395663118844002,
+        "lng": -56.86483758834036
+      },
+      "q3": "Lima ",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua"
+    }
+  },
+  {
+    "id": 126,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:39:29.558Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:37:24.192Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3887687,
+        "lng": -56.8662449
+      },
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Marin ",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 127,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:43:56.205Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:43:10.232Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.387793,
+        "lng": -56.8650059
+      },
+      "q3": "Virgen del pilar ",
+      "q6": "Jose Mutti",
+      "q5": "Buena",
+      "q4": "Buena",
+      "q7": "Arnildo bernal "
+    }
+  },
+  {
+    "id": 128,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T17:47:56.559Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:45:14.652Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3877992,
+        "lng": -56.8649857
+      },
+      "q3": "Yataity",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Carlos Marin ",
+      "q8": "Agua"
+    }
+  },
+  {
+    "id": 129,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T17:49:04.745Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:46:54.733Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Yataity",
+      "q4": "NS/NR",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Mario Cañete",
+      "q2": {
+        "lat": -27.3881164,
+        "lng": -56.8651588
+      },
+      "q8": "Humo"
+    }
+  },
+  {
+    "id": 130,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T17:51:19.579Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:49:29.335Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3874323,
+        "lng": -56.8650945
+      },
+      "q3": "Yataity",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Miguel Amarilla",
+      "q8": "Agua"
+    }
+  },
+  {
+    "id": 131,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:56:28.330Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:54:26.930Z",
+      "q_demo": [
+        "Mujer"
+      ],
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Wlian",
+      "q8": "Mas trabajo ",
+      "q2": {
+        "lat": -27.3918615,
+        "lng": -56.8580118
+      }
+    }
+  },
+  {
+    "id": 132,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T17:57:47.177Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:53:18.335Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39163711148714,
+        "lng": -56.85780685896884
+      },
+      "q3": "Santa Ana ",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Cecilio Arias ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 133,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:59:53.224Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:58:08.172Z",
+      "q_demo": [
+        "Mujer"
+      ],
+      "q2": {
+        "lat": -27.3919375,
+        "lng": -56.8576872
+      },
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q8": "Limpieza de basura ",
+      "q1": "Partido Colorado",
+      "q3": "Santa ana 100"
+    }
+  },
+  {
+    "id": 134,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T18:00:37.311Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:57:54.331Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39143621146509,
+        "lng": -56.858045633572324
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Ninguno ",
+      "q8": "Recolección de basura "
+    }
+  },
+  {
+    "id": 135,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T18:00:43.036Z",
+    "datos": {
+      "timestamp": "2026-04-11T17:56:09.710Z",
+      "q_demo": [
+        "Varón",
+        "Adulto Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3871118,
+        "lng": -56.8643145
+      },
+      "q3": "Yataity",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Wilfrido Jacquet ",
+      "q8": "Agua"
+    }
+  },
+  {
+    "id": 136,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:02:14.274Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:01:40.806Z",
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3872527,
+        "lng": -56.8643984
+      },
+      "q3": "Yat",
+      "q6": "Jose Mutti",
+      "q7": "Ning",
+      "q8": "Basura "
+    }
+  },
+  {
+    "id": 137,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:02:38.068Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:01:20.185Z",
+      "q_demo": [
+        "Mayor"
+      ],
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Sofi",
+      "q8": "Falta de trabajo",
+      "q2": {
+        "lat": -27.3918776,
+        "lng": -56.8570139
+      },
+      "q1": "Partido Colorado",
+      "q3": "100"
+    }
+  },
+  {
+    "id": 138,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T18:03:18.231Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:00:31.447Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.391259362170636,
+        "lng": -56.858018356542594
+      },
+      "q3": "Santa Ana",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Ninguno ",
+      "q8": "Iluminación "
+    }
+  },
+  {
+    "id": 139,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:04:43.859Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:03:43.601Z",
+      "q_demo": [
+        "Mujer"
+      ],
+      "q2": {
+        "lat": -27.3919414,
+        "lng": -56.8566399
+      },
+      "q5": "Mala",
+      "q4": "Buena",
+      "q6": "Christian Rolon",
+      "q8": "Todo ",
+      "q3": "100"
+    }
+  },
+  {
+    "id": 140,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:05:45.827Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:04:19.328Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.387259,
+        "lng": -56.8642477
+      },
+      "q3": "Yat",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "N",
+      "q8": "Basura humo"
+    }
+  },
+  {
+    "id": 141,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:06:22.621Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:05:04.956Z",
+      "q_demo": [
+        "Mayor"
+      ],
+      "q2": {
+        "lat": -27.3919094,
+        "lng": -56.8566187
+      },
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Gabriel Alfonso",
+      "q7": "Jose gimenez",
+      "q8": "Todo",
+      "q3": "100",
+      "q1": "Partido Colorado"
+    }
+  },
+  {
+    "id": 142,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T18:08:13.567Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:03:20.630Z",
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39084813918871,
+        "lng": -56.85756097651701
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Miguel MArin ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 143,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T18:08:24.625Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:06:37.931Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3871182,
+        "lng": -56.863616
+      },
+      "q3": "Yataity",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "Luis cuellar",
+      "q8": "Agua"
+    }
+  },
+  {
+    "id": 144,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:09:33.925Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:08:19.056Z",
+      "q_demo": [
+        "Varón"
+      ],
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Carlos ",
+      "q8": "La iluminación ",
+      "q2": {
+        "lat": -27.3907891,
+        "lng": -56.8569741
+      },
+      "q1": "Partido Colorado",
+      "q3": "100"
+    }
+  },
+  {
+    "id": 145,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T18:12:36.416Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:10:06.718Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.390587101676065,
+        "lng": -56.857373370800595
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguna ",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 146,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T18:14:42.287Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:12:52.697Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3872072,
+        "lng": -56.8625858
+      },
+      "q3": "Yataity",
+      "q4": "Mala",
+      "q5": "Mala"
+    }
+  },
+  {
+    "id": 147,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T18:15:19.133Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:12:35.959Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.390677275791088,
+        "lng": -56.85724560334454
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Sofia Troche ",
+      "q8": "Recolección de basura "
+    }
+  },
+  {
+    "id": 148,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:18:03.738Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:16:28.779Z",
+      "q_demo": [
+        "Mujer"
+      ],
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Sofi",
+      "q8": "Agua potable",
+      "q2": {
+        "lat": -27.3904974,
+        "lng": -56.8569823
+      },
+      "q1": "Partido Colorado"
+    }
+  },
+  {
+    "id": 149,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T18:18:39.622Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:15:07.139Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39057270123674,
+        "lng": -56.85716673695742
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguna ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 150,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:18:46.748Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:17:51.275Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3873417,
+        "lng": -56.8631542
+      },
+      "q3": "Yat",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Sofia Troche",
+      "q8": "Agua"
+    }
+  },
+  {
+    "id": 151,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T18:18:55.308Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:17:44.380Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3873947,
+        "lng": -56.8619433
+      },
+      "q3": "Yataity",
+      "q4": "Muy Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Arnildo Bernal",
+      "q8": "Camino vecinal"
+    }
+  },
+  {
+    "id": 153,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:25:09.115Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:23:56.536Z",
+      "q_demo": [
+        "Varón"
+      ],
+      "q1": "Otros",
+      "q2": {
+        "lat": -26.8898279,
+        "lng": -56.8514267
+      },
+      "q6": "Ninguno",
+      "q7": "Prueba"
+    }
+  },
+  {
+    "id": 154,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:25:22.261Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:24:07.090Z",
+      "q_demo": [
+        "Mujer"
+      ],
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Gabriel Alfonso",
+      "q8": "Agua potable ",
+      "q2": {
+        "lat": -27.3903947,
+        "lng": -56.8566395
+      },
+      "q3": "Santa ana",
+      "q1": "Partido Colorado"
+    }
+  },
+  {
+    "id": 155,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T18:26:47.407Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:23:38.801Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.390431572250122,
+        "lng": -56.85657000023172
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 156,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:27:03.690Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:25:05.826Z",
+      "q_demo": [
+        "Varón",
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Yataity",
+      "q2": {
+        "lat": -27.3876335,
+        "lng": -56.8624865
+      },
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "William Rodriguez ",
+      "q8": "Agua"
+    }
+  },
+  {
+    "id": 157,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:29:18.252Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:27:39.855Z",
+      "q_demo": [
+        "Varón"
+      ],
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Marin",
+      "q8": "Agua potable ",
+      "q3": "Santa ana ",
+      "q2": {
+        "lat": -27.3904187,
+        "lng": -56.8557425
+      },
+      "q1": "Partido Colorado"
+    }
+  },
+  {
+    "id": 158,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T18:29:31.121Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:27:03.252Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.390318756353597,
+        "lng": -56.85625560580597
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q7": "Ninguno ",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 159,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T18:29:40.058Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:29:04.583Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3876085,
+        "lng": -56.8614375
+      },
+      "q3": "Yataity",
+      "q5": "Muy Mala",
+      "q4": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q8": "Agua"
+    }
+  },
+  {
+    "id": 160,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:29:54.775Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:29:13.145Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Yat",
+      "q2": {
+        "lat": -27.3872074,
+        "lng": -56.8639445
+      },
+      "q6": "Jose Mutti",
+      "q5": "NS/NR",
+      "q4": "NS/NR",
+      "q7": "Sofia Troche"
+    }
+  },
+  {
+    "id": 161,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:31:54.022Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:31:10.217Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Yat",
+      "q2": {
+        "lat": -27.3877455,
+        "lng": -56.8648868
+      },
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Ning",
+      "q8": "Caminos"
+    }
+  },
+  {
+    "id": 162,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T18:32:08.950Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:31:13.972Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3872311,
+        "lng": -56.8612082
+      },
+      "q3": "Yataity",
+      "q5": "Mala",
+      "q4": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "WILLIAN AQUINO ",
+      "q8": "Agua"
+    }
+  },
+  {
+    "id": 163,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T18:33:11.082Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:29:39.184Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39021000226267,
+        "lng": -56.8560579845082
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua "
+    }
+  },
+  {
+    "id": 164,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:38:26.812Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:36:19.035Z",
+      "q_demo": [
+        "Mujer"
+      ],
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q8": "Alimentación escolar ",
+      "q2": {
+        "lat": -27.3897718,
+        "lng": -56.8558318
+      },
+      "q1": "Partido Colorado",
+      "q3": "Santa ana "
+    }
+  },
+  {
+    "id": 165,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:41:23.737Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:38:56.376Z",
+      "q_demo": [
+        "Mayor"
+      ],
+      "q2": {
+        "lat": -27.3897576,
+        "lng": -56.8561817
+      },
+      "q4": "Mala",
+      "q5": "Buena",
+      "q8": "Salud",
+      "q3": "Santa ana",
+      "q1": "Partido Colorado"
+    }
+  },
+  {
+    "id": 167,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T18:52:07.454Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:49:18.350Z",
+      "q_demo": [
+        "Varón",
+        "Adulto Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3792029,
+        "lng": -56.8451088
+      },
+      "q3": "Sirena ",
+      "q4": "Mala",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "CACERES",
+      "q8": "Fuente trabajo "
+    }
+  },
+  {
+    "id": 168,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T18:52:27.124Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:51:10.961Z",
+      "q2": {
+        "lat": -27.3796291,
+        "lng": -56.843838
+      },
+      "q5": "Muy Mala",
+      "q7": "Denis dior",
+      "q8": "Todo",
+      "q4": "Muy Mala",
+      "q1": "Partido Colorado",
+      "q_1775904835742": "Mujer"
+    }
+  },
+  {
+    "id": 169,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T18:53:12.377Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:49:37.364Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.37903236459584,
+        "lng": -56.84419006472278
+      },
+      "q3": "Sirena ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Edgardo Villalba ",
+      "q8": "Recolección de basura "
+    }
+  },
+  {
+    "id": 170,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T18:55:36.521Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:53:29.662Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.378869,
+        "lng": -56.844919
+      },
+      "q3": "Sirena",
+      "q4": "Mala",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q8": "Trabajo"
+    }
+  },
+  {
+    "id": 171,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T18:55:51.351Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:52:53.258Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.378802507236607,
+        "lng": -56.84411005941506
+      },
+      "q3": "Sirena ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 172,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T18:55:53.377Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:53:40.873Z",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3796584,
+        "lng": -56.8432053
+      },
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q_1775904835742": "Mujer"
+    }
+  },
+  {
+    "id": 173,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:56:44.425Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:54:49.463Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3788806,
+        "lng": -56.8462985
+      },
+      "q3": "Sirena",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Shirley Dioff",
+      "q8": "Apoya a emprendedores"
+    }
+  },
+  {
+    "id": 174,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T18:57:47.762Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:55:10.375Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.378863874493444,
+        "lng": -56.844139878204935
+      },
+      "q3": "Sirena ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 175,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T18:59:25.876Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:58:13.659Z",
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Hugo ramirez",
+      "q8": "Todo",
+      "q2": {
+        "lat": -27.3797502,
+        "lng": -56.8420503
+      },
+      "q_1775904835742": "Mujer"
+    }
+  },
+  {
+    "id": 176,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T19:00:26.239Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:58:00.300Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3782882,
+        "lng": -56.8446613
+      },
+      "q3": "Sirena",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Elias Leguizamon",
+      "q8": "Agua"
+    }
+  },
+  {
+    "id": 177,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T19:00:27.312Z",
+    "datos": {
+      "timestamp": "2026-04-11T18:57:34.410Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3792488,
+        "lng": -56.8468371
+      },
+      "q6": "Christian Rolon",
+      "q7": "Ninguna ",
+      "q4": "Buena",
+      "q5": "Excelente",
+      "q8": "Centro de salud ",
+      "q3": "Sirena"
+    }
+  },
+  {
+    "id": 178,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T19:03:34.132Z",
+    "datos": {
+      "timestamp": "2026-04-11T19:02:34.892Z",
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3784295,
+        "lng": -56.8446692
+      },
+      "q3": "Sirena",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "William Aquino ",
+      "q8": "Caminos vecinales "
+    }
+  },
+  {
+    "id": 179,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T19:04:35.615Z",
+    "datos": {
+      "timestamp": "2026-04-11T19:01:11.665Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.377965885404585,
+        "lng": -56.84390526574191
+      },
+      "q3": "Sirena ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Recolección de basura "
+    }
+  },
+  {
+    "id": 180,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T19:06:03.058Z",
+    "datos": {
+      "timestamp": "2026-04-11T19:04:14.587Z",
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3782805,
+        "lng": -56.8463112
+      },
+      "q3": "Yat",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Elias Leguizamon",
+      "q8": "Los caminos "
+    }
+  },
+  {
+    "id": 181,
+    "usuario_id": 4,
+    "usuario_nombre": "Mirna",
+    "timestamp": "2026-04-11T19:06:08.351Z",
+    "datos": {
+      "timestamp": "2026-04-11T19:04:25.871Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3782386,
+        "lng": -56.8445082
+      },
+      "q3": "Sirena",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "WILLIAN RODRIGUEZ",
+      "q8": "Agua"
+    }
+  },
+  {
+    "id": 182,
+    "usuario_id": 5,
+    "usuario_nombre": "Milena",
+    "timestamp": "2026-04-11T19:07:50.460Z",
+    "datos": {
+      "timestamp": "2026-04-11T19:04:33.517Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.37766249763766,
+        "lng": -56.84367496268459
+      },
+      "q3": "Sirena ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino "
+    }
+  },
+  {
+    "id": 183,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T19:08:58.137Z",
+    "datos": {
+      "timestamp": "2026-04-11T19:07:48.196Z",
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3783646,
+        "lng": -56.8462043
+      },
+      "q3": "Sirena",
+      "q5": "NS/NR",
+      "q4": "NS/NR",
+      "q7": "Ninguna ",
+      "q8": "Baches agua "
+    }
+  },
+  {
+    "id": 184,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T19:11:08.858Z",
+    "datos": {
+      "timestamp": "2026-04-11T19:09:42.219Z",
+      "q_demo": [
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3782013,
+        "lng": -56.8463381
+      },
+      "q3": "Sirena",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguna ",
+      "q8": "Fuente de trabajo y pago de sueldo"
+    }
+  },
+  {
+    "id": 185,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T15:10:33.866Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3948948,
+        "lng": -56.8665892
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "William Aquino ",
+      "q8": "Fomentar más turismo ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 186,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T15:14:44.430Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3951142,
+        "lng": -56.8664756
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Miguel Marin",
+      "q8": "Agua ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 187,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T15:19:08.236Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3952892,
+        "lng": -56.8660949
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Nadie",
+      "q8": "La iluminación en las calles principales ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 188,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T15:22:48.340Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3959984,
+        "lng": -56.8664409
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q7": "Ninguna ",
+      "q8": "Falta de agua, recolección de basura ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 189,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T15:25:54.248Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3962888,
+        "lng": -56.8665684
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "Ninguno",
+      "q8": "Ningúno ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 190,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T15:36:06.702Z",
+    "datos": {
+      "q_demo": [],
+      "q1": "Partido Colorado",
+      "q3": "Lima",
+      "q2": {
+        "lat": -27.3965354,
+        "lng": -56.8653108
+      },
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Ninguno",
+      "q8": "Control de transporte y concienciacion vial",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 191,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T14:43:52.396Z",
+    "datos": {
+      "q_demo": [
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3936951,
+        "lng": -56.8676326
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguna ",
+      "q8": "Las vías publicas",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 192,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T14:48:24.392Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3933541,
+        "lng": -56.8678831
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "David Vega",
+      "q8": "Hermosear  y trabajo",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 193,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T14:51:31.216Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3934415,
+        "lng": -56.8675465
+      },
+      "q3": "Lima",
+      "q4": "Excelente",
+      "q5": "Excelente",
+      "q6": "Christian Rolon",
+      "q7": "Dennis cardozo",
+      "q8": "Arreglo de vías públicas y limpieza ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 194,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T14:56:35.208Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3939475,
+        "lng": -56.8672883
+      },
+      "q3": "Lima",
+      "q4": "NS/NR",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno",
+      "q8": "En todo ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 195,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T14:59:30.375Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3942637,
+        "lng": -56.8673673
+      },
+      "q3": "Lima",
+      "q5": "Buena",
+      "q4": "Excelente",
+      "q6": "Christian Rolon",
+      "q7": "Ninguno",
+      "q8": "En todo",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 196,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T16:54:49.913Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3990914,
+        "lng": -56.8595559
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Eladio Martinez ",
+      "q8": "Limpieza recolección ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 197,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T16:59:47.886Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Lima",
+      "q2": {
+        "lat": -27.3988456,
+        "lng": -56.8596324
+      },
+      "q4": "NS/NR",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Muchísimas cosas",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 198,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T17:06:07.373Z",
+    "datos": {
+      "q_demo": [
+        "Mujer"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3986149,
+        "lng": -56.8607505
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Luis Cuellar ",
+      "q8": "Limpieza basura",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 199,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T17:12:54.628Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Lima",
+      "q2": {
+        "lat": -27.3982534,
+        "lng": -56.8616254
+      },
+      "q4": "Buena",
+      "q5": "Buena",
+      "q7": "Ninguna ",
+      "q8": "Nada",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 200,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T17:22:19.484Z",
+    "datos": {
+      "q_demo": [
+        "Joven",
+        "Varón"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Lima ",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Alejandro Sanchez",
+      "q2": {
+        "lat": -27.3983346,
+        "lng": -56.8625306
+      },
+      "q8": "Basura ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 201,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T17:30:28.254Z",
+    "datos": {
+      "q_demo": [
+        "Mujer"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3977724,
+        "lng": -56.8634593
+      },
+      "q3": "Lima",
+      "q6": "Jose Mutti",
+      "q7": "Benitez",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 202,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T17:49:04.745Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Yataity",
+      "q4": "NS/NR",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Mario Cañete",
+      "q2": {
+        "lat": -27.3881164,
+        "lng": -56.8651588
+      },
+      "q8": "Humo",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 203,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:02:14.274Z",
+    "datos": {
+      "q_demo": "Varón,Joven",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3872527,
+        "lng": -56.8643984
+      },
+      "q3": "Yataity",
+      "q6": "Jose Mutti",
+      "q7": "Ning",
+      "q8": "Basura ",
+      "usuario_nombre": "Mabel",
+      "q4": "Excelente",
+      "q5": "Excelente"
+    }
+  },
+  {
+    "id": 204,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:05:45.827Z",
+    "datos": {
+      "q_demo": "Mujer,Joven",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.387259,
+        "lng": -56.8642477
+      },
+      "q3": "Yataity",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "N",
+      "q8": "Basura humo",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 205,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:18:46.748Z",
+    "datos": {
+      "q_demo": "Mujer,Mayor",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3873417,
+        "lng": -56.8631542
+      },
+      "q3": "Yataity",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Sofia Troche",
+      "q8": "Agua",
+      "usuario_nombre": "Mabel",
+      "q6": ""
+    }
+  },
+  {
+    "id": 207,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:25:09.115Z",
+    "datos": {
+      "q_demo": "Varón",
+      "q1": "Otros",
+      "q2": {
+        "lat": -26.8898279,
+        "lng": -56.8514267
+      },
+      "q6": "Ninguno",
+      "q7": "Prueba",
+      "usuario_nombre": "Mabel",
+      "q3": "Yataity",
+      "q4": "Excelente",
+      "q5": "Excelente",
+      "q8": ""
+    }
+  },
+  {
+    "id": 208,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:27:03.690Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Yataity",
+      "q2": {
+        "lat": -27.3876335,
+        "lng": -56.8624865
+      },
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "William Rodriguez ",
+      "q8": "Agua",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 209,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:29:54.775Z",
+    "datos": {
+      "q_demo": "Varón,Mayor",
+      "q1": "Partido Colorado",
+      "q3": "Yataity",
+      "q2": {
+        "lat": -27.3872074,
+        "lng": -56.8639445
+      },
+      "q6": "Jose Mutti",
+      "q5": "NS/NR",
+      "q4": "NS/NR",
+      "q7": "Sofia Troche",
+      "usuario_nombre": "Mabel",
+      "q8": ""
+    }
+  },
+  {
+    "id": 210,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:31:54.022Z",
+    "datos": {
+      "q_demo": "Varón,Mayor",
+      "q1": "Partido Colorado",
+      "q3": "Yataity",
+      "q2": {
+        "lat": -27.3877455,
+        "lng": -56.8648868
+      },
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Ning",
+      "q8": "Caminos",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 211,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:56:44.425Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3788806,
+        "lng": -56.8462985
+      },
+      "q3": "Sirena",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Shirley Dioff",
+      "q8": "Apoya a emprendedores",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 212,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T19:00:27.312Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3792488,
+        "lng": -56.8468371
+      },
+      "q6": "Christian Rolon",
+      "q7": "Ninguna ",
+      "q4": "Buena",
+      "q5": "Excelente",
+      "q8": "Centro de salud ",
+      "q3": "Sirena",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 213,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T19:06:03.058Z",
+    "datos": {
+      "q_demo": "Mujer,Joven",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3782805,
+        "lng": -56.8463112
+      },
+      "q3": "Sirena",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Elias Leguizamon",
+      "q8": "Los caminos ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 214,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T19:08:58.137Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3783646,
+        "lng": -56.8462043
+      },
+      "q3": "Sirena",
+      "q5": "NS/NR",
+      "q4": "NS/NR",
+      "q7": "Ninguna ",
+      "q8": "Baches agua ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 215,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T19:11:08.858Z",
+    "datos": {
+      "q_demo": [
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3782013,
+        "lng": -56.8463381
+      },
+      "q3": "Sirena",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguna ",
+      "q8": "Fuente de trabajo y pago de sueldo",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 216,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T15:12:12.132Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3962912,
+        "lng": -56.8513129
+      },
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q8": "Todo",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel",
+      "q3": "San Antonio ",
+      "q7": ""
+    }
+  },
+  {
+    "id": 217,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T15:15:03.638Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3966274,
+        "lng": -56.8515902
+      },
+      "q4": "Muy Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Sofi",
+      "q8": "Agua potable ",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel",
+      "q3": "San Antonio "
+    }
+  },
+  {
+    "id": 218,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T15:19:40.541Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Carlos ramires ",
+      "q8": "Recolección de basura ",
+      "q4": "Muy Mala",
+      "q2": {
+        "lat": -27.3975815,
+        "lng": -56.8528334
+      },
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel",
+      "q3": "San Antonio "
+    }
+  },
+  {
+    "id": 219,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T15:22:36.066Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3977329,
+        "lng": -56.8531208
+      },
+      "q4": "NS/NR",
+      "q5": "Mala",
+      "q3": "San Antonio ",
+      "q_1775904835742": "Mayor",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 220,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T15:26:14.526Z",
+    "datos": {
+      "q2": {
+        "lat": -27.3978992,
+        "lng": -56.8533795
+      },
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q8": "Colectivos",
+      "q1": "Partido Colorado",
+      "q4": "Muy Mala",
+      "q3": "San Antonio ",
+      "q_1775904835742": "Mayor",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 221,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T15:29:44.279Z",
+    "datos": {
+      "q2": {
+        "lat": -27.3981559,
+        "lng": -56.8539106
+      },
+      "q5": "Muy Mala",
+      "q1": "Partido Colorado",
+      "q3": "San Antonio ",
+      "q4": "Muy Mala",
+      "q_1775904835742": "Mayor",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 222,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:20:12.294Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q2": {
+        "lat": -27.4041435,
+        "lng": -56.8612866
+      },
+      "q3": "San jose mi",
+      "q7": "Sofi ",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q8": "Agua potable ",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 223,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:22:48.866Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4047385,
+        "lng": -56.8611391
+      },
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Wilian",
+      "q8": "En todo",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel",
+      "q3": "San jose mi"
+    }
+  },
+  {
+    "id": 224,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:32:41.979Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q2": {
+        "lat": -27.4058291,
+        "lng": -56.8609211
+      },
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q8": "Limpieza publica",
+      "q3": "San jose mi ",
+      "q_1775904835742": "Mayor",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 225,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:36:43.860Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4063574,
+        "lng": -56.8620412
+      },
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q8": "Recolección de basura ",
+      "q3": "San jose mi ",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 226,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:39:38.883Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4061627,
+        "lng": -56.8618655
+      },
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Wilfrido",
+      "q8": "Agua potable ",
+      "q3": "San jose mi",
+      "q_1775904835742": "Mayor",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 227,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:44:22.181Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4061315,
+        "lng": -56.8624329
+      },
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q8": "Alimentos escolares",
+      "q3": "San jose mi ",
+      "q_1775904835742": "Joven",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 228,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:45:34.338Z",
+    "datos": {
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4057909,
+        "lng": -56.8634476
+      },
+      "q8": "Rutas",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel",
+      "q3": "San jose mi",
+      "q7": ""
+    }
+  },
+  {
+    "id": 229,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T14:48:29.234Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q4": "Mala",
+      "q2": {
+        "lat": -27.4055954,
+        "lng": -56.863396
+      },
+      "q5": "Muy Mala",
+      "q7": "Talavera",
+      "q8": "Todo",
+      "q3": "San jose mi",
+      "q_1775904835742": "Varón",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 230,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T16:57:37.441Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3978942,
+        "lng": -56.8600982
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Gricelda ",
+      "q8": "Agua potable ",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 231,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:02:57.966Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3977349,
+        "lng": -56.8606901
+      },
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q8": "Limpieza ",
+      "q3": "Lima",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 232,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:05:08.715Z",
+    "datos": {
+      "q2": {
+        "lat": -27.3976451,
+        "lng": -56.8607866
+      },
+      "q1": "Partido Colorado",
+      "q5": "Buena",
+      "q8": "Mejorar turismo ",
+      "q3": "Lima",
+      "q4": "Mala",
+      "q_1775904835742": "Joven",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 233,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:08:49.555Z",
+    "datos": {
+      "q2": {
+        "lat": -27.397419,
+        "lng": -56.8615888
+      },
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ramón palacios ",
+      "q8": "Agua potable ",
+      "q4": "Muy Mala",
+      "q3": "Lima",
+      "q1": "Partido Colorado",
+      "q_1775904835742": "Mayor",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 234,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:11:34.860Z",
+    "datos": {
+      "q2": {
+        "lat": -27.3972364,
+        "lng": -56.8620884
+      },
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Carlos ramirez ",
+      "q8": "Agua potable ",
+      "q1": "Partido Colorado",
+      "q3": "Lima",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 235,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:19:16.350Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3965086,
+        "lng": -56.8640884
+      },
+      "q4": "Mala",
+      "q5": "Mala",
+      "q8": "Agua potable ",
+      "q3": "Lima",
+      "q_1775904835742": "Mayor",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 236,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:24:05.911Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3960229,
+        "lng": -56.8644662
+      },
+      "q6": "Jose Mutti",
+      "q8": "Veredas",
+      "q3": "Lima",
+      "q4": "Buena",
+      "q_1775904835742": "Adulto Mayor",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 237,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:28:54.615Z",
+    "datos": {
+      "q2": {
+        "lat": -27.3952901,
+        "lng": -56.8650852
+      },
+      "q5": "Buena",
+      "q8": "Agua potable ",
+      "q4": "Muy Mala",
+      "q3": "Lima",
+      "q1": "Partido Colorado",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 238,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:30:16.365Z",
+    "datos": {
+      "q2": {
+        "lat": -27.3952445,
+        "lng": -56.8651516
+      },
+      "q8": "Todo",
+      "q5": "NS/NR",
+      "q4": "NS/NR",
+      "q3": "Lima",
+      "q1": "Partido Colorado",
+      "q_1775904835742": "Adulto Mayor",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 239,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T17:34:37.110Z",
+    "datos": {
+      "q2": {
+        "lat": -27.3948673,
+        "lng": -56.8654411
+      },
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q8": "Todo",
+      "q3": "Lima",
+      "q1": "Partido Colorado",
+      "q_1775904835742": "Mayor",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 241,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T18:52:27.124Z",
+    "datos": {
+      "q2": {
+        "lat": -27.3796291,
+        "lng": -56.843838
+      },
+      "q5": "Muy Mala",
+      "q7": "Denis dior",
+      "q8": "Todo",
+      "q4": "Muy Mala",
+      "q1": "Partido Colorado",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel",
+      "q3": "Sirena",
+      "q6": ""
+    }
+  },
+  {
+    "id": 242,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T18:55:53.377Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3796584,
+        "lng": -56.8432053
+      },
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel",
+      "q3": "Sirena",
+      "q7": "",
+      "q8": ""
+    }
+  },
+  {
+    "id": 243,
+    "usuario_id": 2,
+    "usuario_nombre": "Miguel",
+    "timestamp": "2026-04-11T18:59:25.876Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Hugo ramirez",
+      "q8": "Todo",
+      "q2": {
+        "lat": -27.3797502,
+        "lng": -56.8420503
+      },
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel",
+      "q3": "Sirena"
+    }
+  },
+  {
+    "id": 244,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T00:11:30.375Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -26.8875076,
+        "lng": -57.0227032
+      },
+      "q3": "San Roque ",
+      "q6": "Christian Rolon",
+      "q7": "William ",
+      "q8": "agua potable "
+    }
+  },
+  {
+    "id": 245,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T00:16:14.531Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -26.8874887,
+        "lng": -57.0226614
+      },
+      "q3": "San Roque ",
+      "q6": "Jose Mutti",
+      "q7": "gabriel",
+      "q8": "agua "
+    }
+  },
+  {
+    "id": 266,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:02:14.274Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3872527,
+        "lng": -56.8643984
+      },
+      "q3": "Yat",
+      "q6": "Jose Mutti",
+      "q7": "Ning",
+      "q8": "Basura ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 267,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:05:45.827Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.387259,
+        "lng": -56.8642477
+      },
+      "q3": "Yat",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "N",
+      "q8": "Basura humo",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 268,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:18:46.748Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3873417,
+        "lng": -56.8631542
+      },
+      "q3": "Yat",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Sofia Troche",
+      "q8": "Agua",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 270,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:25:09.115Z",
+    "datos": {
+      "q_demo": "Varón",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -26.8898279,
+        "lng": -56.8514267
+      },
+      "q6": "Ninguno",
+      "q7": "N",
+      "usuario_nombre": "Mabel",
+      "q3": "",
+      "q4": "Excelente",
+      "q5": "Excelente",
+      "q8": ""
+    }
+  },
+  {
+    "id": 272,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:29:54.775Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Yat",
+      "q2": {
+        "lat": -27.3872074,
+        "lng": -56.8639445
+      },
+      "q6": "Jose Mutti",
+      "q5": "NS/NR",
+      "q4": "NS/NR",
+      "q7": "Sofia Troche",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 273,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T18:31:54.022Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q3": "Yat",
+      "q2": {
+        "lat": -27.3877455,
+        "lng": -56.8648868
+      },
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Ning",
+      "q8": "Caminos",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 276,
+    "usuario_id": 6,
+    "usuario_nombre": "Mabel",
+    "timestamp": "2026-04-11T19:06:03.058Z",
+    "datos": {
+      "q_demo": "Mujer,Joven",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3782805,
+        "lng": -56.8463112
+      },
+      "q3": "Sieena",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Elias Leguizamon",
+      "q8": "Los caminos ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 310,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T14:23:07.323Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.390747,
+        "lng": -56.8430486
+      },
+      "q3": "San Antonio ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ns nr",
+      "q8": "Todo ",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 311,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T14:28:14.827Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Adulto Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3919498,
+        "lng": -56.8446045
+      },
+      "q3": "San Antonio ",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q7": "Ns nr ",
+      "q8": "Agua ",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 312,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T14:34:12.116Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39267,
+        "lng": -56.8458755
+      },
+      "q3": "San Antonio ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Diosnel bogado",
+      "q8": "Documentos públicos ",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 313,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T14:39:56.724Z",
+    "datos": {
+      "q_demo": "",
+      "q2": {
+        "lat": -27.3930998,
+        "lng": -56.8464676
+      },
+      "q4": "Mala",
+      "q5": "Mala",
+      "q8": "Todo ",
+      "q7": "Ns nr",
+      "usuario_nombre": "Santiago",
+      "q1": "Partido Colorado",
+      "q3": "San Antonio ",
+      "q6": ""
+    }
+  },
+  {
+    "id": 314,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T14:48:57.658Z",
+    "datos": {
+      "q_demo": "Varón,Mayor",
+      "q2": {
+        "lat": -27.3934285,
+        "lng": -56.8470077
+      },
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Jose Carozo",
+      "q8": "Todo ",
+      "usuario_nombre": "Santiago",
+      "q1": "Partido Colorado",
+      "q3": "San Antonio "
+    }
+  },
+  {
+    "id": 315,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:06:33.781Z",
+    "datos": {
+      "q_demo": "Mujer,Mayor",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3917553,
+        "lng": -56.8656057
+      },
+      "q4": "Buena",
+      "q5": "Excelente",
+      "q6": "Christian Rolon",
+      "q8": "Trabajos ",
+      "usuario_nombre": "Santiago",
+      "q3": "Virgen del pilar ",
+      "q7": ""
+    }
+  },
+  {
+    "id": 316,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:14:21.971Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3919127,
+        "lng": -56.8628758
+      },
+      "q3": "Virgen del pilar ",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q8": "Agua ",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 317,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:16:46.112Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3917757,
+        "lng": -56.8626054
+      },
+      "q3": "Virgen del pilar ",
+      "q4": "NS/NR",
+      "q5": "Buena",
+      "q7": "Ns nr",
+      "q8": "Agua, electricidad ",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 318,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:36:06.641Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Adulto Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q8": "Todo",
+      "q2": {
+        "lat": -27.388738,
+        "lng": -56.8659997
+      },
+      "q3": "Virgen del pilar ",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 319,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:39:29.558Z",
+    "datos": {
+      "q_demo": "Mujer,Mayor",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3887687,
+        "lng": -56.8662449
+      },
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Marin ",
+      "q8": "Agua ",
+      "usuario_nombre": "Santiago",
+      "q3": "Virgen del pilar "
+    }
+  },
+  {
+    "id": 320,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:43:56.205Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.387793,
+        "lng": -56.8650059
+      },
+      "q3": "Virgen del pilar ",
+      "q6": "Jose Mutti",
+      "q5": "Buena",
+      "q4": "Buena",
+      "q7": "Arnildo bernal ",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 321,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:56:28.330Z",
+    "datos": {
+      "q_demo": "Mujer",
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Wlian",
+      "q8": "Mas trabajo ",
+      "q2": {
+        "lat": -27.3918615,
+        "lng": -56.8580118
+      },
+      "usuario_nombre": "Santiago",
+      "q3": "Santa ana"
+    }
+  },
+  {
+    "id": 322,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T17:59:53.224Z",
+    "datos": {
+      "q_demo": [
+        "Mujer"
+      ],
+      "q2": {
+        "lat": -27.3919375,
+        "lng": -56.8576872
+      },
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q8": "Limpieza de basura ",
+      "q1": "Partido Colorado",
+      "q3": "Santa ana 100",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 323,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:02:38.068Z",
+    "datos": {
+      "q_demo": [
+        "Mayor"
+      ],
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Sofi",
+      "q8": "Falta de trabajo",
+      "q2": {
+        "lat": -27.3918776,
+        "lng": -56.8570139
+      },
+      "q1": "Partido Colorado",
+      "q3": "100",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 324,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:04:43.859Z",
+    "datos": {
+      "q_demo": [
+        "Mujer"
+      ],
+      "q2": {
+        "lat": -27.3919414,
+        "lng": -56.8566399
+      },
+      "q5": "Mala",
+      "q4": "Buena",
+      "q6": "Christian Rolon",
+      "q8": "Todo ",
+      "q3": "100",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 325,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:06:22.621Z",
+    "datos": {
+      "q_demo": [
+        "Mayor"
+      ],
+      "q2": {
+        "lat": -27.3919094,
+        "lng": -56.8566187
+      },
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Gabriel Alfonso",
+      "q7": "Jose gimenez",
+      "q8": "Todo",
+      "q3": "100",
+      "q1": "Partido Colorado",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 326,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:09:33.925Z",
+    "datos": {
+      "q_demo": [
+        "Varón"
+      ],
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Carlos ",
+      "q8": "La iluminación ",
+      "q2": {
+        "lat": -27.3907891,
+        "lng": -56.8569741
+      },
+      "q1": "Partido Colorado",
+      "q3": "100",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 327,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:18:03.738Z",
+    "datos": {
+      "q_demo": "Mujer",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Sofi",
+      "q8": "Agua potable",
+      "q2": {
+        "lat": -27.3904974,
+        "lng": -56.8569823
+      },
+      "q1": "Partido Colorado",
+      "usuario_nombre": "Santiago",
+      "q3": "Santa ana"
+    }
+  },
+  {
+    "id": 328,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:25:22.261Z",
+    "datos": {
+      "q_demo": [
+        "Mujer"
+      ],
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Gabriel Alfonso",
+      "q8": "Agua potable ",
+      "q2": {
+        "lat": -27.3903947,
+        "lng": -56.8566395
+      },
+      "q3": "Santa ana",
+      "q1": "Partido Colorado",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 329,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:29:18.252Z",
+    "datos": {
+      "q_demo": [
+        "Varón"
+      ],
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Marin",
+      "q8": "Agua potable ",
+      "q3": "Santa ana ",
+      "q2": {
+        "lat": -27.3904187,
+        "lng": -56.8557425
+      },
+      "q1": "Partido Colorado",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 330,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:38:26.812Z",
+    "datos": {
+      "q_demo": [
+        "Mujer"
+      ],
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q8": "Alimentación escolar ",
+      "q2": {
+        "lat": -27.3897718,
+        "lng": -56.8558318
+      },
+      "q1": "Partido Colorado",
+      "q3": "Santa ana ",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 331,
+    "usuario_id": 3,
+    "usuario_nombre": "Santiago",
+    "timestamp": "2026-04-11T18:41:23.737Z",
+    "datos": {
+      "q_demo": [
+        "Mayor"
+      ],
+      "q2": {
+        "lat": -27.3897576,
+        "lng": -56.8561817
+      },
+      "q4": "Mala",
+      "q5": "Buena",
+      "q8": "Salud",
+      "q3": "Santa ana",
+      "q1": "Partido Colorado",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 335,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T15:12:12.132Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3962912,
+        "lng": -56.8513129
+      },
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q8": "Todo",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 337,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T15:15:03.638Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3966274,
+        "lng": -56.8515902
+      },
+      "q4": "Muy Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Sofi",
+      "q8": "Agua potable ",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 338,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T15:16:39.950Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.396599041019574,
+        "lng": -56.85177830595699
+      },
+      "q3": "San Antonio ",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 340,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T15:19:40.541Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Carlos ramires ",
+      "q8": "Recolección de basura ",
+      "q4": "Muy Mala",
+      "q2": {
+        "lat": -27.3975815,
+        "lng": -56.8528334
+      },
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 341,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T15:19:50.996Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39689441339282,
+        "lng": -56.85211753252889
+      },
+      "q3": "San Antonio ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguna ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 346,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T15:27:51.535Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39796854051086,
+        "lng": -56.85377696685532
+      },
+      "q3": "San Antonio ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 349,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:18:43.238Z",
+    "datos": {
+      "q_demo": "Mujer,Joven",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.40400621051414,
+        "lng": -56.86183459636993
+      },
+      "q3": "San José Mí",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena",
+      "q6": ""
+    }
+  },
+  {
+    "id": 350,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:19:20.410Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3904993,
+        "lng": -56.8423842
+      },
+      "q3": "San antonio",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Diosnel Bogado",
+      "q8": "Recoleccion de Basura",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 352,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:21:45.836Z",
+    "datos": {
+      "q_demo": "Varón,Mayor",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.404113553399807,
+        "lng": -56.86174092751455
+      },
+      "q3": "San José Mí",
+      "q4": "Mala",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 353,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:22:48.866Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4047385,
+        "lng": -56.8611391
+      },
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Wilian",
+      "q8": "En todo",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 355,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:25:04.272Z",
+    "datos": {
+      "q_demo": "Mujer,Mayor",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.404217857368813,
+        "lng": -56.86188800173899
+      },
+      "q3": "San José Mí",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena",
+      "q6": ""
+    }
+  },
+  {
+    "id": 357,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:27:42.533Z",
+    "datos": {
+      "q_demo": "Mujer,Joven",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.404568047548366,
+        "lng": -56.86197004357829
+      },
+      "q3": "San José Mí",
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 359,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:29:48.750Z",
+    "datos": {
+      "q_demo": "Varón,Mayor",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4049176232877,
+        "lng": -56.86186357629915
+      },
+      "q3": "San José Mí",
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 360,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:32:27.597Z",
+    "datos": {
+      "q_demo": "Varón,Mayor",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.405185654226056,
+        "lng": -56.861894874299615
+      },
+      "q3": "San José Mí",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Diego Barreto ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 361,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:32:41.979Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q2": {
+        "lat": -27.4058291,
+        "lng": -56.8609211
+      },
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q8": "Limpieza publica",
+      "q3": "San José Mí",
+      "q_1775904835742": "Mayor",
+      "usuario_nombre": "Miguel",
+      "q_demo": "",
+      "q7": ""
+    }
+  },
+  {
+    "id": 363,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:36:19.021Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3916144,
+        "lng": -56.844004
+      },
+      "q3": "San Antonio ",
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Willian Aquino",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 364,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:36:43.860Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4063574,
+        "lng": -56.8620412
+      },
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q8": "Recolección de basura ",
+      "q3": "San José Mí",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel",
+      "q_demo": "",
+      "q7": ""
+    }
+  },
+  {
+    "id": 365,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:37:18.667Z",
+    "datos": {
+      "q_demo": "Mujer,Mayor",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.405782610341642,
+        "lng": -56.86209535778314
+      },
+      "q3": "San José Mí",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 367,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:39:56.724Z",
+    "datos": {
+      "q_demo": [],
+      "q2": {
+        "lat": -27.3930998,
+        "lng": -56.8464676
+      },
+      "q4": "Mala",
+      "q5": "Mala",
+      "q8": "Todo ",
+      "q7": "Ns nr",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 369,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:44:00.924Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3919687,
+        "lng": -56.8446741
+      },
+      "q3": "San antonio",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Willian Aquino",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 370,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:44:22.181Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4061315,
+        "lng": -56.8624329
+      },
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q8": "Alimentos escolares",
+      "q3": "San José Mí",
+      "q_1775904835742": "Joven",
+      "usuario_nombre": "Miguel",
+      "q_demo": "",
+      "q7": ""
+    }
+  },
+  {
+    "id": 371,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:45:34.338Z",
+    "datos": {
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.4057909,
+        "lng": -56.8634476
+      },
+      "q8": "Rutas",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 374,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T14:48:57.658Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q2": {
+        "lat": -27.3934285,
+        "lng": -56.8470077
+      },
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Jose Carozo",
+      "q8": "Todo ",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 378,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T15:03:03.451Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3932908,
+        "lng": -56.8469262
+      },
+      "q3": "San antonio",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "Willian Aquino ",
+      "q8": "Basura",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 379,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T15:08:32.046Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3947566,
+        "lng": -56.8494005
+      },
+      "q3": "San antonio ",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Alvarenga",
+      "q8": "Todo",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 425,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T16:55:09.728Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39858457811447,
+        "lng": -56.85851209924371
+      },
+      "q3": "Lima ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Denis flores ",
+      "q8": "Agua ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 427,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T16:58:12.181Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39823762862592,
+        "lng": -56.859225926674675
+      },
+      "q3": "Lima ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 428,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T16:59:08.766Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3984567,
+        "lng": -56.8614946
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "William Aquino",
+      "q8": "Agua",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 431,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:03:15.839Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3982005,
+        "lng": -56.862759
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Arnaldo Cardozo",
+      "q8": "Recoleccion de basura",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 434,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:06:26.228Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.397887936730477,
+        "lng": -56.86041627181986
+      },
+      "q3": "Lima ",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q7": "Ninguno ",
+      "q8": "Agua ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 435,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:06:33.781Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3917553,
+        "lng": -56.8656057
+      },
+      "q4": "Buena",
+      "q5": "Excelente",
+      "q6": "Christian Rolon",
+      "q8": "Trabajos ",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 436,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:06:34.425Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.397781,
+        "lng": -56.8634922
+      },
+      "q3": "Lima",
+      "q4": "Muy Mala",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Mario Cañete",
+      "q8": "Trabajo ",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 440,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:12:37.063Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3977020859371,
+        "lng": -56.86112303570069
+      },
+      "q3": "Lima ",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 443,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:16:30.676Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3975753,
+        "lng": -56.863541
+      },
+      "q3": "Lima",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "Cañete",
+      "q8": "Recoleccion",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 446,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:19:38.407Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.396816630045,
+        "lng": -56.86358913938975
+      },
+      "q3": "Lima ",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q7": "Ninguno ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 447,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:22:08.477Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3973472,
+        "lng": -56.864286
+      },
+      "q3": "Lima",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "William Aquino",
+      "q8": "Agua",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 449,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:22:51.458Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.396980137739142,
+        "lng": -56.86368480645706
+      },
+      "q3": "Lima ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 451,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:26:52.571Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.396504081419177,
+        "lng": -56.864202084256796
+      },
+      "q3": "Lima ",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 456,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:35:55.370Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39552055538877,
+        "lng": -56.864922028698984
+      },
+      "q3": "Lima ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Elias leguizamon ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 458,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:37:30.594Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.395663118844002,
+        "lng": -56.86483758834036
+      },
+      "q3": "Lima ",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 459,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:39:29.558Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3887687,
+        "lng": -56.8662449
+      },
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Marin ",
+      "q8": "Agua ",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 461,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:47:56.559Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3877992,
+        "lng": -56.8649857
+      },
+      "q3": "Yataity",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Carlos Marin ",
+      "q8": "Agua",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 463,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:51:19.579Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3874323,
+        "lng": -56.8650945
+      },
+      "q3": "Yataity",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Miguel Amarilla",
+      "q8": "Agua",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 464,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:56:28.330Z",
+    "datos": {
+      "q_demo": [
+        "Mujer"
+      ],
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Wlian",
+      "q8": "Mas trabajo ",
+      "q2": {
+        "lat": -27.3918615,
+        "lng": -56.8580118
+      },
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 465,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:57:47.177Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39163711148714,
+        "lng": -56.85780685896884
+      },
+      "q3": "Santa Ana ",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Cecilio Arias ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 467,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:00:37.311Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39143621146509,
+        "lng": -56.858045633572324
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Ninguno ",
+      "q8": "Recolección de basura ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 468,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:00:43.036Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Adulto Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3871118,
+        "lng": -56.8643145
+      },
+      "q3": "Yataity",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Wilfrido Jacquet ",
+      "q8": "Agua",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 471,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:03:18.231Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.391259362170636,
+        "lng": -56.858018356542594
+      },
+      "q3": "Santa Ana",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Ninguno ",
+      "q8": "Iluminación ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 475,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:08:13.567Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39084813918871,
+        "lng": -56.85756097651701
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Buena",
+      "q6": "Christian Rolon",
+      "q7": "Miguel MArin ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 476,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:08:24.625Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3871182,
+        "lng": -56.863616
+      },
+      "q3": "Yataity",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "Luis cuellar",
+      "q8": "Agua",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 478,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:12:36.416Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.390587101676065,
+        "lng": -56.857373370800595
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguna ",
+      "q8": "Agua ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 479,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:14:42.287Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3872072,
+        "lng": -56.8625858
+      },
+      "q3": "Yataity",
+      "q4": "Mala",
+      "q5": "Mala",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 480,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:15:19.133Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.390677275791088,
+        "lng": -56.85724560334454
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Sofia Troche ",
+      "q8": "Recolección de basura ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 481,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:18:03.738Z",
+    "datos": {
+      "q_demo": [
+        "Mujer"
+      ],
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Sofi",
+      "q8": "Agua potable",
+      "q2": {
+        "lat": -27.3904974,
+        "lng": -56.8569823
+      },
+      "q1": "Partido Colorado",
+      "usuario_nombre": "Santiago"
+    }
+  },
+  {
+    "id": 482,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:18:39.622Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39057270123674,
+        "lng": -56.85716673695742
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguna ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 484,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:18:55.308Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3873947,
+        "lng": -56.8619433
+      },
+      "q3": "Yataity",
+      "q4": "Muy Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Arnildo Bernal",
+      "q8": "Camino vecinal",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 486,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:25:09.115Z",
+    "datos": {
+      "q_demo": [
+        "Varón"
+      ],
+      "q1": "Otros",
+      "q2": {
+        "lat": -26.8898279,
+        "lng": -56.8514267
+      },
+      "q6": "Ninguno",
+      "q7": "Prueba",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 487,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:25:22.261Z",
+    "datos": {
+      "q_demo": "Mujer",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Gabriel Alfonso",
+      "q8": "Agua potable ",
+      "q2": {
+        "lat": -27.3903947,
+        "lng": -56.8566395
+      },
+      "q3": "Santa Ana",
+      "q1": "Partido Colorado",
+      "usuario_nombre": "Santiago",
+      "q7": ""
+    }
+  },
+  {
+    "id": 488,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:26:47.407Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.390431572250122,
+        "lng": -56.85657000023172
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 491,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:29:31.121Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.390318756353597,
+        "lng": -56.85625560580597
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q7": "Ninguno ",
+      "q8": "Agua ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 492,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:29:40.058Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3876085,
+        "lng": -56.8614375
+      },
+      "q3": "Yataity",
+      "q5": "Muy Mala",
+      "q4": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q8": "Agua",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 495,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:32:08.950Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3872311,
+        "lng": -56.8612082
+      },
+      "q3": "Yataity",
+      "q5": "Mala",
+      "q4": "Mala",
+      "q6": "Christian Rolon",
+      "q7": "WILLIAN AQUINO ",
+      "q8": "Agua",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 496,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:33:11.082Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.39021000226267,
+        "lng": -56.8560579845082
+      },
+      "q3": "Santa Ana ",
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Agua ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 498,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:41:23.737Z",
+    "datos": {
+      "q_demo": "Mayor",
+      "q2": {
+        "lat": -27.3897576,
+        "lng": -56.8561817
+      },
+      "q4": "Mala",
+      "q5": "Buena",
+      "q8": "Salud",
+      "q3": "Santa Ana",
+      "q1": "Partido Colorado",
+      "usuario_nombre": "Santiago",
+      "q6": "",
+      "q7": ""
+    }
+  },
+  {
+    "id": 500,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:52:07.454Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Adulto Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3792029,
+        "lng": -56.8451088
+      },
+      "q3": "Sirena ",
+      "q4": "Mala",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "CACERES",
+      "q8": "Fuente trabajo ",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 501,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:52:27.124Z",
+    "datos": {
+      "q2": {
+        "lat": -27.3796291,
+        "lng": -56.843838
+      },
+      "q5": "Muy Mala",
+      "q7": "Denis dior",
+      "q8": "Todo",
+      "q4": "Muy Mala",
+      "q1": "Partido Colorado",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 502,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:53:12.377Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.37903236459584,
+        "lng": -56.84419006472278
+      },
+      "q3": "Sirena ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Edgardo Villalba ",
+      "q8": "Recolección de basura ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 503,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:55:36.521Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.378869,
+        "lng": -56.844919
+      },
+      "q3": "Sirena",
+      "q4": "Mala",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q8": "Trabajo",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 504,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:55:51.351Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.378802507236607,
+        "lng": -56.84411005941506
+      },
+      "q3": "Sirena ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 505,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:55:53.377Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3796584,
+        "lng": -56.8432053
+      },
+      "q4": "Mala",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 507,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:57:47.762Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.378863874493444,
+        "lng": -56.844139878204935
+      },
+      "q3": "Sirena ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 508,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:59:25.876Z",
+    "datos": {
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Hugo ramirez",
+      "q8": "Todo",
+      "q2": {
+        "lat": -27.3797502,
+        "lng": -56.8420503
+      },
+      "q_1775904835742": "Mujer",
+      "usuario_nombre": "Miguel"
+    }
+  },
+  {
+    "id": 509,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T19:00:26.239Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3782882,
+        "lng": -56.8446613
+      },
+      "q3": "Sirena",
+      "q4": "Buena",
+      "q5": "Buena",
+      "q6": "Jose Mutti",
+      "q7": "Elias Leguizamon",
+      "q8": "Agua",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 511,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T19:03:34.132Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3784295,
+        "lng": -56.8446692
+      },
+      "q3": "Sirena",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "William Aquino ",
+      "q8": "Caminos vecinales ",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 512,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T19:04:35.615Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.377965885404585,
+        "lng": -56.84390526574191
+      },
+      "q3": "Sirena ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Ninguno ",
+      "q8": "Recolección de basura ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 513,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T19:06:03.058Z",
+    "datos": {
+      "q_demo": [
+        "Mujer",
+        "Joven"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3782805,
+        "lng": -56.8463112
+      },
+      "q3": "Yat",
+      "q4": "Buena",
+      "q5": "Mala",
+      "q6": "Jose Mutti",
+      "q7": "Elias Leguizamon",
+      "q8": "Los caminos ",
+      "usuario_nombre": "Mabel"
+    }
+  },
+  {
+    "id": 514,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T19:06:08.351Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.3782386,
+        "lng": -56.8445082
+      },
+      "q3": "Sirena",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "WILLIAN RODRIGUEZ",
+      "q8": "Agua",
+      "usuario_nombre": "Mirna"
+    }
+  },
+  {
+    "id": 515,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T19:07:50.460Z",
+    "datos": {
+      "q_demo": [
+        "Varón",
+        "Mayor"
+      ],
+      "q1": "Partido Colorado",
+      "q2": {
+        "lat": -27.37766249763766,
+        "lng": -56.84367496268459
+      },
+      "q3": "Sirena ",
+      "q4": "Mala",
+      "q5": "Muy Mala",
+      "q7": "Ninguno ",
+      "q8": "Camino ",
+      "usuario_nombre": "Milena"
+    }
+  },
+  {
+    "id": 654,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T17:56:28.330Z",
+    "datos": {
+      "q_demo": "Mujer",
+      "q1": "Partido Colorado",
+      "q4": "Buena",
+      "q5": "Muy Mala",
+      "q6": "Christian Rolon",
+      "q7": "Wlian",
+      "q8": "Mas trabajo ",
+      "q2": {
+        "lat": -27.3918615,
+        "lng": -56.8580118
+      },
+      "usuario_nombre": "Santiago",
+      "q3": "Santa Ana"
+    }
+  },
+  {
+    "id": 660,
+    "usuario_id": 1,
+    "usuario_nombre": "admin",
+    "timestamp": "2026-04-11T18:18:03.738Z",
+    "datos": {
+      "q_demo": "Mujer",
+      "q4": "Muy Mala",
+      "q5": "Muy Mala",
+      "q6": "Jose Mutti",
+      "q7": "Sofi",
+      "q8": "Agua potable",
+      "q2": {
+        "lat": -27.3904974,
+        "lng": -56.8569823
+      },
+      "q1": "Partido Colorado",
+      "usuario_nombre": "Santiago",
+      "q3": "Santa Ana"
+    }
+  }
+]

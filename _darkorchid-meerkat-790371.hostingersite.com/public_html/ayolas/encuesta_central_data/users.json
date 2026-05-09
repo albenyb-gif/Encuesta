@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nombre": "admin",
+    "password_hash": "$2a$10$ACQoyQoACZhA0ZyMy9zM5eXGXeMuqhBUQhQxl7C7nvHKIN2CkT82W",
+    "rol": "admin"
+  },
+  {
+    "id": 2,
+    "nombre": "Miguel",
+    "password_hash": "$2a$10$SYkwfDJSVzMTYKvAhg/BEO4FORNXPXwYFPjFS86q4UMTtQM5FwxgG",
+    "rol": "encuestador"
+  },
+  {
+    "id": 3,
+    "nombre": "Santiago",
+    "password_hash": "$2a$10$vPTcRYSoe5Iwh1h6hu6sZuiyDak0goLBiR4XN9C4gyuc2yv.v2zWe",
+    "rol": "encuestador"
+  },
+  {
+    "id": 6,
+    "nombre": "Mabel",
+    "password_hash": "$2a$10$rTpz3TLe44E3wk9stfgW1.puj1NzZYqyjFkR7rztTakKoUB2iknRi",
+    "rol": "encuestador"
+  },
+  {
+    "id": 7,
+    "nombre": "Ayolas",
+    "password_hash": "$2a$10$ENTUuIAdj/PxXNS4cctbjebX7LInsfNXcKWEI69cEE40rLnRaeZ2y",
+    "rol": "analista"
+  }
+]

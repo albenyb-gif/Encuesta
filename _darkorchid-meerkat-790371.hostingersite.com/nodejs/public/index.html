@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Encuesta Senior Pro 3.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Barra de Estado Offline -->
+    <div id="offline-status-bar" class="offline-status-bar" style="display:none;">
+        <div class="sync-info">
+            <i id="sync-icon" class="fa-solid fa-cloud-arrow-up"></i>
+            <span id="sync-text">Pendientes de envío (<span id="sync-count">0</span>)</span>
+        </div>
+    </div>
+
+    <!-- Sidebar para PC -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <div style="background: var(--accent); width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+            <span>Senior 3.0</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="sidebar-item active" id="nav-home" data-view="view-dashboard">
+                <i class="fa-solid fa-house"></i> Dashboard
+            </a>
+            <a href="#" class="sidebar-item" id="nav-new-survey" onclick="startNewSurvey()">
+                <i class="fa-solid fa-plus-circle"></i> Nueva Encuesta
+            </a>
+            <a href="#" class="sidebar-item" id="nav-results" data-view="view-results">
+                <i class="fa-solid fa-chart-column"></i> Resultados
+            </a>
+            <a href="#" class="sidebar-item" id="nav-settings" data-view="view-settings">
+                <i class="fa-solid fa-gear"></i> Estructura y Config
+            </a>
+            <a href="#" class="sidebar-item" id="nav-admin" data-view="view-admin" style="display:none;">
+                <i class="fa-solid fa-user-shield"></i> Usuarios
+            </a>
+        </nav>
+        <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="#" onclick="handleLogout()" class="sidebar-item" style="color: var(--danger);">
+                <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
+            </a>
+        </div>
+    </aside>
+
+    <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <div class="app-container">
+        <!-- Main Area -->
+        <main class="main-content" id="main-content" style="display:none;">
+            <!-- Header Móvil -->
+            <header class="header">
+                <button class="menu-btn" id="menu-toggle" onclick="toggleSidebar()">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+                <div class="header-center">
+                    <h2 style="font-size: 16px; letter-spacing: -0.5px;">Panel Principal</h2>
+                </div>
+                <div class="user-avatar" onclick="openProfileModal()">
+                    <img id="header-avatar" src="https://i.pravatar.cc/100?u=researcher" alt="Perfil">
+                </div>
+            </header>
+
+            <!-- VISTA: DASHBOARD -->
+            <section id="view-dashboard" class="view active">
+                <div class="welcome-section" style="margin-bottom: 30px;">
+                    <h1 style="font-size: 24px; margin-bottom: 4px;">¡Hola, <span id="welcome-name">...</span>! 👋</h1>
+                    <p style="color: var(--slate-500); font-size: 14px;">Aquí tienes el resumen de tu campaña 3.0.</p>
+                </div>
+
+                <div id="quick-stats" class="stats-grid">
+                    <!-- Cards dinámicas -->
+                </div>
+
+                <div class="dashboard-layout">
+                    <!-- Mapa Miniatura -->
+                    <div class="card" style="padding: 0; overflow: hidden; height: 400px; position: relative;">
+                        <div style="position: absolute; top: 15px; left: 15px; z-index: 1000; background: white; padding: 6px 12px; border-radius: 50px; box-shadow: var(--shadow); font-size: 12px; font-weight: 700;">
+                            <i class="fa-solid fa-location-dot" style="color: var(--accent);"></i> <span id="loc-count">0</span> Geolocalizaciones
+                        </div>
+                        <div id="dashboard-map" style="height: 100%; width: 100%;"></div>
+                    </div>
+
+                    <!-- Actividad Reciente -->
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h3 style="font-size: 16px;">Actividad Reciente</h3>
+                            <button onclick="navigateTo('view-results')" style="font-size: 12px; color: var(--accent); background: none; font-weight: 700;">Ver todo</button>
+                        </div>
+                        <div id="activity-list">
+                            <!-- Items dinámicos -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VISTA: ENCUESTA (WIZARD) -->
+            <section id="view-survey" class="view">
+                <div class="survey-header" style="text-align: center; margin-bottom: 40px;">
+                    <div id="step-info" style="font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; margin-bottom: 8px;">Paso 1 de 3</div>
+                    <h1 id="step-title" style="font-size: 24px;">Identificación</h1>
+                </div>
+
+                <div id="survey-questions-container">
+                    <!-- Preguntas inyectadas por JS -->
+                </div>
+
+                <div class="survey-actions" style="display: flex; gap: 15px; margin-top: 40px; padding-bottom: 40px;">
+                    <button class="btn-secondary" id="btn-prev" onclick="prevStep()" style="flex: 1;">
+                        <i class="fa-solid fa-arrow-left"></i> Anterior
+                    </button>
+                    <button class="btn-primary-large" id="btn-next" onclick="nextStep()" style="flex: 2;">
+                        Siguiente <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- VISTA: RESULTADOS Y ANÁLISIS -->
+            <section id="view-results" class="view">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px; flex-wrap: wrap; gap: 20px;">
+                    <div>
+                        <h1 style="font-size: 24px;">Análisis de Datos</h1>
+                        <p style="color: var(--slate-500); font-size: 14px;">Filtra y exporta la información recolectada.</p>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn-secondary" id="btn-back-to-map" onclick="goBackToMap()" style="display: none; padding: 8px 16px; font-size: 13px;">
+                            <i class="fa-solid fa-map"></i> Volver al Mapa
+                        </button>
+                        <button class="btn-secondary" id="btn-export-excel" onclick="exportToExcel()" style="padding: 10px 20px; font-size: 13px; background: #10b981; color: white; border: none;">
+                            <i class="fa-solid fa-file-excel"></i> Exportar
+                        </button>
+                        <!-- Botón de borrado masivo (solo admin) -->
+                        <button class="btn-secondary" id="btn-bulk-delete" onclick="deleteSelectedSurveys()" style="display: none; padding: 10px 20px; font-size: 13px; background: var(--danger); color: white; border: none;">
+                            <i class="fa-solid fa-trash-can"></i> Borrar (<span id="selected-count">0</span>)
+                        </button>
+                    </div>
+                </div>
+
+                <div class="processing-panel" id="report-config-panel">
+                    <div class="filter-group">
+                        <div class="filter-item">
+                            <label style="font-size: 11px; font-weight: 700; color: var(--slate-400); margin-bottom: 4px;">TIPO DE INFORME</label>
+                            <select id="report-type" onchange="refreshAnalysis()">
+                                <option value="geo">Mapa de Relevamiento</option>
+                                <option value="summary">Resumen Estadístico (Gráficos)</option>
+                                <option value="raw">Base de Datos (Tabla)</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label style="font-size: 11px; font-weight: 700; color: var(--slate-400); margin-bottom: 4px;">FILTRAR POR BARRIO</label>
+                            <select id="filter-barrio" onchange="refreshAnalysis()">
+                                <option value="all">Todos los barrios</option>
+                            </select>
+                        </div>
+                        <div class="filter-item" style="margin-left: auto;">
+                             <button class="btn-secondary" onclick="refreshAnalysis()" style="padding: 10px; min-width: auto;"><i class="fa-solid fa-rotate"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="analysis-container">
+                    <!-- Contenido dinámico: Mapa, Gráficos o Tabla -->
+                </div>
+            </section>
+
+            <!-- VISTA: CONFIGURACIÓN DE ESTRUCTURA (ADMIN) -->
+            <section id="view-settings" class="view">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                    <div>
+                        <h1 style="font-size: 24px;">Configuración de Encuesta</h1>
+                        <p style="color: var(--slate-500); font-size: 14px;">Define preguntas, candidatos y flujos.</p>
+                    </div>
+                    <button class="btn-secondary" onclick="resetToDefault()" style="color: var(--danger); border-color: #fee2e2;">
+                        <i class="fa-solid fa-trash-arrow-up"></i> Resetear Sistema
+                    </button>
+                </div>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                        <h3 style="font-size: 18px;">Preguntas del Cuestionario</h3>
+                        <button class="btn-primary-large" onclick="openQuestionModal()" style="padding: 10px 20px; width: auto; font-size: 13px;">
+                            <i class="fa-solid fa-plus"></i> Agregar Pregunta
+                        </button>
+                    </div>
+                    <div id="settings-questions-list" style="display: flex; flex-direction: column; gap: 12px;">
+                        <!-- Preguntas dinámicas -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                        <h3 style="font-size: 18px;">Candidatos (Opción Selección)</h3>
+                        <button class="btn-secondary" onclick="openCandidateModal()" style="padding: 10px 20px; font-size: 13px;">
+                            <i class="fa-solid fa-user-plus"></i> Agregar Candidato
+                        </button>
+                    </div>
+                    <div id="settings-candidates-list" class="candidate-grid">
+                        <!-- Candidatos dinámicos -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- VISTA: ADMINISTRACIÓN DE USUARIOS -->
+            <section id="view-admin" class="view">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                    <div>
+                        <h1 style="font-size: 24px;">Gestión de Equipo</h1>
+                        <p style="color: var(--slate-500); font-size: 14px;">Administra los encuestadores y sus permisos.</p>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn-secondary" onclick="deepRecoveryScan()" style="background: var(--warning); color: white; border: none; font-size: 12px;">
+                            <i class="fa-solid fa-life-ring"></i> Recuperación Profunda
+                        </button>
+                        <button class="btn-primary-large" onclick="openNewUserModal()" style="padding: 10px 20px; width: auto; font-size: 13px;">
+                            <i class="fa-solid fa-user-plus"></i> Nuevo Usuario
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bloque de Mantenimiento / Importación -->
+                <div class="card" style="border-left: 4px solid var(--accent); background: #f8fafc;">
+                    <h3 style="font-size: 14px; margin-bottom: 15px;"><i class="fa-solid fa-tools"></i> Mantenimiento y Rescate</h3>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                         <div style="flex: 1; min-width: 200px;">
+                             <label style="font-size: 11px; font-weight: 700; color: var(--slate-500);">IMPORTAR DATOS (.JSON o .CSV)</label>
+                             <div style="display: flex; gap: 8px; margin-top: 5px;">
+                                 <input type="file" id="import-json-file" style="font-size: 11px; flex: 1;">
+                                 <button onclick="importSurveyData()" class="btn-secondary" style="padding: 5px 12px; font-size: 11px;">Subir</button>
+                             </div>
+                         </div>
+                         <button onclick="cleanDuplicates()" class="btn-secondary" style="align-self: flex-end; padding: 10px 20px; font-size: 12px; border-color: var(--accent); color: var(--accent);">
+                             <i class="fa-solid fa-broom"></i> Limpieza de Duplicados
+                         </button>
+                    </div>
+                </div>
+
+                <div id="admin-users-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;">
+                    <!-- Usuarios dinámicos -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Navegación Móvil (Bottom Bar) -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active" onclick="navigateTo('view-dashboard')">
+                <i class="fa-solid fa-house"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#" class="nav-item" onclick="startNewSurvey()">
+                <i class="fa-solid fa-circle-plus"></i>
+                <span>Nueva</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('view-results')">
+                <i class="fa-solid fa-chart-simple"></i>
+                <span>Datos</span>
+            </a>
+            <a href="#" class="nav-item" onclick="navigateTo('view-settings')">
+                <i class="fa-solid fa-gear"></i>
+                <span>Config</span>
+            </a>
+        </nav>
+
+        <!-- VISTA: LOGIN (FUERA DE MAIN) -->
+        <section id="view-login" class="view">
+            <div class="login-card">
+                <div style="background: var(--accent); width: 60px; height: 60px; border-radius: 18px; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; box-shadow: 0 10px 20px rgba(59,130,246,0.3);">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h1 class="welcome-title">Senior Pro 3.0</h1>
+                <p class="welcome-subtitle">Inicie sesión para comenzar el relevamiento.</p>
+                
+                <div class="login-input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="login-user" placeholder="Nombre de Usuario">
+                </div>
+                <div class="login-input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="login-pass" placeholder="Contraseña">
+                </div>
+                
+                <button class="btn-primary-large" onclick="handleLogin()">
+                    Entrar al Sistema <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <p style="margin-top: 30px; color: rgba(255,255,255,0.4); font-size: 12px; font-weight: 500;">v3.0.0 Stable Build</p>
+        </section>
+    </div>
+
+    <!-- MODALS -->
+    <div id="modal-container" class="overlay">
+        <div class="card" style="width: 100%; max-width: 500px; margin: 20px;">
+            <h2 id="modal-q-title" style="margin-bottom: 24px;">Gestionar Pregunta</h2>
+            <input type="hidden" id="edit-q-index">
+            
+            <div style="margin-bottom: 16px;">
+                <label class="edit-field-label">Pregunta</label>
+                <input type="text" id="new-q-label" class="premium-input" placeholder="Ej: ¿Qué partido prefiere?">
+            </div>
+            
+            <div style="margin-bottom: 16px;">
+                <label class="edit-field-label">Tipo de Respuesta</label>
+                <select id="new-q-type" class="premium-input">
+                    <option value="text">Texto Libre</option>
+                    <option value="choice">Selección Única</option>
+                    <option value="multi-choice">Selección Múltiple</option>
+                    <option value="scale">Escala de Gestión (Exc/Buena/Mala)</option>
+                    <option value="candidates">Grilla de Candidatos</option>
+                    <option value="location">Captura de GPS (Geolocalización)</option>
+                </select>
+            </div>
+            
+            <div id="choice-options-container" style="display:none; margin-bottom: 16px;">
+                <label class="edit-field-label">Opciones (separadas por coma)</label>
+                <input type="text" id="new-q-options" class="premium-input" placeholder="Opción 1, Opción 2...">
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 30px;">
+                <button class="btn-secondary" onclick="closeModal()" style="flex: 1;">Cancelar</button>
+                <button class="btn-primary-large" onclick="saveNewQuestion()" style="flex: 1;">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-edit-container" class="overlay">
+        <div class="card" style="width: 100%; max-width: 600px; margin: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <h3>Editar Registro de Encuesta</h3>
+                <button onclick="closeEditModal()" style="background:none; font-size: 20px; color: var(--slate-400);"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="edit-survey-fields" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-height: 60vh; overflow-y: auto; padding-right: 10px;">
+                <!-- Campos dinámicos -->
+            </div>
+            <div style="display: flex; gap: 10px; margin-top: 30px;">
+                <button class="btn-secondary" onclick="closeEditModal()" style="flex: 1;">Cancelar</button>
+                <button class="btn-primary-large" onclick="saveSurveyEdit()" style="flex: 1;">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Usuario -->
+    <div id="modal-user-container" class="overlay">
+        <div class="card" style="width: 100%; max-width: 400px; margin: 20px;">
+            <h2 id="modal-user-title">Nuevo Usuario</h2>
+            <input type="hidden" id="edit-user-id">
+            <div style="margin-top: 20px;">
+                <label class="edit-field-label">Nombre de Usuario</label>
+                <input type="text" id="edit-user-nombre" class="premium-input">
+            </div>
+            <div style="margin-top: 15px;">
+                <label class="edit-field-label">Contraseña</label>
+                <input type="password" id="edit-user-password" class="premium-input" placeholder="Dejar vacío para no cambiar">
+            </div>
+            <div style="margin-top: 15px;">
+                <label class="edit-field-label">Rol del Usuario</label>
+                <select id="edit-user-rol" class="premium-input">
+                    <option value="encuestador">Encuestador (Solo carga datos)</option>
+                    <option value="analista">Analista (Solo ve Mapa y Resultados)</option>
+                    <option value="admin">Administrador (Control total)</option>
+                </select>
+            </div>
+            <div style="display: flex; gap: 10px; margin-top: 30px;">
+                <button class="btn-secondary" onclick="closeUserModal()" style="flex: 1;">Cancelar</button>
+                <button class="btn-primary-large" onclick="saveUser()" style="flex: 1;">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js?v=3.0"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+    </script>
+</body>
+</html>

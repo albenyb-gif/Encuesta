@@ -1,0 +1,85 @@
+[
+  {
+    "id": "q_demo",
+    "type": "multi-choice",
+    "label": "Datos Demográficos (Seleccione múltiples)",
+    "options": [
+      "Varón",
+      "Mujer",
+      "Joven",
+      "Mayor",
+      "Adulto Mayor"
+    ]
+  },
+  {
+    "id": "q1",
+    "type": "choice",
+    "label": "¿A qué partido pertenece o tiene afinidad?",
+    "options": [
+      "Partido Colorado",
+      "PLRA",
+      "Cruzada Nacional",
+      "Otros",
+      "NS/NR"
+    ]
+  },
+  {
+    "id": "q2",
+    "type": "location",
+    "label": "Ubicación de la Encuesta"
+  },
+  {
+    "id": "q3",
+    "type": "choice",
+    "label": "Barrio o Compañía",
+    "options": [
+      "Yataity",
+      "San José Mi",
+      "San José Obrero",
+      "Maria Graciela",
+      "Las Mercedes",
+      "San Antonio",
+      "Sirena",
+      "Lima",
+      "Virgen de Fátima",
+      "Santa Ana",
+      "Núcleo 1",
+      "Núcleo 2",
+      "Núcleo 3",
+      "Núcleo 4",
+      "Núcleo 5",
+      "Núcleo 6",
+      "Núcleo 7",
+      "Villa Permanente",
+      "las Mercedes",
+      "María Graciela",
+      "San José Obrero",
+      "Compañia Coratei"
+    ]
+  },
+  {
+    "id": "q4",
+    "type": "scale",
+    "label": "Calificación: Gestión del Intendente Municipal"
+  },
+  {
+    "id": "q5",
+    "type": "scale",
+    "label": "Calificación: Gestión del Presidente de la República"
+  },
+  {
+    "id": "q6",
+    "type": "candidates",
+    "label": "Pre-candidatos a Intendente Municipal"
+  },
+  {
+    "id": "q7",
+    "type": "text",
+    "label": "Pre-candidatos a Concejal Municipal"
+  },
+  {
+    "id": "q8",
+    "type": "text",
+    "label": "¿Qué servicio público debe mejorar la municipalidad?"
+  }
+]

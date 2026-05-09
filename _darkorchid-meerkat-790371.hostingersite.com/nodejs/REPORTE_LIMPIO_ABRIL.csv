@@ -1,0 +1,358 @@
+﻿id;timestamp;usuario_nombre;Latitud;Longitud;q1;q3;q4;q5;q6;q7;q8;q_1775904835742;q_demo
+1;2026-04-11T15:10:33.866Z;Mabel;-27.3948948;-56.8665892;Partido Colorado;Lima;Buena;Mala;Christian Rolon;William Aquino ;Fomentar más turismo ;;Mujer, Mayor
+2;2026-04-11T15:12:12.132Z;Miguel;-27.3962912;-56.8513129;Partido Colorado;;Mala;Mala;Jose Mutti;;Todo;Mujer;
+3;2026-04-11T15:14:44.430Z;Mabel;-27.3951142;-56.8664756;Partido Colorado;Lima;Buena;Buena;Christian Rolon;Miguel Marin;Agua ;;Mujer, Joven
+4;2026-04-11T15:15:03.638Z;Miguel;-27.3966274;-56.8515902;Partido Colorado;;Muy Mala;Mala;Jose Mutti;Sofi;Agua potable ;Mujer;
+5;2026-04-11T15:16:39.950Z;Milena;-27.396599041019574;-56.85177830595699;Partido Colorado;San Antonio ;Buena;Mala;;Ninguno ;Camino ;;Mujer, Mayor
+6;2026-04-11T15:19:08.236Z;Mabel;-27.3952892;-56.8660949;Partido Colorado;Lima;Buena;Buena;Christian Rolon;Nadie;La iluminación en las calles principales ;;Mujer, Mayor
+7;2026-04-11T15:19:40.541Z;Miguel;-27.3975815;-56.8528334;Partido Colorado;;Muy Mala;Buena;Jose Mutti;Carlos ramires ;Recolección de basura ;Mujer;
+8;2026-04-11T15:19:50.996Z;Milena;-27.39689441339282;-56.85211753252889;Partido Colorado;San Antonio ;Mala;Muy Mala;;Ninguna ;Camino ;;Varón, Mayor
+9;2026-04-11T15:22:36.066Z;Miguel;-27.3977329;-56.8531208;Partido Colorado;San Antonio ;NS/NR;Mala;;;;Mayor;
+10;2026-04-11T15:22:48.340Z;Mabel;-27.3959984;-56.8664409;Partido Colorado;Lima;Mala;;;Ninguna ;Falta de agua, recolección de basura ;;Varón, Mayor
+11;2026-04-11T15:25:54.248Z;Mabel;-27.3962888;-56.8665684;Partido Colorado;Lima;Buena;Mala;Christian Rolon;Ninguno;Ningúno ;;Mujer, Varón, Mayor
+12;2026-04-11T15:26:14.526Z;Miguel;-27.3978992;-56.8533795;Partido Colorado;San Antonio ;Muy Mala;Muy Mala;Jose Mutti;;Colectivos;Mayor;
+13;2026-04-11T15:27:51.535Z;Milena;-27.39796854051086;-56.85377696685532;Partido Colorado;San Antonio ;Mala;Muy Mala;;Ninguno ;Camino ;;Varón, Mayor
+14;2026-04-11T15:29:44.279Z;Miguel;-27.3981559;-56.8539106;Partido Colorado;San Antonio ;Muy Mala;Muy Mala;;;;Mayor;
+15;2026-04-11T15:36:06.702Z;Mabel;-27.3965354;-56.8653108;Partido Colorado;Lima;Buena;Muy Mala;Christian Rolon;Ninguno;Control de transporte y concienciacion vial;;
+16;2026-04-11T14:18:43.238Z;Milena;-27.40400621051414;-56.86183459636993;Partido Colorado;San José mi ;Muy Mala;Muy Mala;;Ninguno ;Camino ;;Mujer, Joven
+17;2026-04-11T14:19:20.410Z;Mirna;-27.3904993;-56.8423842;Partido Colorado;San antonio;Muy Mala;Muy Mala;Jose Mutti;Diosnel Bogado;Recoleccion de Basura;;Mujer, Mayor
+18;2026-04-11T14:20:12.294Z;Miguel;-27.4041435;-56.8612866;Partido Colorado;San jose mi;Buena;Buena;Christian Rolon;Sofi ;Agua potable ;Mujer;
+19;2026-04-11T14:21:45.836Z;Milena;-27.404113553399807;-56.86174092751455;Partido Colorado;San José Mi ;Mala;Buena;Jose Mutti;Ninguno ;Camino ;;Varón, Mayor
+20;2026-04-11T14:22:48.866Z;Miguel;-27.4047385;-56.8611391;Partido Colorado;;Buena;Muy Mala;Christian Rolon;Wilian;En todo;Mujer;
+21;2026-04-11T14:23:07.323Z;Santiago;-27.390747;-56.8430486;Partido Colorado;San Antonio ;Mala;Muy Mala;Jose Mutti;Ns nr;Todo ;;Varón, Mayor
+22;2026-04-11T14:25:04.272Z;Milena;-27.404217857368813;-56.86188800173899;Partido Colorado;San José mi ;Mala;Muy Mala;;Ninguno ;Camino ;;Mujer, Mayor
+23;2026-04-11T14:27:34.640Z;Mirna;;;Partido Colorado;San Antonio ;Buena;Mala;Christian Rolon;Willian Aquino;Recoleccion de basura;;Varón, Adulto Mayor
+24;2026-04-11T14:27:42.533Z;Milena;-27.404568047548366;-56.86197004357829;Partido Colorado;San José mi ;Buena;Muy Mala;Jose Mutti;Ninguno ;Camino ;;Mujer, Joven
+25;2026-04-11T14:28:14.827Z;Santiago;-27.3919498;-56.8446045;Partido Colorado;San Antonio ;Mala;Mala;;Ns nr ;Agua ;;Mujer, Adulto Mayor
+26;2026-04-11T14:29:48.750Z;Milena;-27.4049176232877;-56.86186357629915;Partido Colorado;San José mi ;Buena;Muy Mala;Jose Mutti;Ninguno ;Agua ;;Varón, Mayor
+27;2026-04-11T14:32:27.597Z;Milena;-27.405185654226056;-56.861894874299615;Partido Colorado;San José Mi ;Muy Mala;Muy Mala;Jose Mutti;Diego Barreto ;Camino ;;Varón, Mayor
+28;2026-04-11T14:32:41.979Z;Miguel;-27.4058291;-56.8609211;Partido Colorado;San jose mi ;Buena;Mala;Jose Mutti;;Limpieza publica;Mayor;
+29;2026-04-11T14:34:12.116Z;Santiago;-27.39267;-56.8458755;Partido Colorado;San Antonio ;Mala;Muy Mala;Jose Mutti;Diosnel bogado;Documentos públicos ;;Varón, Mayor
+30;2026-04-11T14:36:19.021Z;Mirna;-27.3916144;-56.844004;Partido Colorado;San Antonio ;Buena;Muy Mala;Christian Rolon;Willian Aquino;;;Varón, Joven
+31;2026-04-11T14:36:43.860Z;Miguel;-27.4063574;-56.8620412;Partido Colorado;San jose mi ;Mala;Muy Mala;Jose Mutti;;Recolección de basura ;Mujer;
+32;2026-04-11T14:37:18.667Z;Milena;-27.405782610341642;-56.86209535778314;Partido Colorado;San José mi ;Muy Mala;Muy Mala;Jose Mutti;Ninguno ;Agua ;;Mujer, Mayor
+33;2026-04-11T14:39:38.883Z;Miguel;-27.4061627;-56.8618655;Partido Colorado;San jose mi;Buena;Buena;Christian Rolon;Wilfrido;Agua potable ;Mayor;
+34;2026-04-11T14:39:56.724Z;Santiago;-27.3930998;-56.8464676;;;Mala;Mala;;Ns nr;Todo ;;
+35;2026-04-11T14:43:52.396Z;Mabel;-27.3936951;-56.8676326;Partido Colorado;Lima;Mala;Muy Mala;;Ninguna ;Las vías publicas;;Joven
+36;2026-04-11T14:44:00.924Z;Mirna;-27.3919687;-56.8446741;Partido Colorado;San antonio;Buena;Buena;Jose Mutti;Willian Aquino;;;Varón, Mayor
+37;2026-04-11T14:44:22.181Z;Miguel;-27.4061315;-56.8624329;Partido Colorado;San jose mi ;Buena;Buena;Jose Mutti;;Alimentos escolares;Joven;
+38;2026-04-11T14:45:34.338Z;Miguel;-27.4057909;-56.8634476;Partido Colorado;;Mala;Muy Mala;Jose Mutti;;Rutas;Mujer;
+39;2026-04-11T14:48:24.392Z;Mabel;-27.3933541;-56.8678831;Partido Colorado;Lima;Mala;Buena;Christian Rolon;David Vega;Hermosear  y trabajo;;Mujer, Mayor
+40;2026-04-11T14:48:29.234Z;Miguel;-27.4055954;-56.863396;Partido Colorado;San jose mi;Mala;Muy Mala;;Talavera;Todo;Varón;
+41;2026-04-11T14:48:57.658Z;Santiago;-27.3934285;-56.8470077;;;Buena;Buena;Christian Rolon;Jose Carozo;Todo ;;Varón, Mayor
+42;2026-04-11T14:51:31.216Z;Mabel;-27.3934415;-56.8675465;Partido Colorado;Lima;Excelente;Excelente;Christian Rolon;Dennis cardozo;Arreglo de vías públicas y limpieza ;;Varón, Mayor
+43;2026-04-11T14:56:35.208Z;Mabel;-27.3939475;-56.8672883;Partido Colorado;Lima;NS/NR;Buena;Jose Mutti;Ninguno;En todo ;;Varón, Mayor
+44;2026-04-11T14:59:30.375Z;Mabel;-27.3942637;-56.8673673;Partido Colorado;Lima;Excelente;Buena;Christian Rolon;Ninguno;En todo;;Varón, Mayor
+45;2026-04-11T15:03:03.451Z;Mirna;-27.3932908;-56.8469262;Partido Colorado;San antonio;Buena;Mala;Christian Rolon;Willian Aquino ;Basura;;Mujer, Mayor
+46;2026-04-11T15:08:32.046Z;Mirna;-27.3947566;-56.8494005;Partido Colorado;San antonio ;Buena;Buena;Jose Mutti;Alvarenga;Todo;;Varón, Joven
+71;2026-04-11T14:18:43.238Z;Importado;[object Object];;Partido Colorado;San José mi;Muy Mala;Muy Mala;;Ninguno;Camino;;Mujer,Joven
+72;2026-04-11T14:21:45.836Z;Importado;[object Object];;Partido Colorado;San José Mi;Mala;Buena;Jose Mutti;Ninguno;Camino;;Varón,Mayor
+73;2026-04-11T14:25:04.272Z;Importado;[object Object];;Partido Colorado;San José mi;Mala;Muy Mala;;Ninguno;Camino;;Mujer,Mayor
+74;2026-04-11T14:27:42.533Z;Importado;[object Object];;Partido Colorado;San José mi;Buena;Muy Mala;Jose Mutti;Ninguno;Camino;;Mujer,Joven
+75;2026-04-11T14:29:48.750Z;Importado;[object Object];;Partido Colorado;San José mi;Buena;Muy Mala;Jose Mutti;Ninguno;Agua;;Varón,Mayor
+76;2026-04-11T14:32:27.597Z;Importado;[object Object];;Partido Colorado;San José Mi;Muy Mala;Muy Mala;Jose Mutti;Diego Barreto;Camino;;Varón,Mayor
+77;2026-04-11T14:37:18.667Z;Importado;[object Object];;Partido Colorado;San José mi;Muy Mala;Muy Mala;Jose Mutti;Ninguno;Agua;;Mujer,Mayor
+78;2026-04-11T14:23:07.323Z;Importado;[object Object];;Partido Colorado;San Antonio;Mala;Muy Mala;Jose Mutti;Ns nr;Todo;;Varón,Mayor
+79;2026-04-11T14:28:14.827Z;Importado;[object Object];;Partido Colorado;San Antonio;Mala;Mala;;Ns nr;Agua;;Mujer,Adulto Mayor
+80;2026-04-11T14:34:12.116Z;Importado;[object Object];;Partido Colorado;San Antonio;Mala;Muy Mala;Jose Mutti;Diosnel bogado;Documentos públicos;;Varón,Mayor
+81;2026-04-11T14:39:56.724Z;Importado;[object Object];;;;Mala;Mala;;Ns nr;Todo;;
+82;2026-04-11T14:48:57.658Z;Importado;[object Object];;;;Buena;Buena;Christian Rolon;Jose Carozo;Todo;;Varón,Mayor
+83;2026-04-11T14:20:12.294Z;Importado;[object Object];;Partido Colorado;San jose mi;Buena;Buena;Christian Rolon;Sofi;Agua potable;;
+84;2026-04-11T14:22:48.866Z;Importado;[object Object];;Partido Colorado;San jose mi;Buena;Muy Mala;Christian Rolon;Wilian;En todo;;
+85;2026-04-11T14:32:41.979Z;Importado;[object Object];;Partido Colorado;San jose mi;Buena;Mala;Jose Mutti;;Limpieza publica;;
+86;2026-04-11T14:36:43.860Z;Importado;[object Object];;Partido Colorado;San jose mi;Mala;Muy Mala;Jose Mutti;;Recolección de basura;;
+87;2026-04-11T14:39:38.883Z;Importado;[object Object];;Partido Colorado;San jose mi;Buena;Buena;Christian Rolon;Wilfrido;Agua potable;;
+88;2026-04-11T14:44:22.181Z;Importado;[object Object];;Partido Colorado;San jose mi;Buena;Buena;Jose Mutti;;Alimentos escolares;;
+89;2026-04-11T14:45:34.338Z;Importado;[object Object];;Partido Colorado;San jose mi;Mala;Muy Mala;Jose Mutti;;Rutas;;
+90;2026-04-11T14:48:29.234Z;Importado;[object Object];;Partido Colorado;San jose mi;Mala;Muy Mala;;Talavera;Todo;;
+91;2026-04-11T16:54:49.913Z;Mabel;-27.3990914;-56.8595559;Partido Colorado;Lima;Mala;Muy Mala;Christian Rolon;Eladio Martinez ;Limpieza recolección ;;Mujer, Joven
+92;2026-04-11T16:55:09.728Z;Milena;-27.39858457811447;-56.85851209924371;Partido Colorado;Lima ;Mala;Muy Mala;Christian Rolon;Denis flores ;Agua ;;Mujer, Mayor
+93;2026-04-11T16:57:37.441Z;Miguel;-27.3978942;-56.8600982;Partido Colorado;Lima;Mala;Muy Mala;Christian Rolon;Gricelda ;Agua potable ;Mujer;
+94;2026-04-11T16:58:12.181Z;Milena;-27.39823762862592;-56.859225926674675;Partido Colorado;Lima ;Mala;Muy Mala;Jose Mutti;Ninguno ;Agua ;;Mujer, Mayor
+95;2026-04-11T16:59:08.766Z;Mirna;-27.3984567;-56.8614946;Partido Colorado;Lima;Buena;Buena;Christian Rolon;William Aquino;Agua;;Varón, Mayor
+96;2026-04-11T16:59:47.886Z;Mabel;-27.3988456;-56.8596324;Partido Colorado;Lima;NS/NR;Buena;Jose Mutti;Ninguno ;Muchísimas cosas;;Mujer, Joven
+97;2026-04-11T17:02:57.966Z;Miguel;-27.3977349;-56.8606901;Partido Colorado;Lima;Buena;Muy Mala;;;Limpieza ;Mujer;
+98;2026-04-11T17:03:15.839Z;Mirna;-27.3982005;-56.862759;Partido Colorado;Lima;Buena;Buena;Christian Rolon;Arnaldo Cardozo;Recoleccion de basura;;Varón, Joven
+99;2026-04-11T17:05:08.715Z;Miguel;-27.3976451;-56.8607866;Partido Colorado;Lima;Mala;Buena;;;Mejorar turismo ;Joven;
+100;2026-04-11T17:06:07.373Z;Mabel;-27.3986149;-56.8607505;Partido Colorado;Lima;Mala;Mala;Jose Mutti;Luis Cuellar ;Limpieza basura;;Mujer
+101;2026-04-11T17:06:26.228Z;Milena;-27.397887936730477;-56.86041627181986;Partido Colorado;Lima ;Mala;Mala;;Ninguno ;Agua ;;Mujer, Mayor
+102;2026-04-11T17:06:33.781Z;Santiago;-27.3917553;-56.8656057;Partido Colorado;;Buena;Excelente;Christian Rolon;;Trabajos ;;Mujer, Mayor
+103;2026-04-11T17:06:34.425Z;Mirna;-27.397781;-56.8634922;Partido Colorado;Lima;Muy Mala;Buena;Christian Rolon;Mario Cañete;Trabajo ;;Mujer, Mayor
+104;2026-04-11T17:08:49.555Z;Miguel;-27.397419;-56.8615888;Partido Colorado;Lima;Muy Mala;Muy Mala;Jose Mutti;Ramón palacios ;Agua potable ;Mayor;
+105;2026-04-11T02:02:42.576Z;Mirna;-26.886463059397656;-56.85454230845701;Partido Colorado;PABLO VI;;;Jose Mutti;;SALUD;;Varón
+106;2026-04-11T17:11:34.860Z;Miguel;-27.3972364;-56.8620884;Partido Colorado;Lima;Muy Mala;Muy Mala;Jose Mutti;Carlos ramirez ;Agua potable ;Mujer;
+107;2026-04-11T17:12:37.063Z;Milena;-27.3977020859371;-56.86112303570069;Partido Colorado;Lima ;Muy Mala;Muy Mala;Jose Mutti;Ninguno ;Camino ;;Mujer, Joven
+108;2026-04-11T17:12:54.628Z;Mabel;-27.3982534;-56.8616254;Partido Colorado;Lima;Buena;Buena;;Ninguna ;Nada;;Mujer, Joven
+109;2026-04-11T17:14:21.971Z;Santiago;-27.3919127;-56.8628758;Partido Colorado;Virgen del pilar ;Buena;Buena;Jose Mutti;;Agua ;;Mujer, Mayor
+110;2026-04-11T17:16:30.676Z;Mirna;-27.3975753;-56.863541;Partido Colorado;Lima;Mala;Mala;Christian Rolon;Cañete;Recoleccion;;Varón, Mayor
+111;2026-04-11T17:16:46.112Z;Santiago;-27.3917757;-56.8626054;Partido Colorado;Virgen del pilar ;NS/NR;Buena;;Ns nr;Agua, electricidad ;;Mujer, Mayor
+112;2026-04-11T17:19:16.350Z;Miguel;-27.3965086;-56.8640884;Partido Colorado;Lima;Mala;Mala;;;Agua potable ;Mayor;
+113;2026-04-11T17:19:38.407Z;Milena;-27.396816630045;-56.86358913938975;Partido Colorado;Lima ;Buena;Buena;;Ninguno ;Camino ;;Varón, Joven
+114;2026-04-11T17:22:08.477Z;Mirna;-27.3973472;-56.864286;Partido Colorado;Lima;Buena;Mala;Christian Rolon;William Aquino;Agua;;Mujer, Joven
+115;2026-04-11T17:22:19.484Z;Mabel;-27.3983346;-56.8625306;Partido Colorado;Lima ;Mala;Mala;Jose Mutti;Alejandro Sanchez;Basura ;;Joven, Varón
+116;2026-04-11T17:22:51.458Z;Milena;-27.396980137739142;-56.86368480645706;Partido Colorado;Lima ;Mala;Muy Mala;Jose Mutti;Ninguno ;Camino ;;Varón, Joven
+117;2026-04-11T17:24:05.911Z;Miguel;-27.3960229;-56.8644662;Partido Colorado;Lima;Buena;;Jose Mutti;;Veredas;Adulto Mayor;
+118;2026-04-11T17:26:52.571Z;Milena;-27.396504081419177;-56.864202084256796;Partido Colorado;Lima ;Muy Mala;Muy Mala;Jose Mutti;Ninguno ;Agua ;;Varón, Mayor
+119;2026-04-11T17:28:54.615Z;Miguel;-27.3952901;-56.8650852;Partido Colorado;Lima;Muy Mala;Buena;;;Agua potable ;;
+120;2026-04-11T17:30:16.365Z;Miguel;-27.3952445;-56.8651516;Partido Colorado;Lima;NS/NR;NS/NR;;;Todo;Adulto Mayor;
+121;2026-04-11T17:30:28.254Z;Mabel;-27.3977724;-56.8634593;Partido Colorado;Lima;;;Jose Mutti;Benitez;;;Mujer
+122;2026-04-11T17:34:37.110Z;Miguel;-27.3948673;-56.8654411;Partido Colorado;Lima;Mala;Muy Mala;;;Todo;Mayor;
+123;2026-04-11T17:35:55.370Z;Milena;-27.39552055538877;-56.864922028698984;Partido Colorado;Lima ;Mala;Muy Mala;Jose Mutti;Elias leguizamon ;Camino ;;Varón, Joven
+124;2026-04-11T17:36:06.641Z;Santiago;-27.388738;-56.8659997;Partido Colorado;Virgen del pilar ;Buena;Buena;Christian Rolon;;Todo;;Varón, Adulto Mayor
+125;2026-04-11T17:37:30.594Z;Milena;-27.395663118844002;-56.86483758834036;Partido Colorado;Lima ;Muy Mala;Muy Mala;Jose Mutti;Ninguno ;Agua;;Varón, Mayor
+126;2026-04-11T17:39:29.558Z;Santiago;-27.3887687;-56.8662449;Partido Colorado;;Muy Mala;Muy Mala;Jose Mutti;Marin ;Agua ;;Mujer, Mayor
+127;2026-04-11T17:43:56.205Z;Santiago;-27.387793;-56.8650059;Partido Colorado;Virgen del pilar ;Buena;Buena;Jose Mutti;Arnildo bernal ;;;Varón, Mayor
+128;2026-04-11T17:47:56.559Z;Mirna;-27.3877992;-56.8649857;Partido Colorado;Yataity;Buena;Buena;Christian Rolon;Carlos Marin ;Agua;;Mujer, Mayor
+129;2026-04-11T17:49:04.745Z;Mabel;-27.3881164;-56.8651588;Partido Colorado;Yataity;NS/NR;Mala;Jose Mutti;Mario Cañete;Humo;;Mujer, Joven
+130;2026-04-11T17:51:19.579Z;Mirna;-27.3874323;-56.8650945;Partido Colorado;Yataity;Buena;Buena;Jose Mutti;Miguel Amarilla;Agua;;Varón, Mayor
+131;2026-04-11T17:56:28.330Z;Santiago;-27.3918615;-56.8580118;Partido Colorado;;Buena;Muy Mala;Christian Rolon;Wlian;Mas trabajo ;;Mujer
+132;2026-04-11T17:57:47.177Z;Milena;-27.39163711148714;-56.85780685896884;Partido Colorado;Santa Ana ;Buena;Buena;Christian Rolon;Cecilio Arias ;Camino ;;Mujer, Mayor
+133;2026-04-11T17:59:53.224Z;Santiago;-27.3919375;-56.8576872;Partido Colorado;Santa ana 100;;Mala;Jose Mutti;;Limpieza de basura ;;Mujer
+134;2026-04-11T18:00:37.311Z;Milena;-27.39143621146509;-56.858045633572324;Partido Colorado;Santa Ana ;Mala;Muy Mala;Christian Rolon;Ninguno ;Recolección de basura ;;Mujer, Mayor
+135;2026-04-11T18:00:43.036Z;Mirna;-27.3871118;-56.8643145;Partido Colorado;Yataity;Mala;Mala;Jose Mutti;Wilfrido Jacquet ;Agua;;Varón, Adulto Mayor
+136;2026-04-11T18:02:14.274Z;Mabel;-27.3872527;-56.8643984;Partido Colorado;Yat;;;Jose Mutti;Ning;Basura ;;Varón, Joven
+137;2026-04-11T18:02:38.068Z;Santiago;-27.3918776;-56.8570139;Partido Colorado;100;Buena;Buena;Jose Mutti;Sofi;Falta de trabajo;;Mayor
+138;2026-04-11T18:03:18.231Z;Milena;-27.391259362170636;-56.858018356542594;Partido Colorado;Santa Ana;Muy Mala;Muy Mala;Christian Rolon;Ninguno ;Iluminación ;;Mujer, Mayor
+139;2026-04-11T18:04:43.859Z;Santiago;-27.3919414;-56.8566399;;100;Buena;Mala;Christian Rolon;;Todo ;;Mujer
+140;2026-04-11T18:05:45.827Z;Mabel;-27.387259;-56.8642477;Partido Colorado;Yat;Buena;Buena;Christian Rolon;N;Basura humo;;Mujer, Joven
+141;2026-04-11T18:06:22.621Z;Santiago;-27.3919094;-56.8566187;Partido Colorado;100;Muy Mala;Muy Mala;Gabriel Alfonso;Jose gimenez;Todo;;Mayor
+142;2026-04-11T18:08:13.567Z;Milena;-27.39084813918871;-56.85756097651701;Partido Colorado;Santa Ana ;Mala;Buena;Christian Rolon;Miguel MArin ;Camino ;;Varón, Joven
+143;2026-04-11T18:08:24.625Z;Mirna;-27.3871182;-56.863616;Partido Colorado;Yataity;Mala;Mala;Christian Rolon;Luis cuellar;Agua;;Mujer, Mayor
+144;2026-04-11T18:09:33.925Z;Santiago;-27.3907891;-56.8569741;Partido Colorado;100;Mala;Muy Mala;Jose Mutti;Carlos ;La iluminación ;;Varón
+145;2026-04-11T18:12:36.416Z;Milena;-27.390587101676065;-56.857373370800595;Partido Colorado;Santa Ana ;Mala;Muy Mala;Jose Mutti;Ninguna ;Agua ;;Varón, Mayor
+146;2026-04-11T18:14:42.287Z;Mirna;-27.3872072;-56.8625858;Partido Colorado;Yataity;Mala;Mala;;;;;Varón, Mayor
+147;2026-04-11T18:15:19.133Z;Milena;-27.390677275791088;-56.85724560334454;Partido Colorado;Santa Ana ;Mala;Mala;Jose Mutti;Sofia Troche ;Recolección de basura ;;Varón, Mayor
+148;2026-04-11T18:18:03.738Z;Santiago;-27.3904974;-56.8569823;Partido Colorado;;Muy Mala;Muy Mala;Jose Mutti;Sofi;Agua potable;;Mujer
+149;2026-04-11T18:18:39.622Z;Milena;-27.39057270123674;-56.85716673695742;Partido Colorado;Santa Ana ;Mala;Muy Mala;;Ninguna ;Camino ;;Mujer, Mayor
+150;2026-04-11T18:18:46.748Z;Mabel;-27.3873417;-56.8631542;Partido Colorado;Yat;Mala;Muy Mala;;Sofia Troche;Agua;;Mujer, Mayor
+151;2026-04-11T18:18:55.308Z;Mirna;-27.3873947;-56.8619433;Partido Colorado;Yataity;Muy Mala;Mala;Jose Mutti;Arnildo Bernal;Camino vecinal;;Mujer, Mayor
+152;2026-04-11T18:22:55.274Z;Mabel;;;Partido Colorado;;Mala;Mala;Jose Mutti;Ningun;Arreglar ruta acompañar a los emprendedores;;Varón, Joven
+153;2026-04-11T18:25:09.115Z;Mabel;-26.8898279;-56.8514267;Otros;;;;Ninguno;Prueba;;;Varón
+154;2026-04-11T18:25:22.261Z;Santiago;-27.3903947;-56.8566395;Partido Colorado;Santa ana;Mala;Muy Mala;Gabriel Alfonso;;Agua potable ;;Mujer
+155;2026-04-11T18:26:47.407Z;Milena;-27.390431572250122;-56.85657000023172;Partido Colorado;Santa Ana ;Mala;Muy Mala;Jose Mutti;Ninguno ;Agua ;;Varón, Mayor
+156;2026-04-11T18:27:03.690Z;Mabel;-27.3876335;-56.8624865;Partido Colorado;Yataity;Buena;Mala;Christian Rolon;William Rodriguez ;Agua;;Varón, Mujer, Mayor
+157;2026-04-11T18:29:18.252Z;Santiago;-27.3904187;-56.8557425;Partido Colorado;Santa ana ;Mala;Mala;Jose Mutti;Marin;Agua potable ;;Varón
+158;2026-04-11T18:29:31.121Z;Milena;-27.390318756353597;-56.85625560580597;Partido Colorado;Santa Ana ;Mala;Mala;;Ninguno ;Agua ;;Varón, Mayor
+159;2026-04-11T18:29:40.058Z;Mirna;-27.3876085;-56.8614375;Partido Colorado;Yataity;Muy Mala;Muy Mala;Christian Rolon;;Agua;;Varón, Mayor
+160;2026-04-11T18:29:54.775Z;Mabel;-27.3872074;-56.8639445;Partido Colorado;Yat;NS/NR;NS/NR;Jose Mutti;Sofia Troche;;;Varón, Mayor
+161;2026-04-11T18:31:54.022Z;Mabel;-27.3877455;-56.8648868;Partido Colorado;Yat;Buena;Buena;Christian Rolon;Ning;Caminos;;Varón, Mayor
+162;2026-04-11T18:32:08.950Z;Mirna;-27.3872311;-56.8612082;Partido Colorado;Yataity;Mala;Mala;Christian Rolon;WILLIAN AQUINO ;Agua;;Mujer, Mayor
+163;2026-04-11T18:33:11.082Z;Milena;-27.39021000226267;-56.8560579845082;Partido Colorado;Santa Ana ;Mala;Mala;Jose Mutti;Ninguno ;Agua ;;Mujer, Joven
+164;2026-04-11T18:38:26.812Z;Santiago;-27.3897718;-56.8558318;Partido Colorado;Santa ana ;Muy Mala;Muy Mala;Jose Mutti;;Alimentación escolar ;;Mujer
+165;2026-04-11T18:41:23.737Z;Santiago;-27.3897576;-56.8561817;Partido Colorado;Santa ana;Mala;Buena;;;Salud;;Mayor
+166;2026-04-11T18:49:28.817Z;Miguel;;;;;Excelente;Mala;Christian Rolon;Denise flores ;Agua potable  ;Joven;
+167;2026-04-11T18:52:07.454Z;Mirna;-27.3792029;-56.8451088;Partido Colorado;Sirena ;Mala;Buena;Jose Mutti;CACERES;Fuente trabajo ;;Varón, Adulto Mayor
+168;2026-04-11T18:52:27.124Z;Miguel;-27.3796291;-56.843838;Partido Colorado;;Muy Mala;Muy Mala;;Denis dior;Todo;Mujer;
+169;2026-04-11T18:53:12.377Z;Milena;-27.37903236459584;-56.84419006472278;Partido Colorado;Sirena ;Mala;Muy Mala;Christian Rolon;Edgardo Villalba ;Recolección de basura ;;Mujer, Joven
+170;2026-04-11T18:55:36.521Z;Mirna;-27.378869;-56.844919;Partido Colorado;Sirena;Mala;Buena;Jose Mutti;;Trabajo;;Mujer, Joven
+171;2026-04-11T18:55:51.351Z;Milena;-27.378802507236607;-56.84411005941506;Partido Colorado;Sirena ;Mala;Muy Mala;;Ninguno ;Camino ;;Mujer, Mayor
+172;2026-04-11T18:55:53.377Z;Miguel;-27.3796584;-56.8432053;Partido Colorado;;Mala;Mala;Jose Mutti;;;Mujer;
+173;2026-04-11T18:56:44.425Z;Mabel;-27.3788806;-56.8462985;Partido Colorado;Sirena;Buena;Buena;Jose Mutti;Shirley Dioff;Apoya a emprendedores;;Mujer, Joven
+174;2026-04-11T18:57:47.762Z;Milena;-27.378863874493444;-56.844139878204935;Partido Colorado;Sirena ;Mala;Muy Mala;;Ninguno ;Camino ;;Varón, Mayor
+175;2026-04-11T18:59:25.876Z;Miguel;-27.3797502;-56.8420503;Partido Colorado;;Buena;Muy Mala;Jose Mutti;Hugo ramirez;Todo;Mujer;
+176;2026-04-11T19:00:26.239Z;Mirna;-27.3782882;-56.8446613;Partido Colorado;Sirena;Buena;Buena;Jose Mutti;Elias Leguizamon;Agua;;Mujer, Mayor
+177;2026-04-11T19:00:27.312Z;Mabel;-27.3792488;-56.8468371;Partido Colorado;Sirena;Buena;Excelente;Christian Rolon;Ninguna ;Centro de salud ;;Mujer, Joven
+178;2026-04-11T19:03:34.132Z;Mirna;-27.3784295;-56.8446692;Partido Colorado;Sirena;Muy Mala;Muy Mala;Jose Mutti;William Aquino ;Caminos vecinales ;;Mujer, Mayor
+179;2026-04-11T19:04:35.615Z;Milena;-27.377965885404585;-56.84390526574191;Partido Colorado;Sirena ;Mala;Muy Mala;Jose Mutti;Ninguno ;Recolección de basura ;;Varón, Mayor
+180;2026-04-11T19:06:03.058Z;Mabel;-27.3782805;-56.8463112;Partido Colorado;Yat;Buena;Mala;Jose Mutti;Elias Leguizamon;Los caminos ;;Mujer, Joven
+181;2026-04-11T19:06:08.351Z;Mirna;-27.3782386;-56.8445082;Partido Colorado;Sirena;Mala;Muy Mala;Jose Mutti;WILLIAN RODRIGUEZ;Agua;;Varón, Mayor
+182;2026-04-11T19:07:50.460Z;Milena;-27.37766249763766;-56.84367496268459;Partido Colorado;Sirena ;Mala;Muy Mala;;Ninguno ;Camino ;;Varón, Mayor
+183;2026-04-11T19:08:58.137Z;Mabel;-27.3783646;-56.8462043;Partido Colorado;Sirena;NS/NR;NS/NR;;Ninguna ;Baches agua ;;Varón, Mayor
+184;2026-04-11T19:11:08.858Z;Mabel;-27.3782013;-56.8463381;Partido Colorado;Sirena;Mala;Mala;Jose Mutti;Ninguna ;Fuente de trabajo y pago de sueldo;;Mayor
+185;2026-04-11T15:10:33.866Z;Mabel;-27.3948948;-56.8665892;Partido Colorado;Lima;Buena;Mala;Christian Rolon;William Aquino ;Fomentar más turismo ;;Mujer, Mayor
+186;2026-04-11T15:14:44.430Z;Mabel;-27.3951142;-56.8664756;Partido Colorado;Lima;Buena;Buena;Christian Rolon;Miguel Marin;Agua ;;Mujer, Joven
+187;2026-04-11T15:19:08.236Z;Mabel;-27.3952892;-56.8660949;Partido Colorado;Lima;Buena;Buena;Christian Rolon;Nadie;La iluminación en las calles principales ;;Mujer, Mayor
+188;2026-04-11T15:22:48.340Z;Mabel;-27.3959984;-56.8664409;Partido Colorado;Lima;Mala;;;Ninguna ;Falta de agua, recolección de basura ;;Varón, Mayor
+189;2026-04-11T15:25:54.248Z;Mabel;-27.3962888;-56.8665684;Partido Colorado;Lima;Buena;Mala;Christian Rolon;Ninguno;Ningúno ;;Mujer, Varón, Mayor
+190;2026-04-11T15:36:06.702Z;Mabel;-27.3965354;-56.8653108;Partido Colorado;Lima;Buena;Muy Mala;Christian Rolon;Ninguno;Control de transporte y concienciacion vial;;
+191;2026-04-11T14:43:52.396Z;Mabel;-27.3936951;-56.8676326;Partido Colorado;Lima;Mala;Muy Mala;;Ninguna ;Las vías publicas;;Joven
+192;2026-04-11T14:48:24.392Z;Mabel;-27.3933541;-56.8678831;Partido Colorado;Lima;Mala;Buena;Christian Rolon;David Vega;Hermosear  y trabajo;;Mujer, Mayor
+193;2026-04-11T14:51:31.216Z;Mabel;-27.3934415;-56.8675465;Partido Colorado;Lima;Excelente;Excelente;Christian Rolon;Dennis cardozo;Arreglo de vías públicas y limpieza ;;Varón, Mayor
+194;2026-04-11T14:56:35.208Z;Mabel;-27.3939475;-56.8672883;Partido Colorado;Lima;NS/NR;Buena;Jose Mutti;Ninguno;En todo ;;Varón, Mayor
+195;2026-04-11T14:59:30.375Z;Mabel;-27.3942637;-56.8673673;Partido Colorado;Lima;Excelente;Buena;Christian Rolon;Ninguno;En todo;;Varón, Mayor
+196;2026-04-11T16:54:49.913Z;Mabel;-27.3990914;-56.8595559;Partido Colorado;Lima;Mala;Muy Mala;Christian Rolon;Eladio Martinez ;Limpieza recolección ;;Mujer, Joven
+197;2026-04-11T16:59:47.886Z;Mabel;-27.3988456;-56.8596324;Partido Colorado;Lima;NS/NR;Buena;Jose Mutti;Ninguno ;Muchísimas cosas;;Mujer, Joven
+198;2026-04-11T17:06:07.373Z;Mabel;-27.3986149;-56.8607505;Partido Colorado;Lima;Mala;Mala;Jose Mutti;Luis Cuellar ;Limpieza basura;;Mujer
+199;2026-04-11T17:12:54.628Z;Mabel;-27.3982534;-56.8616254;Partido Colorado;Lima;Buena;Buena;;Ninguna ;Nada;;Mujer, Joven
+200;2026-04-11T17:22:19.484Z;Mabel;-27.3983346;-56.8625306;Partido Colorado;Lima ;Mala;Mala;Jose Mutti;Alejandro Sanchez;Basura ;;Joven, Varón
+201;2026-04-11T17:30:28.254Z;Mabel;-27.3977724;-56.8634593;Partido Colorado;Lima;;;Jose Mutti;Benitez;;;Mujer
+202;2026-04-11T17:49:04.745Z;Mabel;-27.3881164;-56.8651588;Partido Colorado;Yataity;NS/NR;Mala;Jose Mutti;Mario Cañete;Humo;;Mujer, Joven
+203;2026-04-11T18:02:14.274Z;Mabel;-27.3872527;-56.8643984;Partido Colorado;Yataity;Excelente;Excelente;Jose Mutti;Ning;Basura ;;Varón,Joven
+204;2026-04-11T18:05:45.827Z;Mabel;-27.387259;-56.8642477;Partido Colorado;Yataity;Buena;Buena;Christian Rolon;N;Basura humo;;Mujer,Joven
+205;2026-04-11T18:18:46.748Z;Mabel;-27.3873417;-56.8631542;Partido Colorado;Yataity;Mala;Muy Mala;;Sofia Troche;Agua;;Mujer,Mayor
+206;2026-04-11T18:22:55.274Z;Mabel;;;Partido Colorado;Yataity;Mala;Mala;Jose Mutti;Ningun;Arreglar ruta acompañar a los emprendedores;;Varón,Joven
+207;2026-04-11T18:25:09.115Z;Mabel;-26.8898279;-56.8514267;Otros;Yataity;Excelente;Excelente;Ninguno;Prueba;;;Varón
+208;2026-04-11T18:27:03.690Z;Mabel;-27.3876335;-56.8624865;Partido Colorado;Yataity;Buena;Mala;Christian Rolon;William Rodriguez ;Agua;;Varón, Mujer, Mayor
+209;2026-04-11T18:29:54.775Z;Mabel;-27.3872074;-56.8639445;Partido Colorado;Yataity;NS/NR;NS/NR;Jose Mutti;Sofia Troche;;;Varón,Mayor
+210;2026-04-11T18:31:54.022Z;Mabel;-27.3877455;-56.8648868;Partido Colorado;Yataity;Buena;Buena;Christian Rolon;Ning;Caminos;;Varón,Mayor
+211;2026-04-11T18:56:44.425Z;Mabel;-27.3788806;-56.8462985;Partido Colorado;Sirena;Buena;Buena;Jose Mutti;Shirley Dioff;Apoya a emprendedores;;Mujer, Joven
+212;2026-04-11T19:00:27.312Z;Mabel;-27.3792488;-56.8468371;Partido Colorado;Sirena;Buena;Excelente;Christian Rolon;Ninguna ;Centro de salud ;;Mujer, Joven
+213;2026-04-11T19:06:03.058Z;Mabel;-27.3782805;-56.8463112;Partido Colorado;Sirena;Buena;Mala;Jose Mutti;Elias Leguizamon;Los caminos ;;Mujer,Joven
+214;2026-04-11T19:08:58.137Z;Mabel;-27.3783646;-56.8462043;Partido Colorado;Sirena;NS/NR;NS/NR;;Ninguna ;Baches agua ;;Varón, Mayor
+215;2026-04-11T19:11:08.858Z;Mabel;-27.3782013;-56.8463381;Partido Colorado;Sirena;Mala;Mala;Jose Mutti;Ninguna ;Fuente de trabajo y pago de sueldo;;Mayor
+216;2026-04-11T15:12:12.132Z;Miguel;-27.3962912;-56.8513129;Partido Colorado;San Antonio ;Mala;Mala;Jose Mutti;;Todo;Mujer;
+217;2026-04-11T15:15:03.638Z;Miguel;-27.3966274;-56.8515902;Partido Colorado;San Antonio ;Muy Mala;Mala;Jose Mutti;Sofi;Agua potable ;Mujer;
+218;2026-04-11T15:19:40.541Z;Miguel;-27.3975815;-56.8528334;Partido Colorado;San Antonio ;Muy Mala;Buena;Jose Mutti;Carlos ramires ;Recolección de basura ;Mujer;
+219;2026-04-11T15:22:36.066Z;Miguel;-27.3977329;-56.8531208;Partido Colorado;San Antonio ;NS/NR;Mala;;;;Mayor;
+220;2026-04-11T15:26:14.526Z;Miguel;-27.3978992;-56.8533795;Partido Colorado;San Antonio ;Muy Mala;Muy Mala;Jose Mutti;;Colectivos;Mayor;
+221;2026-04-11T15:29:44.279Z;Miguel;-27.3981559;-56.8539106;Partido Colorado;San Antonio ;Muy Mala;Muy Mala;;;;Mayor;
+222;2026-04-11T14:20:12.294Z;Miguel;-27.4041435;-56.8612866;Partido Colorado;San jose mi;Buena;Buena;Christian Rolon;Sofi ;Agua potable ;Mujer;
+223;2026-04-11T14:22:48.866Z;Miguel;-27.4047385;-56.8611391;Partido Colorado;San jose mi;Buena;Muy Mala;Christian Rolon;Wilian;En todo;Mujer;
+224;2026-04-11T14:32:41.979Z;Miguel;-27.4058291;-56.8609211;Partido Colorado;San jose mi ;Buena;Mala;Jose Mutti;;Limpieza publica;Mayor;
+225;2026-04-11T14:36:43.860Z;Miguel;-27.4063574;-56.8620412;Partido Colorado;San jose mi ;Mala;Muy Mala;Jose Mutti;;Recolección de basura ;Mujer;
+226;2026-04-11T14:39:38.883Z;Miguel;-27.4061627;-56.8618655;Partido Colorado;San jose mi;Buena;Buena;Christian Rolon;Wilfrido;Agua potable ;Mayor;
+227;2026-04-11T14:44:22.181Z;Miguel;-27.4061315;-56.8624329;Partido Colorado;San jose mi ;Buena;Buena;Jose Mutti;;Alimentos escolares;Joven;
+228;2026-04-11T14:45:34.338Z;Miguel;-27.4057909;-56.8634476;Partido Colorado;San jose mi;Mala;Muy Mala;Jose Mutti;;Rutas;Mujer;
+229;2026-04-11T14:48:29.234Z;Miguel;-27.4055954;-56.863396;Partido Colorado;San jose mi;Mala;Muy Mala;;Talavera;Todo;Varón;
+230;2026-04-11T16:57:37.441Z;Miguel;-27.3978942;-56.8600982;Partido Colorado;Lima;Mala;Muy Mala;Christian Rolon;Gricelda ;Agua potable ;Mujer;
+231;2026-04-11T17:02:57.966Z;Miguel;-27.3977349;-56.8606901;Partido Colorado;Lima;Buena;Muy Mala;;;Limpieza ;Mujer;
+232;2026-04-11T17:05:08.715Z;Miguel;-27.3976451;-56.8607866;Partido Colorado;Lima;Mala;Buena;;;Mejorar turismo ;Joven;
+233;2026-04-11T17:08:49.555Z;Miguel;-27.397419;-56.8615888;Partido Colorado;Lima;Muy Mala;Muy Mala;Jose Mutti;Ramón palacios ;Agua potable ;Mayor;
+234;2026-04-11T17:11:34.860Z;Miguel;-27.3972364;-56.8620884;Partido Colorado;Lima;Muy Mala;Muy Mala;Jose Mutti;Carlos ramirez ;Agua potable ;Mujer;
+235;2026-04-11T17:19:16.350Z;Miguel;-27.3965086;-56.8640884;Partido Colorado;Lima;Mala;Mala;;;Agua potable ;Mayor;
+236;2026-04-11T17:24:05.911Z;Miguel;-27.3960229;-56.8644662;Partido Colorado;Lima;Buena;;Jose Mutti;;Veredas;Adulto Mayor;
+237;2026-04-11T17:28:54.615Z;Miguel;-27.3952901;-56.8650852;Partido Colorado;Lima;Muy Mala;Buena;;;Agua potable ;;
+238;2026-04-11T17:30:16.365Z;Miguel;-27.3952445;-56.8651516;Partido Colorado;Lima;NS/NR;NS/NR;;;Todo;Adulto Mayor;
+239;2026-04-11T17:34:37.110Z;Miguel;-27.3948673;-56.8654411;Partido Colorado;Lima;Mala;Muy Mala;;;Todo;Mayor;
+240;2026-04-11T18:49:28.817Z;Miguel;;;Partido Colorado;Sirena;Excelente;Mala;Christian Rolon;Denise flores ;Agua potable  ;Joven;
+241;2026-04-11T18:52:27.124Z;Miguel;-27.3796291;-56.843838;Partido Colorado;Sirena;Muy Mala;Muy Mala;;Denis dior;Todo;Mujer;
+242;2026-04-11T18:55:53.377Z;Miguel;-27.3796584;-56.8432053;Partido Colorado;Sirena;Mala;Mala;Jose Mutti;;;Mujer;
+243;2026-04-11T18:59:25.876Z;Miguel;-27.3797502;-56.8420503;Partido Colorado;Sirena;Buena;Muy Mala;Jose Mutti;Hugo ramirez;Todo;Mujer;
+244;2026-04-11T00:11:30.375Z;admin;-26.8875076;-57.0227032;Partido Colorado;San Roque ;;;Christian Rolon;William ;agua potable ;;Mujer, Joven
+245;2026-04-11T00:16:14.531Z;admin;-26.8874887;-57.0226614;Partido Colorado;San Roque ;;;Jose Mutti;gabriel;agua ;;Varón, Joven
+266;2026-04-11T18:02:14.274Z;Mabel;-27.3872527;-56.8643984;Partido Colorado;Yat;;;Jose Mutti;Ning;Basura ;;Varón, Joven
+267;2026-04-11T18:05:45.827Z;Mabel;-27.387259;-56.8642477;Partido Colorado;Yat;Buena;Buena;Christian Rolon;N;Basura humo;;Mujer, Joven
+268;2026-04-11T18:18:46.748Z;Mabel;-27.3873417;-56.8631542;Partido Colorado;Yat;Mala;Muy Mala;;Sofia Troche;Agua;;Mujer, Mayor
+269;2026-04-11T18:22:55.274Z;Mabel;;;Partido Colorado;;Mala;Mala;Jose Mutti;Ningun;Arreglar ruta acompañar a los emprendedores;;Varón, Joven
+270;2026-04-11T18:25:09.115Z;Mabel;-26.8898279;-56.8514267;Partido Colorado;;Excelente;Excelente;Ninguno;N;;;Varón
+272;2026-04-11T18:29:54.775Z;Mabel;-27.3872074;-56.8639445;Partido Colorado;Yat;NS/NR;NS/NR;Jose Mutti;Sofia Troche;;;Varón, Mayor
+273;2026-04-11T18:31:54.022Z;Mabel;-27.3877455;-56.8648868;Partido Colorado;Yat;Buena;Buena;Christian Rolon;Ning;Caminos;;Varón, Mayor
+276;2026-04-11T19:06:03.058Z;Mabel;-27.3782805;-56.8463112;Partido Colorado;Sieena;Buena;Mala;Jose Mutti;Elias Leguizamon;Los caminos ;;Mujer,Joven
+310;2026-04-11T14:23:07.323Z;Santiago;-27.390747;-56.8430486;Partido Colorado;San Antonio ;Mala;Muy Mala;Jose Mutti;Ns nr;Todo ;;Varón, Mayor
+311;2026-04-11T14:28:14.827Z;Santiago;-27.3919498;-56.8446045;Partido Colorado;San Antonio ;Mala;Mala;;Ns nr ;Agua ;;Mujer, Adulto Mayor
+312;2026-04-11T14:34:12.116Z;Santiago;-27.39267;-56.8458755;Partido Colorado;San Antonio ;Mala;Muy Mala;Jose Mutti;Diosnel bogado;Documentos públicos ;;Varón, Mayor
+313;2026-04-11T14:39:56.724Z;Santiago;-27.3930998;-56.8464676;Partido Colorado;San Antonio ;Mala;Mala;;Ns nr;Todo ;;
+314;2026-04-11T14:48:57.658Z;Santiago;-27.3934285;-56.8470077;Partido Colorado;San Antonio ;Buena;Buena;Christian Rolon;Jose Carozo;Todo ;;Varón,Mayor
+315;2026-04-11T17:06:33.781Z;Santiago;-27.3917553;-56.8656057;Partido Colorado;Virgen del pilar ;Buena;Excelente;Christian Rolon;;Trabajos ;;Mujer,Mayor
+316;2026-04-11T17:14:21.971Z;Santiago;-27.3919127;-56.8628758;Partido Colorado;Virgen del pilar ;Buena;Buena;Jose Mutti;;Agua ;;Mujer, Mayor
+317;2026-04-11T17:16:46.112Z;Santiago;-27.3917757;-56.8626054;Partido Colorado;Virgen del pilar ;NS/NR;Buena;;Ns nr;Agua, electricidad ;;Mujer, Mayor
+318;2026-04-11T17:36:06.641Z;Santiago;-27.388738;-56.8659997;Partido Colorado;Virgen del pilar ;Buena;Buena;Christian Rolon;;Todo;;Varón, Adulto Mayor
+319;2026-04-11T17:39:29.558Z;Santiago;-27.3887687;-56.8662449;Partido Colorado;Virgen del pilar ;Muy Mala;Muy Mala;Jose Mutti;Marin ;Agua ;;Mujer,Mayor
+320;2026-04-11T17:43:56.205Z;Santiago;-27.387793;-56.8650059;Partido Colorado;Virgen del pilar ;Buena;Buena;Jose Mutti;Arnildo bernal ;;;Varón, Mayor
+321;2026-04-11T17:56:28.330Z;Santiago;-27.3918615;-56.8580118;Partido Colorado;Santa ana;Buena;Muy Mala;Christian Rolon;Wlian;Mas trabajo ;;Mujer
+322;2026-04-11T17:59:53.224Z;Santiago;-27.3919375;-56.8576872;Partido Colorado;Santa ana 100;;Mala;Jose Mutti;;Limpieza de basura ;;Mujer
+323;2026-04-11T18:02:38.068Z;Santiago;-27.3918776;-56.8570139;Partido Colorado;100;Buena;Buena;Jose Mutti;Sofi;Falta de trabajo;;Mayor
+324;2026-04-11T18:04:43.859Z;Santiago;-27.3919414;-56.8566399;;100;Buena;Mala;Christian Rolon;;Todo ;;Mujer
+325;2026-04-11T18:06:22.621Z;Santiago;-27.3919094;-56.8566187;Partido Colorado;100;Muy Mala;Muy Mala;Gabriel Alfonso;Jose gimenez;Todo;;Mayor
+326;2026-04-11T18:09:33.925Z;Santiago;-27.3907891;-56.8569741;Partido Colorado;100;Mala;Muy Mala;Jose Mutti;Carlos ;La iluminación ;;Varón
+327;2026-04-11T18:18:03.738Z;Santiago;-27.3904974;-56.8569823;Partido Colorado;Santa ana;Muy Mala;Muy Mala;Jose Mutti;Sofi;Agua potable;;Mujer
+328;2026-04-11T18:25:22.261Z;Santiago;-27.3903947;-56.8566395;Partido Colorado;Santa ana;Mala;Muy Mala;Gabriel Alfonso;;Agua potable ;;Mujer
+329;2026-04-11T18:29:18.252Z;Santiago;-27.3904187;-56.8557425;Partido Colorado;Santa ana ;Mala;Mala;Jose Mutti;Marin;Agua potable ;;Varón
+330;2026-04-11T18:38:26.812Z;Santiago;-27.3897718;-56.8558318;Partido Colorado;Santa ana ;Muy Mala;Muy Mala;Jose Mutti;;Alimentación escolar ;;Mujer
+331;2026-04-11T18:41:23.737Z;Santiago;-27.3897576;-56.8561817;Partido Colorado;Santa ana;Mala;Buena;;;Salud;;Mayor
+335;2026-04-11T15:12:12.132Z;admin;-27.3962912;-56.8513129;Partido Colorado;;Mala;Mala;Jose Mutti;;Todo;Mujer;
+337;2026-04-11T15:15:03.638Z;admin;-27.3966274;-56.8515902;Partido Colorado;;Muy Mala;Mala;Jose Mutti;Sofi;Agua potable ;Mujer;
+338;2026-04-11T15:16:39.950Z;admin;-27.396599041019574;-56.85177830595699;Partido Colorado;San Antonio ;Buena;Mala;;Ninguno ;Camino ;;Mujer, Mayor
+340;2026-04-11T15:19:40.541Z;admin;-27.3975815;-56.8528334;Partido Colorado;;Muy Mala;Buena;Jose Mutti;Carlos ramires ;Recolección de basura ;Mujer;
+341;2026-04-11T15:19:50.996Z;admin;-27.39689441339282;-56.85211753252889;Partido Colorado;San Antonio ;Mala;Muy Mala;;Ninguna ;Camino ;;Varón, Mayor
+346;2026-04-11T15:27:51.535Z;admin;-27.39796854051086;-56.85377696685532;Partido Colorado;San Antonio ;Mala;Muy Mala;;Ninguno ;Camino ;;Varón, Mayor
+349;2026-04-11T14:18:43.238Z;admin;-27.40400621051414;-56.86183459636993;Partido Colorado;San José Mí;Muy Mala;Muy Mala;;Ninguno ;Camino ;;Mujer,Joven
+350;2026-04-11T14:19:20.410Z;admin;-27.3904993;-56.8423842;Partido Colorado;San antonio;Muy Mala;Muy Mala;Jose Mutti;Diosnel Bogado;Recoleccion de Basura;;Mujer, Mayor
+352;2026-04-11T14:21:45.836Z;admin;-27.404113553399807;-56.86174092751455;Partido Colorado;San José Mí;Mala;Buena;Jose Mutti;Ninguno ;Camino ;;Varón,Mayor
+353;2026-04-11T14:22:48.866Z;admin;-27.4047385;-56.8611391;Partido Colorado;;Buena;Muy Mala;Christian Rolon;Wilian;En todo;Mujer;
+355;2026-04-11T14:25:04.272Z;admin;-27.404217857368813;-56.86188800173899;Partido Colorado;San José Mí;Mala;Muy Mala;;Ninguno ;Camino ;;Mujer,Mayor
+356;2026-04-11T14:27:34.640Z;admin;;;Partido Colorado;San Antonio ;Buena;Mala;Christian Rolon;Willian Aquino;Recoleccion de basura;;Varón, Adulto Mayor
+357;2026-04-11T14:27:42.533Z;admin;-27.404568047548366;-56.86197004357829;Partido Colorado;San José Mí;Buena;Muy Mala;Jose Mutti;Ninguno ;Camino ;;Mujer,Joven
+359;2026-04-11T14:29:48.750Z;admin;-27.4049176232877;-56.86186357629915;Partido Colorado;San José Mí;Buena;Muy Mala;Jose Mutti;Ninguno ;Agua ;;Varón,Mayor
+360;2026-04-11T14:32:27.597Z;admin;-27.405185654226056;-56.861894874299615;Partido Colorado;San José Mí;Muy Mala;Muy Mala;Jose Mutti;Diego Barreto ;Camino ;;Varón,Mayor
+361;2026-04-11T14:32:41.979Z;admin;-27.4058291;-56.8609211;Partido Colorado;San José Mí;Buena;Mala;Jose Mutti;;Limpieza publica;Mayor;
+363;2026-04-11T14:36:19.021Z;admin;-27.3916144;-56.844004;Partido Colorado;San Antonio ;Buena;Muy Mala;Christian Rolon;Willian Aquino;;;Varón, Joven
+364;2026-04-11T14:36:43.860Z;admin;-27.4063574;-56.8620412;Partido Colorado;San José Mí;Mala;Muy Mala;Jose Mutti;;Recolección de basura ;Mujer;
+365;2026-04-11T14:37:18.667Z;admin;-27.405782610341642;-56.86209535778314;Partido Colorado;San José Mí;Muy Mala;Muy Mala;Jose Mutti;Ninguno ;Agua ;;Mujer,Mayor
+367;2026-04-11T14:39:56.724Z;admin;-27.3930998;-56.8464676;;;Mala;Mala;;Ns nr;Todo ;;
+369;2026-04-11T14:44:00.924Z;admin;-27.3919687;-56.8446741;Partido Colorado;San antonio;Buena;Buena;Jose Mutti;Willian Aquino;;;Varón, Mayor
+370;2026-04-11T14:44:22.181Z;admin;-27.4061315;-56.8624329;Partido Colorado;San José Mí;Buena;Buena;Jose Mutti;;Alimentos escolares;Joven;
+371;2026-04-11T14:45:34.338Z;admin;-27.4057909;-56.8634476;Partido Colorado;;Mala;Muy Mala;Jose Mutti;;Rutas;Mujer;
+374;2026-04-11T14:48:57.658Z;admin;-27.3934285;-56.8470077;;;Buena;Buena;Christian Rolon;Jose Carozo;Todo ;;Varón, Mayor
+378;2026-04-11T15:03:03.451Z;admin;-27.3932908;-56.8469262;Partido Colorado;San antonio;Buena;Mala;Christian Rolon;Willian Aquino ;Basura;;Mujer, Mayor
+379;2026-04-11T15:08:32.046Z;admin;-27.3947566;-56.8494005;Partido Colorado;San antonio ;Buena;Buena;Jose Mutti;Alvarenga;Todo;;Varón, Joven
+380;"[�dM���J��� r5���Lҽ`>�蛃�����1GLx��gѣ֭��^S�|����A:<��R�""���t�E !�I�wV�N�ޒRx��˹�g.�e�	  �� PK     ! �E��   O   _rels/.rels �(�                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ��MO�0��H�����ݐBKwAH�!T~�I����$ݿ'\�Jcp��׏_y���Q9�^��uQ�bg�����R?��@�D��(�5�8®���>�H)Ů�Qe5t)�{�h:�(���J#a���Т'3P˸)�[�5�Zh�����T}�y����4��1��]:�yN�,ە�-�>_�j";admin;;;;;;;;;;;
+404;2026-04-11T14:18:43.238Z;admin;[object Object];;Partido Colorado;San José mi;Muy Mala;Muy Mala;;Ninguno;Camino;;Mujer,Joven
+405;2026-04-11T14:21:45.836Z;admin;[object Object];;Partido Colorado;San José Mi;Mala;Buena;Jose Mutti;Ninguno;Camino;;Varón,Mayor
+406;2026-04-11T14:25:04.272Z;admin;[object Object];;Partido Colorado;San José mi;Mala;Muy Mala;;Ninguno;Camino;;Mujer,Mayor
+407;2026-04-11T14:27:42.533Z;admin;[object Object];;Partido Colorado;San José mi;Buena;Muy Mala;Jose Mutti;Ninguno;Camino;;Mujer,Joven
+408;2026-04-11T14:29:48.750Z;admin;[object Object];;Partido Colorado;San José mi;Buena;Muy Mala;Jose Mutti;Ninguno;Agua;;Varón,Mayor
+409;2026-04-11T14:32:27.597Z;admin;[object Object];;Partido Colorado;San José Mi;Muy Mala;Muy Mala;Jose Mutti;Diego Barreto;Camino;;Varón,Mayor
+410;2026-04-11T14:37:18.667Z;admin;[object Object];;Partido Colorado;San José mi;Muy Mala;Muy Mala;Jose Mutti;Ninguno;Agua;;Mujer,Mayor
+411;2026-04-11T14:23:07.323Z;admin;[object Object];;Partido Colorado;San Antonio;Mala;Muy Mala;Jose Mutti;Ns nr;Todo;;Varón,Mayor
+412;2026-04-11T14:28:14.827Z;admin;[object Object];;Partido Colorado;San Antonio;Mala;Mala;;Ns nr;Agua;;Mujer,Adulto Mayor
+413;2026-04-11T14:34:12.116Z;admin;[object Object];;Partido Colorado;San Antonio;Mala;Muy Mala;Jose Mutti;Diosnel bogado;Documentos públicos;;Varón,Mayor
+414;2026-04-11T14:39:56.724Z;admin;[object Object];;;;Mala;Mala;;Ns nr;Todo;;
+415;2026-04-11T14:48:57.658Z;admin;[object Object];;;;Buena;Buena;Christian Rolon;Jose Carozo;Todo;;Varón,Mayor
+416;2026-04-11T14:20:12.294Z;admin;[object Object];;Partido Colorado;San jose mi;Buena;Buena;Christian Rolon;Sofi;Agua potable;;
+417;2026-04-11T14:22:48.866Z;admin;[object Object];;Partido Colorado;San jose mi;Buena;Muy Mala;Christian Rolon;Wilian;En todo;;
+418;2026-04-11T14:32:41.979Z;admin;[object Object];;Partido Colorado;San jose mi;Buena;Mala;Jose Mutti;;Limpieza publica;;
+419;2026-04-11T14:36:43.860Z;admin;[object Object];;Partido Colorado;San jose mi;Mala;Muy Mala;Jose Mutti;;Recolección de basura;;
+420;2026-04-11T14:39:38.883Z;admin;[object Object];;Partido Colorado;San jose mi;Buena;Buena;Christian Rolon;Wilfrido;Agua potable;;
+421;2026-04-11T14:44:22.181Z;admin;[object Object];;Partido Colorado;San jose mi;Buena;Buena;Jose Mutti;;Alimentos escolares;;
+422;2026-04-11T14:45:34.338Z;admin;[object Object];;Partido Colorado;San jose mi;Mala;Muy Mala;Jose Mutti;;Rutas;;
+423;2026-04-11T14:48:29.234Z;admin;[object Object];;Partido Colorado;San jose mi;Mala;Muy Mala;;Talavera;Todo;;
+425;2026-04-11T16:55:09.728Z;admin;-27.39858457811447;-56.85851209924371;Partido Colorado;Lima ;Mala;Muy Mala;Christian Rolon;Denis flores ;Agua ;;Mujer, Mayor
+427;2026-04-11T16:58:12.181Z;admin;-27.39823762862592;-56.859225926674675;Partido Colorado;Lima ;Mala;Muy Mala;Jose Mutti;Ninguno ;Agua ;;Mujer, Mayor
+428;2026-04-11T16:59:08.766Z;admin;-27.3984567;-56.8614946;Partido Colorado;Lima;Buena;Buena;Christian Rolon;William Aquino;Agua;;Varón, Mayor
+431;2026-04-11T17:03:15.839Z;admin;-27.3982005;-56.862759;Partido Colorado;Lima;Buena;Buena;Christian Rolon;Arnaldo Cardozo;Recoleccion de basura;;Varón, Joven
+434;2026-04-11T17:06:26.228Z;admin;-27.397887936730477;-56.86041627181986;Partido Colorado;Lima ;Mala;Mala;;Ninguno ;Agua ;;Mujer, Mayor
+435;2026-04-11T17:06:33.781Z;admin;-27.3917553;-56.8656057;Partido Colorado;;Buena;Excelente;Christian Rolon;;Trabajos ;;Mujer, Mayor
+436;2026-04-11T17:06:34.425Z;admin;-27.397781;-56.8634922;Partido Colorado;Lima;Muy Mala;Buena;Christian Rolon;Mario Cañete;Trabajo ;;Mujer, Mayor
+438;2026-04-11T02:02:42.576Z;admin;-26.886463059397656;-56.85454230845701;Partido Colorado;PABLO VI;;;Jose Mutti;;SALUD;;Varón
+440;2026-04-11T17:12:37.063Z;admin;-27.3977020859371;-56.86112303570069;Partido Colorado;Lima ;Muy Mala;Muy Mala;Jose Mutti;Ninguno ;Camino ;;Mujer, Joven
+443;2026-04-11T17:16:30.676Z;admin;-27.3975753;-56.863541;Partido Colorado;Lima;Mala;Mala;Christian Rolon;Cañete;Recoleccion;;Varón, Mayor
+446;2026-04-11T17:19:38.407Z;admin;-27.396816630045;-56.86358913938975;Partido Colorado;Lima ;Buena;Buena;;Ninguno ;Camino ;;Varón, Joven
+447;2026-04-11T17:22:08.477Z;admin;-27.3973472;-56.864286;Partido Colorado;Lima;Buena;Mala;Christian Rolon;William Aquino;Agua;;Mujer, Joven
+449;2026-04-11T17:22:51.458Z;admin;-27.396980137739142;-56.86368480645706;Partido Colorado;Lima ;Mala;Muy Mala;Jose Mutti;Ninguno ;Camino ;;Varón, Joven
+451;2026-04-11T17:26:52.571Z;admin;-27.396504081419177;-56.864202084256796;Partido Colorado;Lima ;Muy Mala;Muy Mala;Jose Mutti;Ninguno ;Agua ;;Varón, Mayor
+456;2026-04-11T17:35:55.370Z;admin;-27.39552055538877;-56.864922028698984;Partido Colorado;Lima ;Mala;Muy Mala;Jose Mutti;Elias leguizamon ;Camino ;;Varón, Joven
+458;2026-04-11T17:37:30.594Z;admin;-27.395663118844002;-56.86483758834036;Partido Colorado;Lima ;Muy Mala;Muy Mala;Jose Mutti;Ninguno ;Agua;;Varón, Mayor
+459;2026-04-11T17:39:29.558Z;admin;-27.3887687;-56.8662449;Partido Colorado;;Muy Mala;Muy Mala;Jose Mutti;Marin ;Agua ;;Mujer, Mayor
+461;2026-04-11T17:47:56.559Z;admin;-27.3877992;-56.8649857;Partido Colorado;Yataity;Buena;Buena;Christian Rolon;Carlos Marin ;Agua;;Mujer, Mayor
+463;2026-04-11T17:51:19.579Z;admin;-27.3874323;-56.8650945;Partido Colorado;Yataity;Buena;Buena;Jose Mutti;Miguel Amarilla;Agua;;Varón, Mayor
+464;2026-04-11T17:56:28.330Z;admin;-27.3918615;-56.8580118;Partido Colorado;;Buena;Muy Mala;Christian Rolon;Wlian;Mas trabajo ;;Mujer
+465;2026-04-11T17:57:47.177Z;admin;-27.39163711148714;-56.85780685896884;Partido Colorado;Santa Ana ;Buena;Buena;Christian Rolon;Cecilio Arias ;Camino ;;Mujer, Mayor
+467;2026-04-11T18:00:37.311Z;admin;-27.39143621146509;-56.858045633572324;Partido Colorado;Santa Ana ;Mala;Muy Mala;Christian Rolon;Ninguno ;Recolección de basura ;;Mujer, Mayor
+468;2026-04-11T18:00:43.036Z;admin;-27.3871118;-56.8643145;Partido Colorado;Yataity;Mala;Mala;Jose Mutti;Wilfrido Jacquet ;Agua;;Varón, Adulto Mayor
+471;2026-04-11T18:03:18.231Z;admin;-27.391259362170636;-56.858018356542594;Partido Colorado;Santa Ana;Muy Mala;Muy Mala;Christian Rolon;Ninguno ;Iluminación ;;Mujer, Mayor
+475;2026-04-11T18:08:13.567Z;admin;-27.39084813918871;-56.85756097651701;Partido Colorado;Santa Ana ;Mala;Buena;Christian Rolon;Miguel MArin ;Camino ;;Varón, Joven
+476;2026-04-11T18:08:24.625Z;admin;-27.3871182;-56.863616;Partido Colorado;Yataity;Mala;Mala;Christian Rolon;Luis cuellar;Agua;;Mujer, Mayor
+478;2026-04-11T18:12:36.416Z;admin;-27.390587101676065;-56.857373370800595;Partido Colorado;Santa Ana ;Mala;Muy Mala;Jose Mutti;Ninguna ;Agua ;;Varón, Mayor
+479;2026-04-11T18:14:42.287Z;admin;-27.3872072;-56.8625858;Partido Colorado;Yataity;Mala;Mala;;;;;Varón, Mayor
+480;2026-04-11T18:15:19.133Z;admin;-27.390677275791088;-56.85724560334454;Partido Colorado;Santa Ana ;Mala;Mala;Jose Mutti;Sofia Troche ;Recolección de basura ;;Varón, Mayor
+481;2026-04-11T18:18:03.738Z;admin;-27.3904974;-56.8569823;Partido Colorado;;Muy Mala;Muy Mala;Jose Mutti;Sofi;Agua potable;;Mujer
+482;2026-04-11T18:18:39.622Z;admin;-27.39057270123674;-56.85716673695742;Partido Colorado;Santa Ana ;Mala;Muy Mala;;Ninguna ;Camino ;;Mujer, Mayor
+484;2026-04-11T18:18:55.308Z;admin;-27.3873947;-56.8619433;Partido Colorado;Yataity;Muy Mala;Mala;Jose Mutti;Arnildo Bernal;Camino vecinal;;Mujer, Mayor
+486;2026-04-11T18:25:09.115Z;admin;-26.8898279;-56.8514267;Otros;;;;Ninguno;Prueba;;;Varón
+487;2026-04-11T18:25:22.261Z;admin;-27.3903947;-56.8566395;Partido Colorado;Santa Ana;Mala;Muy Mala;Gabriel Alfonso;;Agua potable ;;Mujer
+488;2026-04-11T18:26:47.407Z;admin;-27.390431572250122;-56.85657000023172;Partido Colorado;Santa Ana ;Mala;Muy Mala;Jose Mutti;Ninguno ;Agua ;;Varón, Mayor
+491;2026-04-11T18:29:31.121Z;admin;-27.390318756353597;-56.85625560580597;Partido Colorado;Santa Ana ;Mala;Mala;;Ninguno ;Agua ;;Varón, Mayor
+492;2026-04-11T18:29:40.058Z;admin;-27.3876085;-56.8614375;Partido Colorado;Yataity;Muy Mala;Muy Mala;Christian Rolon;;Agua;;Varón, Mayor
+495;2026-04-11T18:32:08.950Z;admin;-27.3872311;-56.8612082;Partido Colorado;Yataity;Mala;Mala;Christian Rolon;WILLIAN AQUINO ;Agua;;Mujer, Mayor
+496;2026-04-11T18:33:11.082Z;admin;-27.39021000226267;-56.8560579845082;Partido Colorado;Santa Ana ;Mala;Mala;Jose Mutti;Ninguno ;Agua ;;Mujer, Joven
+498;2026-04-11T18:41:23.737Z;admin;-27.3897576;-56.8561817;Partido Colorado;Santa Ana;Mala;Buena;;;Salud;;Mayor
+499;2026-04-11T18:49:28.817Z;admin;;;;;Excelente;Mala;Christian Rolon;Denise flores ;Agua potable  ;Joven;
+500;2026-04-11T18:52:07.454Z;admin;-27.3792029;-56.8451088;Partido Colorado;Sirena ;Mala;Buena;Jose Mutti;CACERES;Fuente trabajo ;;Varón, Adulto Mayor
+501;2026-04-11T18:52:27.124Z;admin;-27.3796291;-56.843838;Partido Colorado;;Muy Mala;Muy Mala;;Denis dior;Todo;Mujer;
+502;2026-04-11T18:53:12.377Z;admin;-27.37903236459584;-56.84419006472278;Partido Colorado;Sirena ;Mala;Muy Mala;Christian Rolon;Edgardo Villalba ;Recolección de basura ;;Mujer, Joven
+503;2026-04-11T18:55:36.521Z;admin;-27.378869;-56.844919;Partido Colorado;Sirena;Mala;Buena;Jose Mutti;;Trabajo;;Mujer, Joven
+504;2026-04-11T18:55:51.351Z;admin;-27.378802507236607;-56.84411005941506;Partido Colorado;Sirena ;Mala;Muy Mala;;Ninguno ;Camino ;;Mujer, Mayor
+505;2026-04-11T18:55:53.377Z;admin;-27.3796584;-56.8432053;Partido Colorado;;Mala;Mala;Jose Mutti;;;Mujer;
+507;2026-04-11T18:57:47.762Z;admin;-27.378863874493444;-56.844139878204935;Partido Colorado;Sirena ;Mala;Muy Mala;;Ninguno ;Camino ;;Varón, Mayor
+508;2026-04-11T18:59:25.876Z;admin;-27.3797502;-56.8420503;Partido Colorado;;Buena;Muy Mala;Jose Mutti;Hugo ramirez;Todo;Mujer;
+509;2026-04-11T19:00:26.239Z;admin;-27.3782882;-56.8446613;Partido Colorado;Sirena;Buena;Buena;Jose Mutti;Elias Leguizamon;Agua;;Mujer, Mayor
+511;2026-04-11T19:03:34.132Z;admin;-27.3784295;-56.8446692;Partido Colorado;Sirena;Muy Mala;Muy Mala;Jose Mutti;William Aquino ;Caminos vecinales ;;Mujer, Mayor
+512;2026-04-11T19:04:35.615Z;admin;-27.377965885404585;-56.84390526574191;Partido Colorado;Sirena ;Mala;Muy Mala;Jose Mutti;Ninguno ;Recolección de basura ;;Varón, Mayor
+513;2026-04-11T19:06:03.058Z;admin;-27.3782805;-56.8463112;Partido Colorado;Yat;Buena;Mala;Jose Mutti;Elias Leguizamon;Los caminos ;;Mujer, Joven
+514;2026-04-11T19:06:08.351Z;admin;-27.3782386;-56.8445082;Partido Colorado;Sirena;Mala;Muy Mala;Jose Mutti;WILLIAN RODRIGUEZ;Agua;;Varón, Mayor
+515;2026-04-11T19:07:50.460Z;admin;-27.37766249763766;-56.84367496268459;Partido Colorado;Sirena ;Mala;Muy Mala;;Ninguno ;Camino ;;Varón, Mayor
+577;2026-04-11T00:11:30.375Z;admin;-26.8875076;-57.0227032;Partido Colorado;San Roque ;;;Christian Rolon;William ;agua potable ;;Mujer, Joven
+578;2026-04-11T00:16:14.531Z;admin;-26.8874887;-57.0226614;Partido Colorado;San Roque ;;;Jose Mutti;gabriel;agua ;;Varón, Joven
+654;2026-04-11T17:56:28.330Z;admin;-27.3918615;-56.8580118;Partido Colorado;Santa Ana;Buena;Muy Mala;Christian Rolon;Wlian;Mas trabajo ;;Mujer
+660;2026-04-11T18:18:03.738Z;admin;-27.3904974;-56.8569823;Partido Colorado;Santa Ana;Muy Mala;Muy Mala;Jose Mutti;Sofi;Agua potable;;Mujer
